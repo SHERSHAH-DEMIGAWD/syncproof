@@ -1,11 +1,11 @@
 # Source publication â€” 2026-11-07
 
 Published to `SHERSHAH-DEMIGAWD/syncproof` at the owner's explicit request.
-This is the educational source project and its documentation, including the complete PDF guide. It is not a hosted application deployment.
+This is the educational source project and its documentation. It is not a hosted application deployment.
 
 ## Evidence handling
 
-The publication copy replaces absolute local user-directory prefixes with `<USER_HOME>` in the files listed below. Runtime source, tests, schemas, numerical measurements, pass/fail outcomes, and the PDF are unchanged. The private working originals are retained locally. Redacted artifacts are presentation copies, not byte-identical originals; historical hashes refer to the original artifacts. JSON artifacts remain valid JSON.
+The publication copy replaces absolute local user-directory prefixes with `<USER_HOME>` in the files listed below. Runtime source, tests, schemas, numerical measurements, and pass/fail outcomes are unchanged. The private working originals are retained locally. Redacted artifacts are presentation copies, not byte-identical originals; historical hashes refer to the original artifacts. JSON artifacts remain valid JSON.
 
 Historical phase reports, readiness decisions, test totals, and benchmark results retain their original dates and scope. Their statements that publication had not happened describe those earlier phases. The new publication request authorizes this source release.
 

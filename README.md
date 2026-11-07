@@ -1,6 +1,6 @@
 # SyncProof
 
-[Complete project guide (PDF)](output/pdf/SYNCPROOF_COMPLETE_PROJECT_GUIDE.pdf) · [Publication notes](PUBLICATION.md)
+[Publication notes](PUBLICATION.md)
 
 A local field-inspection demonstration of durable offline intent, revision-checked writes and recovery when a request commits but its acknowledgment disappears. Two independent browser stores edit title/status/notes, preserve conflicts and reconcile against authoritative PostgreSQL.
 
