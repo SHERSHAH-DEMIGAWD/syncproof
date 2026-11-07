@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "markdown_files": 10,
+  "local_links_anchors_checked": 201,
+  "json_illustrations": 4,
+  "defined_invariants": 12,
+  "full_failure_scenarios_not_run": 10,
+  "full_claim_targets_not_run": 19,
+  "backend_pass_entries": 9,
+  "demo_steps_not_run": 8,
+  "phase1_acceptance_pass_entries": 16,
+  "source_hashes_verified": 14,
+  "final_test_counts": [
+    18,
+    27
+  ],
+  "errors": []
+}

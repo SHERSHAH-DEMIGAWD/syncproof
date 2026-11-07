@@ -1,0 +1,49 @@
+{
+  "name": "syncproof",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local educational PostgreSQL mutation server \u2014 Phase 1",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node --env-file-if-exists=.env dist/src/server.js",
+    "migrate": "node --env-file-if-exists=.env dist/src/db.js",
+    "test:unit": "node --test dist/tests/contracts.test.js",
+    "test:db": "node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/integration.test.js dist/tests/process.test.js",
+    "test": "npm run build && npm run test:unit && npm run test:db",
+    "dev:client": "vite --config vite.config.ts",
+    "build:client": "tsc -p tsconfig.client.json && vite build --config vite.config.ts",
+    "test:local": "node --test dist/tests/local.test.js",
+    "test:browser": "playwright test",
+    "check:client": "tsc -p tsconfig.client.json",
+    "test:push": "node --test dist/tests/push.test.js",
+    "test:snapshot": "node --test dist/tests/snapshot.test.js",
+    "test:resolution": "node --test dist/tests/resolution.test.js",
+    "test:audit:db": "node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/audit.test.js dist/tests/process.test.js",
+    "test:audit:browser": "playwright test tests/browser/audit.spec.ts tests/browser/resolution.spec.ts",
+    "test:demo": "playwright test tests/browser/demo.spec.ts",
+    "test:audit": "npm run build && npm run test:audit:db && npm run test:audit:browser"
+  },
+  "dependencies": {
+    "dexie": "4.4.7",
+    "express": "5.3.0",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "fake-indexeddb": "6.2.7",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

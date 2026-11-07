@@ -1,0 +1,20 @@
+
+> syncproof@0.1.0 test:audit:browser
+> playwright test tests/browser/audit.spec.ts
+
+
+Running 11 tests using 1 worker
+
+  ok  1 tests\browser\audit.spec.ts:3:1 › F1 confirmed commit loss replays original ID before newer snapshot and atomic acknowledgment (2.2s)
+  ok  2 tests\browser\audit.spec.ts:7:32 › F3 HTTP reverse delivery delayed A preserves stale loser (2.8s)
+  ok  3 tests\browser\audit.spec.ts:7:32 › F3 HTTP reverse delivery delayed B preserves stale loser (2.6s)
+  ok  4 tests\browser\audit.spec.ts:12:1 › F4 independent-record cycle interruption retains acknowledged unknown queued and recovers in order (2.2s)
+  ok  5 tests\browser\audit.spec.ts:17:1 › F5 real graceful Chromium restarts retain saved draft queued unknown locks and completed receipt (5.6s)
+  ok  6 tests\browser\audit.spec.ts:22:53 › F7 lost stale update receipt replays historical conflict and never revives tombstone (2.3s)
+  ok  7 tests\browser\audit.spec.ts:22:53 › F7 lost stale delete receipt replays historical conflict and never revives tombstone (2.2s)
+  ok  8 tests\browser\audit.spec.ts:27:31 › F8 independent clients both at record-lock barrier then A wins without lost update (2.9s)
+  ok  9 tests\browser\audit.spec.ts:27:31 › F8 independent clients both at record-lock barrier then B wins without lost update (3.2s)
+  ok 10 tests\browser\audit.spec.ts:32:1 › F10 simulated 21 days offline recovers unknown before tombstones and preserves stale intent until explicit decision (3.1s)
+  ok 11 tests\browser\audit.spec.ts:39:1 › pre-send native IndexedDB marker abort prevents transport and preserves queued bytes (1.4s)
+
+  11 passed (36.2s)

@@ -1,0 +1,16 @@
+{
+  "collection": "Windows CIM/Storage read-only metadata",
+  "disks": {
+    "MediaType": "SSD",
+    "BusType": "NVMe",
+    "Size": 512110190592
+  },
+  "cpu": {
+    "Name": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M           ",
+    "NumberOfCores": 12,
+    "NumberOfLogicalProcessors": 24
+  },
+  "memory": {
+    "TotalPhysicalMemory": 24823836672
+  }
+}

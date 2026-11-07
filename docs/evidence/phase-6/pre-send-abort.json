@@ -1,0 +1,111 @@
+{
+  "scenario": "pre-send-abort",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:23.684Z",
+  "test": "pre-send native IndexedDB marker abort prevents transport and preserves queued bytes",
+  "nativeTransactionAbort": true,
+  "transportCallsBeforeRecovery": 0,
+  "mutation": {
+    "mutationId": "b9009eee-30b9-4869-847f-57e34605ed26",
+    "recordId": "c781f68e-940d-4af6-bd1d-83041e12c102",
+    "envelope": {
+      "protocolVersion": 1,
+      "mutationId": "b9009eee-30b9-4869-847f-57e34605ed26",
+      "clientId": "11fa650a-7ca4-4119-961b-e604bb57c7ee",
+      "recordId": "c781f68e-940d-4af6-bd1d-83041e12c102",
+      "operation": "create",
+      "baseRevision": null,
+      "payload": {
+        "title": "Marker failure",
+        "status": "open",
+        "notes": "Saved proposal"
+      }
+    },
+    "canonical": "{\"protocolVersion\":1,\"mutationId\":\"b9009eee-30b9-4869-847f-57e34605ed26\",\"clientId\":\"11fa650a-7ca4-4119-961b-e604bb57c7ee\",\"recordId\":\"c781f68e-940d-4af6-bd1d-83041e12c102\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Marker failure\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+    "fingerprint": "2d709a59dc3293e209f15756e6eed8b16ac7d71f36beb0fe98d4990f4ea57dab",
+    "commonBase": null,
+    "phase": "queued"
+  },
+  "client": {
+    "work": [],
+    "mutations": [
+      {
+        "mutationId": "b9009eee-30b9-4869-847f-57e34605ed26",
+        "recordId": "c781f68e-940d-4af6-bd1d-83041e12c102",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "b9009eee-30b9-4869-847f-57e34605ed26",
+          "clientId": "11fa650a-7ca4-4119-961b-e604bb57c7ee",
+          "recordId": "c781f68e-940d-4af6-bd1d-83041e12c102",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Marker failure",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"b9009eee-30b9-4869-847f-57e34605ed26\",\"clientId\":\"11fa650a-7ca4-4119-961b-e604bb57c7ee\",\"recordId\":\"c781f68e-940d-4af6-bd1d-83041e12c102\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Marker failure\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "2d709a59dc3293e209f15756e6eed8b16ac7d71f36beb0fe98d4990f4ea57dab",
+        "commonBase": null,
+        "phase": "acknowledged",
+        "attemptCount": 1,
+        "lastAttemptAt": 1793811263598,
+        "receipt": {
+          "protocolVersion": 1,
+          "mutationId": "b9009eee-30b9-4869-847f-57e34605ed26",
+          "replayed": false,
+          "outcome": {
+            "kind": "committed",
+            "committedRevision": "1",
+            "record": {
+              "id": "c781f68e-940d-4af6-bd1d-83041e12c102",
+              "title": "Marker failure",
+              "status": "open",
+              "notes": "Saved proposal",
+              "revision": "1",
+              "deleted": false
+            }
+          }
+        },
+        "lastError": ""
+      }
+    ],
+    "clean": [
+      {
+        "id": "c781f68e-940d-4af6-bd1d-83041e12c102",
+        "title": "Marker failure",
+        "status": "open",
+        "notes": "Saved proposal",
+        "revision": "1",
+        "deleted": false
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "11fa650a-7ca4-4119-961b-e604bb57c7ee"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793811263631,\"recordCount\":1}"
+      }
+    ]
+  },
+  "server": [
+    {
+      "id": "c781f68e-940d-4af6-bd1d-83041e12c102",
+      "title": "Marker failure",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "1",
+      "deleted": false
+    }
+  ],
+  "invariants": [
+    "INV-UNKNOWN-01",
+    "INV-DRAFT-01"
+  ],
+  "limit": "Injected exception, not physical disk failure"
+}

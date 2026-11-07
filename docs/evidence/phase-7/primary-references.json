@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05",
+  "method": "Official primary docs opened/searched during this session; scoped paraphrases only",
+  "sources": [
+    {
+      "url": "https://rxdb.info/replication.html",
+      "facts": [
+        "checkpoint-based pull",
+        "assumed master/new fork push and returned conflict states",
+        "live observation and deletion marker"
+      ]
+    },
+    {
+      "url": "https://electric.ax/docs/sync/",
+      "facts": [
+        "Postgres HTTP read-path sync using Shapes"
+      ]
+    },
+    {
+      "url": "https://electric.ax/docs/sync/guides/writes",
+      "facts": [
+        "application write patterns discussed separately"
+      ]
+    },
+    {
+      "url": "https://pouchdb.apache.org/guides/conflicts.html",
+      "facts": [
+        "CouchDB-compatible replication/conflicts, deterministic winner with retained branches"
+      ]
+    },
+    {
+      "url": "https://pouchdb.apache.org/guides/updating-deleting.html",
+      "facts": [
+        "revision-tree deletion tombstone"
+      ]
+    }
+  ],
+  "notClaimed": [
+    "installed product evaluation",
+    "relative performance ranking",
+    "production equivalence"
+  ]
+}

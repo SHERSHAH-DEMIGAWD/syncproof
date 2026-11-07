@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Calcutta",
+  "sourceRevision": "No HEAD commit exists; uncommitted workspace identified by source SHA-256 below",
+  "node": "v24.15.0",
+  "npm": "11.12.1",
+  "platform": "win32",
+  "release": "10.0.26200",
+  "architecture": "x64",
+  "postgresql": "18.6, x86_64 Windows, UTF8",
+  "postgresSettings": {
+    "default_transaction_isolation": "read committed",
+    "fsync": "on",
+    "synchronous_commit": "on",
+    "full_page_writes": "on"
+  },
+  "databaseTopology": "Project-owned loopback cluster 127.0.0.1:55432; dedicated syncproof_test DB; per-test generated schemas",
+  "sourceHashes": {
+    "migrations/001_mutation_server.sql": "be1ac5ee8eb8e10fbf3983702e9d80de0ed14da560d82bd278a602f873287a19",
+    "package-lock.json": "aaa4cec1db2c2af9a23371277bbb021941762c92048ed42ecf8b2566ffa3a70c",
+    "package.json": "8a2086851f901148593e3a7d565e3e630da5d2253387232771cffd94f8aef826",
+    "scripts/local-postgres.ps1": "f59994442d6671df6843b07edfb48aaa636c3b638a4c800db6e123d09a7a5394",
+    "src/app.ts": "c481f0b0f1082adcec428f5f6df86386d05136e8e3952f7f34db08bb4aea8c72",
+    "src/contracts.ts": "1e7a3fa7b9cfc2a01fc65c4828fa3a729fa68c2c827ae8bab92248813bcfe273",
+    "src/db.ts": "e6b9787f42cb028bf5be9ad31395dd8bc71e357490fe292d5419be5d4b86bdab",
+    "src/mutations.ts": "1235830d808dd4c92f16306e09cf556f3be4bc9f86b0b5bc7df97622cf7a6991",
+    "src/server.ts": "1830db0beb74dfcdf2a76d858cf724f4b177442e03ae272b3703b37a3b11999c",
+    "tests/contracts.test.ts": "ff258e830d8595c84a8af2ded7b4516b51c7531ae310e8cc9c6647da45e5c729",
+    "tests/helpers.ts": "71294bda59e3f16219bf1266698a48c5992c570acbc0b3512833be20166c8889",
+    "tests/integration.test.ts": "eb3429c2ff3ce7f67dbb587c9ca4483b559f37050275ab8ac04a0f1bcaab1036",
+    "tests/process.test.ts": "42742533b0db788555e18f78096f01b4696d880b46da15d165dca306309f9809",
+    "tsconfig.json": "249f1b7b6b5e3cd11180b07ba73ce31ee914bc3857f1f99b808b24aba236821d"
+  }
+}

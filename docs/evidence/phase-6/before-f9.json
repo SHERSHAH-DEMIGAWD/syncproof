@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "resolutionId": "6776cd3e-607a-4369-a4fb-2836343ee7ce",
+  "originalConflict": "1a82f10a-2396-414f-ac1b-4a8b5c1eccd1",
+  "pids": [
+    8648,
+    26868
+  ],
+  "graceful": true,
+  "commitObservedBeforeDrop": true,
+  "historicalReceipt": "6",
+  "newestRevision": "7",
+  "resolutionReceiptCount": 1,
+  "canonicalUnchanged": true
+}

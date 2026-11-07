@@ -1,0 +1,17 @@
+
+> syncproof@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:18228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:12904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\local.spec.ts:17:1 › draft edit/reload, queue immutability, independent records and exact reload persistence (1.5s)
+  ok 2 tests\browser\local.spec.ts:26:1 › already loaded app authors and queues offline with no mutation/snapshot HTTP requests (755ms)
+  ok 3 tests\browser\local.spec.ts:32:1 › actual IndexedDB aborted freeze rolls back both stores; UI write failure never claims saved (879ms)
+  ok 4 tests\browser\local.spec.ts:39:1 › F5 actual graceful browser process close/relaunch retains same persistent profile; fresh profile isolated (2.6s)
+
+  4 passed (9.5s)

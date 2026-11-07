@@ -1,0 +1,44 @@
+
+> syncproof@0.1.0 test:db
+> node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/integration.test.js dist/tests/process.test.js
+
+.env not found. Continuing without it.
+.env not found. Continuing without it.
+✔ environment: real PostgreSQL records durability and isolation settings (277.8171ms)
+ℹ {"database":"PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit","settings":[{"name":"default_transaction_isolation","setting":"read committed"},{"name":"fsync","setting":"on"},{"name":"full_page_writes","setting":"on"},{"name":"synchronous_commit","setting":"on"}]}
+✔ create stores revision 1 and a durable complete success receipt (249.1525ms)
+✔ update and sequential identical replay advance exactly once; equivalent JSON replays (319.0748ms)
+✔ no-change update still advances revision exactly once (205.9135ms)
+✔ same ID rejects each changed immutable envelope field with no new effect (222.7365ms)
+✔ F2 concurrent same-ID requests block on independent PostgreSQL connections then replay (271.7766ms)
+ℹ Observed duplicate backend 36836 blocked by owner 23820; one receipt and revision 2.
+✔ F2 waiting duplicate becomes processor when initial claim owner rolls back (276.6876ms)
+✔ F2 concurrent changed-envelope contender collides after owner commits (271.1192ms)
+✔ F8 distinct same-base mutations serialize on row; winner index 0 (287.8207ms)
+✔ F8 distinct same-base mutations serialize on row; winner index 1 (270.8428ms)
+✔ F3 reversed arrival order accepts delivered-first request and records stale loser (302.4504ms)
+✔ F7 terminal stale conflict replays original snapshot after further legitimate update (210.8927ms)
+✔ historical success replay returns old revision without rolling newest authoritative state back (200.1015ms)
+✔ delete retains tombstone; identical delete replays; new matching/stale deletes and update/create cannot resurrect (202.4183ms)
+✔ missing update/delete yield replayable record_missing receipts without creating records (206.7493ms)
+✔ concurrent distinct-ID creates on one absent record yield one record and one record_exists receipt (289.1157ms)
+✔ F6 simulated pre-commit exception rolls back provisional row and receipt; retry executes safely (186.6717ms)
+✔ F1/F6 controlled after-commit exception gives transient HTTP failure but replay is original success (352.6396ms)
+ℹ Controlled exception after COMMIT; not a process restart or socket-drop simulation. Real restart covered separately.
+✔ revision overflow is a real database error, rolls back receipt, and is not a terminal conflict (222.7774ms)
+✔ database rejects COMMIT of incomplete receipt claims rather than leaving permanent pending rows (203.4093ms)
+✔ parallel different-record writes progress while an unrelated transaction holds its row lock (269.818ms)
+✔ HTTP rejects invalid/malformed/media/oversized input before receipt admission; no read API added early (241.4691ms)
+.env not found. Continuing without it.
+✔ F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics (1506.7946ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_record_write_before_commit","oldPid":34120,"newPid":32064,"postgresBackendAtCheckpoint":18228,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_a133d633a65542848ae3d5332a31cf11","replayed":false,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+✔ F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics (1410.8874ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_commit_before_response","oldPid":41732,"newPid":34424,"postgresBackendAtCheckpoint":2636,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_c0be3aa616714a54a7c685af3e8bd98b","replayed":true,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9349.3174

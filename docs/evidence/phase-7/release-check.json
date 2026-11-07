@@ -1,0 +1,1635 @@
+{
+  "date": "2026-11-05",
+  "status": "PASS",
+  "runId": "phase7-192835c3-297e-4048-ae59-de5a503712ed",
+  "phase6Entry": "PASS",
+  "sourceRevision": "No HEAD; SHA-256 identifies workspace",
+  "counts": {
+    "backend": 45,
+    "newDbAudit": 3,
+    "local": 13,
+    "push": 9,
+    "snapshot": 4,
+    "resolution": 5,
+    "browser": 44,
+    "namedCases": 123,
+    "mainCommandExecutions": 126,
+    "repeatedProcessChecks": 3,
+    "freshCopyRepeatedContractCases": 18,
+    "freshCopyHttpSmoke": "PASS",
+    "profileLauncher": "PASS"
+  },
+  "scenarios": [
+    {
+      "id": "F1",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F1 confirmed commit loss replays original ID before newer snapshot and atomic acknowledgment"
+      ],
+      "initial": "clean1, immutable update/base1, no receipt",
+      "injectedFault": "commit2 held before browser delivery; reload destroys old controller",
+      "expectedClient": "unknown/locked original bytes; replay before pull gives historical2 and clean3",
+      "expectedServer": "one original receipt, final3",
+      "recovery": "same-ID replay then full pull",
+      "invariants": [
+        "INV-ACK-01",
+        "INV-ATOMIC-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01"
+      ],
+      "artifacts": [
+        "F1.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F1.json",
+          "test": "F1 confirmed commit loss replays original ID before newer snapshot and atomic acknowledgment",
+          "recordedAt": "2026-11-05T07:52:46.338Z"
+        }
+      ],
+      "limitation": "Interception/reload; local ack abort additionally covered in resolution/browser regressions",
+      "executedPhase": 7
+    },
+    {
+      "id": "F2",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/audit.test.ts",
+      "tests": [
+        "F2 HTTP concurrent success duplicates arbitrate one receipt and preserve identity",
+        "F2 HTTP concurrent conflict duplicates arbitrate one receipt and preserve identity"
+      ],
+      "initial": "live1 or live2, no target receipt",
+      "injectedFault": "hold owner claim, observe independent waiter PostgreSQL lock; duplicate and collision HTTP",
+      "expectedClient": "HTTP client sees original decision and replay; collision explicit",
+      "expectedServer": "one target receipt; final2, conflict adds no effect",
+      "recovery": "identical sequential/concurrent replay; owner-rollback variant in backend regression",
+      "invariants": [
+        "INV-IDEMP-01",
+        "INV-ATOMIC-01",
+        "INV-REV-01"
+      ],
+      "artifacts": [
+        "F2-success.json",
+        "F2-conflict.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F2-success.json",
+          "test": "F2 HTTP concurrent success duplicates arbitrate one receipt and preserve identity",
+          "recordedAt": "2026-11-05T07:52:48.453Z"
+        },
+        {
+          "artifact": "F2-conflict.json",
+          "test": "F2 HTTP concurrent conflict duplicates arbitrate one receipt and preserve identity",
+          "recordedAt": "2026-11-05T07:52:48.841Z"
+        }
+      ],
+      "limitation": "HTTP clients plus existing browser collision regression; no exactly-once delivery claim",
+      "executedPhase": 7
+    },
+    {
+      "id": "F3",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F3 HTTP reverse delivery delayed A preserves stale loser",
+        "F3 HTTP reverse delivery delayed B preserves stale loser"
+      ],
+      "initial": "two isolated profiles at1 with distinct update IDs/base1",
+      "injectedFault": "hold first-sent HTTP before admission; deliver other first, both orderings",
+      "expectedClient": "one acknowledged, one preserved terminal conflict/base1/local values",
+      "expectedServer": "one effect to2, success and conflict receipts",
+      "recovery": "explicit keep-server and both final reconcile",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-IDEMP-01"
+      ],
+      "artifacts": [
+        "F3-A.json",
+        "F3-B.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F3-A.json",
+          "test": "F3 HTTP reverse delivery delayed A preserves stale loser",
+          "recordedAt": "2026-11-05T07:52:49.448Z"
+        },
+        {
+          "artifact": "F3-B.json",
+          "test": "F3 HTTP reverse delivery delayed B preserves stale loser",
+          "recordedAt": "2026-11-05T07:52:52.517Z"
+        }
+      ],
+      "limitation": "Controlled finite orderings; no general network ordering guarantee",
+      "executedPhase": 7
+    },
+    {
+      "id": "F4",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F4 independent-record cycle interruption retains acknowledged unknown queued and recovers in order"
+      ],
+      "initial": "three independent queued creates, no target receipts",
+      "injectedFault": "first acknowledged; second commit reply held until reload; third unsent",
+      "expectedClient": "acknowledged/unknown/queued; final all acknowledged with same IDs",
+      "expectedServer": "two receipts before recovery, three after; each record1",
+      "recovery": "unknown first, full pull, send queued third, final pull",
+      "invariants": [
+        "INV-ATOMIC-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01",
+        "INV-ONE-01",
+        "INV-SNAP-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F4.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F4.json",
+          "test": "F4 independent-record cycle interruption retains acknowledged unknown queued and recovers in order",
+          "recordedAt": "2026-11-05T07:52:54.745Z"
+        }
+      ],
+      "limitation": "No multi-record atomicity; snapshot abort/truncation covered by existing snapshot suite",
+      "executedPhase": 7
+    },
+    {
+      "id": "F5",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F5 real graceful Chromium restarts retain saved draft queued unknown locks and completed receipt"
+      ],
+      "initial": "persistent profile with saved draft and separate offline queued mutation",
+      "injectedFault": "graceful whole Chromium close/relaunch; later unknown variant and second acknowledged reopen",
+      "expectedClient": "exact durable identity/work/ID/hash/envelope/lock across launches; fresh profile empty",
+      "expectedServer": "no effect offline; one receipt per sent operation",
+      "recovery": "same retained profile, exact retry, full reconciliation",
+      "invariants": [
+        "INV-DRAFT-01",
+        "INV-ONE-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01"
+      ],
+      "artifacts": [
+        "F5.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F5.json",
+          "test": "F5 real graceful Chromium restarts retain saved draft queued unknown locks and completed receipt",
+          "recordedAt": "2026-11-05T07:53:00.356Z"
+        }
+      ],
+      "limitation": "Graceful only, reachable frontend shell, no eviction/forced browser kill/power loss",
+      "executedPhase": 7
+    },
+    {
+      "id": "F6",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/process.test.ts",
+      "tests": [
+        "F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics",
+        "F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics"
+      ],
+      "initial": "local frozen create marked unknown; no server record/receipt",
+      "injectedFault": "actual dedicated Node SIGKILL after provisional write or after commit, before reply",
+      "expectedClient": "transport lost, unknown original lock retained; local acknowledgment after retry",
+      "expectedServer": "before kill: 0/0 or record1/receipt1; after retry always1/1",
+      "recovery": "new Node PID same database/schema; original ID executes or replays",
+      "invariants": [
+        "INV-ACK-01",
+        "INV-ATOMIC-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01"
+      ],
+      "artifacts": [
+        "F6-precommit.json",
+        "F6-postcommit.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F6-precommit.json",
+          "test": "F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics",
+          "recordedAt": "2026-11-05T07:52:51.647Z"
+        },
+        {
+          "artifact": "F6-postcommit.json",
+          "test": "F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics",
+          "recordedAt": "2026-11-05T07:52:53.616Z"
+        }
+      ],
+      "limitation": "Actual Node termination; local store fake-indexeddb, separate actual-browser coverage; PostgreSQL remains running",
+      "executedPhase": 7
+    },
+    {
+      "id": "F7",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F7 lost stale update receipt replays historical conflict and never revives tombstone",
+        "F7 lost stale delete receipt replays historical conflict and never revives tombstone"
+      ],
+      "initial": "browser original base1, server2, no stale-request receipt",
+      "injectedFault": "stale update/delete; durable conflict2 reply lost; server later3 then tombstone4",
+      "expectedClient": "original intent/base and historical conflict2 retained; current clean3/4 separate",
+      "expectedServer": "stale requests never change server; create/update/delete cannot revive tombstone4",
+      "recovery": "same-ID conflict replay, pull, explicit keep deletion",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-TOMB-01"
+      ],
+      "artifacts": [
+        "F7-update.json",
+        "F7-delete.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F7-update.json",
+          "test": "F7 lost stale update receipt replays historical conflict and never revives tombstone",
+          "recordedAt": "2026-11-05T07:53:02.757Z"
+        },
+        {
+          "artifact": "F7-delete.json",
+          "test": "F7 lost stale delete receipt replays historical conflict and never revives tombstone",
+          "recordedAt": "2026-11-05T07:53:04.717Z"
+        }
+      ],
+      "limitation": "Receipt/tombstone retention within unpruned test DB, no restore coverage",
+      "executedPhase": 7
+    },
+    {
+      "id": "F8",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F8 independent clients both at record-lock barrier then A wins without lost update",
+        "F8 independent clients both at record-lock barrier then B wins without lost update"
+      ],
+      "initial": "independent profiles at1, different IDs/client IDs",
+      "injectedFault": "both HTTP transactions held before_record_lock; controlled A-first and B-first releases",
+      "expectedClient": "one acknowledgment and visible preserved conflict until deliberate new resolution",
+      "expectedServer": "one transition to2; two original terminal receipts; resolution to3",
+      "recovery": "new ID/base2 then both clean caches3 under quiescence",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F8-A.json",
+        "F8-B.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F8-A.json",
+          "test": "F8 independent clients both at record-lock barrier then A wins without lost update",
+          "recordedAt": "2026-11-05T07:53:07.860Z"
+        },
+        {
+          "artifact": "F8-B.json",
+          "test": "F8 independent clients both at record-lock barrier then B wins without lost update",
+          "recordedAt": "2026-11-05T07:53:10.816Z"
+        }
+      ],
+      "limitation": "One controller per independent store; no shared-profile tab arbitration",
+      "executedPhase": 7
+    },
+    {
+      "id": "F9",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/resolution.spec.ts",
+      "tests": [
+        "F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID"
+      ],
+      "initial": "genuine conflict/base4 at server5, explicit new resolution/base5",
+      "injectedFault": "real commit6 response dropped; graceful whole Chromium restart; writer7 before replay",
+      "expectedClient": "same unknown ID/hash/envelope/lock/history; original resolution receipt6 then clean7",
+      "expectedServer": "one resolution receipt/effect; final7",
+      "recovery": "same-ID replay before pull; local ack abort separately rerun in same spec",
+      "invariants": [
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01",
+        "INV-CONFLICT-01",
+        "INV-ONE-01"
+      ],
+      "artifacts": [
+        "F9.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F9.json",
+          "test": "F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID",
+          "recordedAt": "2026-11-05T07:54:23.736Z"
+        }
+      ],
+      "limitation": "Graceful browser restart, no forced browser kill or power loss",
+      "executedPhase": 7
+    },
+    {
+      "id": "F10",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F10 simulated 21 days offline recovers unknown before tombstones and preserves stale intent until explicit decision"
+      ],
+      "initial": "old-base queued record and separate previously committed unknown record",
+      "injectedFault": "API disconnected; simulated wall clock +21 days; remote update/delete",
+      "expectedClient": "unknown replay first, tombstones observed, stale proposal retained until keep-server",
+      "expectedServer": "tombstones3 and2, no resurrection or unintended increment",
+      "recovery": "recover unknown, pull, stale request conflicts, explicit keep, both caches equal",
+      "invariants": [
+        "INV-TOMB-01",
+        "INV-DRAFT-01",
+        "INV-UNKNOWN-01",
+        "INV-CONFLICT-01",
+        "INV-SNAP-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F10.json"
+      ],
+      "observed": [
+        {
+          "artifact": "F10.json",
+          "test": "F10 simulated 21 days offline recovers unknown before tombstones and preserves stale intent until explicit decision",
+          "recordedAt": "2026-11-05T07:53:14.054Z"
+        }
+      ],
+      "limitation": "Simulated duration only; independent not-before fixture schedules queued work, no cursor/aging claim",
+      "executedPhase": 7
+    }
+  ],
+  "demoRuns": 2,
+  "sourceHashes": {
+    "src/app.ts": "dfb96014c08bf913790f82ccbcf30a51574b50e956895468be1d703c4591d384",
+    "src/contracts.ts": "1e7a3fa7b9cfc2a01fc65c4828fa3a729fa68c2c827ae8bab92248813bcfe273",
+    "src/db.ts": "e6b9787f42cb028bf5be9ad31395dd8bc71e357490fe292d5419be5d4b86bdab",
+    "src/mutations.ts": "1235830d808dd4c92f16306e09cf556f3be4bc9f86b0b5bc7df97622cf7a6991",
+    "src/server.ts": "1830db0beb74dfcdf2a76d858cf724f4b177442e03ae272b3703b37a3b11999c",
+    "client/conflict.tsx": "17e943d82dab8c36ca094ad3bd519f18b08d33fc471b37435a8055a9f11c6d51",
+    "client/env.d.ts": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+    "client/index.html": "086aeb897d08516bbe249d37f8943eb493c312b3eed130915cfaf9f24753dff2",
+    "client/main.tsx": "9640adb1a8e514b06d5033f550a499cf3a038bef342fb49ce62d1cfd2da30a7a",
+    "client/style.css": "184725c46ffd08d2f9a5c90430699205f55aaded92689dd7eb9b749cf04a6c61",
+    "client/lib/contract.ts": "fed81ae8be72f3c2e3e4173fe2bc899fb7012eb030f1002793cb660a8b8f5ca6",
+    "client/lib/pull.ts": "e3fd32cd144dff834e90643d0858be9220b3f6a358376b6ccae7ad9bd4df2fd1",
+    "client/lib/push.ts": "3ef6e0b545e3516bcf218a95e6fafa9bb60b689e78f67920ac04c8bb11f878d5",
+    "client/lib/storage.ts": "51cb7c01863de7c17eac4e749a111fb627a11cd1f356e35a80fd10ec5b8c76ff",
+    "tests/audit-evidence.ts": "0ad789dbd6714267c72381f67d1275ace3000d4503ff766020f1401bf422460b",
+    "tests/audit.test.ts": "a1d7c6910b55a0ef83e67e1fd8a76ef4ad81a582f1257e429aa015d53ec72ae9",
+    "tests/contracts.test.ts": "ff258e830d8595c84a8af2ded7b4516b51c7531ae310e8cc9c6647da45e5c729",
+    "tests/helpers.ts": "71294bda59e3f16219bf1266698a48c5992c570acbc0b3512833be20166c8889",
+    "tests/integration.test.ts": "e22f680b56d715eb46addbd1bf0e9ba499dad22b1ae5d0f75f75278074f42574",
+    "tests/local.test.ts": "8d84127161b7032feccb52ca50225b6778cf2577675806043efa6e02f42dacc6",
+    "tests/process.test.ts": "948acee3d9ae97bcf82728f4a72f1bb87b34998e0509c646f7ec76324ed9638b",
+    "tests/push.test.ts": "4a6f177f0fa2cfa3be540ccbc04c67009ddf2fd217d3642ddeee263d6227cd9b",
+    "tests/resolution.test.ts": "44afe758922359fd66be0973b320ebcdeb64c91074ea96657041c4aedd9ad102",
+    "tests/snapshot.test.ts": "ae5b409438b956cc66661bb22290d8438f8c98d122aff62ecd92096822a348a1",
+    "tests/browser/audit-harness.ts": "b47c3f1cf35539d169e746e6565c9aabc10cae49e88490ad5c31bf4618307251",
+    "tests/browser/audit.spec.ts": "7b30dfad6975e10f4ef550df987fbc4baf4bc28fe568fdd862c808c466529d9a",
+    "tests/browser/demo.spec.ts": "24d02473093e0a9bd2e731c98fb358f7a82f78785b82e128433ecd484c99955c",
+    "tests/browser/local.spec.ts": "67bc2fbacaf342da8c0b0e0343f08fd7564539382a0de6bdfe0d4f83506b57ad",
+    "tests/browser/push.spec.ts": "341a1d32d9ffb91d749d89b1cf20b945a76d0f8024d8812325becf226ec0b2da",
+    "tests/browser/resolution.spec.ts": "718116ce72dedcd3a87798259610c41da95942d8f929df75e0951b19df56f804",
+    "tests/browser/snapshot.spec.ts": "5c8bbfe7c382c26d119c8a647e4e9c69efa5500e95a670d5ce98ef84bd43f1dd",
+    "scripts/local-postgres.ps1": "f59994442d6671df6843b07edfb48aaa636c3b638a4c800db6e123d09a7a5394",
+    "scripts/verify-audit.mjs": "58d2ae21735288b4a91ed6380881ba7d1874bba63988289be893f310b6895f72",
+    "migrations/001_mutation_server.sql": "be1ac5ee8eb8e10fbf3983702e9d80de0ed14da560d82bd278a602f873287a19",
+    "package.json": "58e153f3b0f8e679cbe6507a97a64aae3beff774cec5c3c3eb7b93bdc3b4c453",
+    "package-lock.json": "9317f3a13ec9292c7052e6a0402093e7f64aa6bb9e5891510c978d54ec8cfd1d",
+    "playwright.config.ts": "e448af9f7d1d01d8858757a421d74543aeaa81c3038d400901af02e3807e3da2",
+    "vite.config.ts": "0bbea1ab1f43a75dccfd1941d309be6da4eb8b338d940a7ce7ff356f37049c11",
+    "tsconfig.json": "6073147dae3b773d57c72901c911b9aaad34162650ea9600b048ead86c193bb3",
+    "tsconfig.client.json": "1ed8bd77df034f0fe788197362f6203b3e4494ef2d29a1cb9705336c521c1a03",
+    "scripts/bench.mjs": "1771380015b9d58c68b95bb4b45c35539204ed212eb420e98101af7b8a22b393",
+    "scripts/release-audit.mjs": "f5bb3e3ae80d5bb7dd801f982638a08e296587b18901bf1d0bfebcd2cdbb13eb",
+    "scripts/reproduce.mjs": "e8b663a1e23d8c8ca5a629cff6e63160159ac7950e2aa4d3e546ff60e493c843",
+    "scripts/demo-clients.mjs": "3d697bf9522463ba8dc3ea5b1320c184f6c1af75b015412ecf9202794bf8952f",
+    "scripts/verify-release.mjs": "be12550852106dc72999e2eba073f59be15b5a5369b7ac22552778898269cf34"
+  },
+  "changedPreexistingSource": [
+    "tests/audit-evidence.ts",
+    "tests/browser/local.spec.ts",
+    "tests/browser/push.spec.ts",
+    "tests/browser/resolution.spec.ts"
+  ],
+  "productionSourceChanged": false,
+  "dependencyOrMigrationChanged": false,
+  "benchmark": {
+    "status": "PASS",
+    "samples": 4010,
+    "groups": 32,
+    "repetitions": 2,
+    "seed": 20261105,
+    "measurementArtifact": "bench-raw.json",
+    "summary": [
+      {
+        "experiment": "post_accepted",
+        "parameters": {
+          "writers": 1
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 3.2149000000063097,
+        "median": 4.994999999999891,
+        "p95": 7.421799999999621,
+        "max": 16.952699999994365,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 3.712800000000243,
+            "median": 5.77034999999978,
+            "p95": 7.800700000000234,
+            "max": 10.769000000000005,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 3.2149000000063097,
+            "median": 4.41404999999213,
+            "p95": 6.511799999992945,
+            "max": 16.952699999994365,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "post_replay",
+        "parameters": {
+          "writers": 1
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 1.950700000001234,
+        "median": 3.40104999999312,
+        "p95": 4.617499999999836,
+        "max": 45.17930000000024,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 2.4325999999996384,
+            "median": 3.534850000000006,
+            "p95": 4.617499999999836,
+            "max": 45.17930000000024,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 1.950700000001234,
+            "median": 3.1097999999910826,
+            "p95": 4.5917999999946915,
+            "max": 5.60570000000007,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "post_conflict",
+        "parameters": {
+          "writers": 1
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 2.7445000000006985,
+        "median": 4.155999999996084,
+        "p95": 6.3595000000000255,
+        "max": 13.682200000000194,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 3.568499999999858,
+            "median": 4.912449999999808,
+            "p95": 6.7184000000002015,
+            "max": 13.682200000000194,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 2.7445000000006985,
+            "median": 3.7092000000047847,
+            "p95": 4.492599999997765,
+            "max": 4.8813999999983935,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "409": 200
+        }
+      },
+      {
+        "experiment": "snapshot_http",
+        "parameters": {
+          "N": 100
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 1.6138999999966472,
+        "median": 2.833549999999832,
+        "p95": 4.568000000000211,
+        "max": 18.304200000000492,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 2.164900000000671,
+            "median": 2.8718999999998687,
+            "p95": 4.621299999999792,
+            "max": 18.304200000000492,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 1.6138999999966472,
+            "median": 2.6882499999919673,
+            "p95": 4.4553000000014435,
+            "max": 10.616099999999278,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        },
+        "payloadBytes": 45306
+      },
+      {
+        "experiment": "snapshot_validate",
+        "parameters": {
+          "N": 100
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 1.399999976158142,
+        "median": 1.699999988079071,
+        "p95": 2.5,
+        "max": 3.300000011920929,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 1.399999976158142,
+            "median": 1.699999988079071,
+            "p95": null,
+            "max": 3.300000011920929,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 1.399999976158142,
+            "median": 1.800000011920929,
+            "p95": null,
+            "max": 2.600000023841858,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "snapshot_install",
+        "parameters": {
+          "N": 100
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 20.399999976158142,
+        "median": 28.549999982118607,
+        "p95": 44.80000001192093,
+        "max": 80.30000001192093,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 20.399999976158142,
+            "median": 30.450000017881393,
+            "p95": null,
+            "max": 80.30000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 21.400000035762787,
+            "median": 27.05000001192093,
+            "p95": null,
+            "max": 37.299999952316284,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "foreground_pull_clean",
+        "parameters": {
+          "N": 100,
+          "Q": 0
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 30.399999976158142,
+        "median": 43.099999994039536,
+        "p95": null,
+        "max": 99.40000003576279,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 41.80000001192093,
+            "median": 45.14999997615814,
+            "p95": null,
+            "max": 99.40000003576279,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 30.399999976158142,
+            "median": 38.05000001192093,
+            "p95": null,
+            "max": 52,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "foreground_pull_drafts",
+        "parameters": {
+          "N": 100,
+          "Q": 10
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 31.600000023841858,
+        "median": 38.5,
+        "p95": null,
+        "max": 54,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 36.69999998807907,
+            "median": 42.45000001788139,
+            "p95": null,
+            "max": 54,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 31.600000023841858,
+            "median": 35.650000005960464,
+            "p95": null,
+            "max": 45.90000003576279,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "snapshot_http",
+        "parameters": {
+          "N": 500
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 5.165199999988545,
+        "median": 8.58114999999998,
+        "p95": 13.54570000000058,
+        "max": 35.525400000000445,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 5.345600000000559,
+            "median": 9.550499999999374,
+            "p95": 13.54570000000058,
+            "max": 35.525400000000445,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 5.165199999988545,
+            "median": 7.276499999999942,
+            "p95": 11.573700000008103,
+            "max": 26.380799999999,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        },
+        "payloadBytes": 227360
+      },
+      {
+        "experiment": "snapshot_validate",
+        "parameters": {
+          "N": 500
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 7.099999964237213,
+        "median": 9.700000017881393,
+        "p95": 14.199999988079071,
+        "max": 16.799999952316284,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 7.300000011920929,
+            "median": 10.099999994039536,
+            "p95": null,
+            "max": 16.799999952316284,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 7.099999964237213,
+            "median": 8.549999982118607,
+            "p95": null,
+            "max": 14.699999988079071,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "snapshot_install",
+        "parameters": {
+          "N": 500
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 100.39999997615814,
+        "median": 126.05000001192093,
+        "p95": 177.70000004768372,
+        "max": 226.30000001192093,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 118,
+            "median": 136.5499999821186,
+            "p95": null,
+            "max": 226.30000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 100.39999997615814,
+            "median": 120.35000002384186,
+            "p95": null,
+            "max": 142.39999997615814,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "foreground_pull_clean",
+        "parameters": {
+          "N": 500,
+          "Q": 0
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 124.5,
+        "median": 163.5499999821186,
+        "p95": null,
+        "max": 187,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 152.70000004768372,
+            "median": 171.80000001192093,
+            "p95": null,
+            "max": 187,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 124.5,
+            "median": 159.5,
+            "p95": null,
+            "max": 178.29999995231628,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "foreground_pull_drafts",
+        "parameters": {
+          "N": 500,
+          "Q": 50
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 127.89999997615814,
+        "median": 162.60000002384186,
+        "p95": null,
+        "max": 254.9000000357628,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 155.5,
+            "median": 171.34999999403954,
+            "p95": null,
+            "max": 254.9000000357628,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 127.89999997615814,
+            "median": 158.30000001192093,
+            "p95": null,
+            "max": 170.89999997615814,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "snapshot_http",
+        "parameters": {
+          "N": 1000
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 8.349099999992177,
+        "median": 14.037849999993341,
+        "p95": 28.324500000002445,
+        "max": 39.17630000000645,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 10.226599999998143,
+            "median": 14.785550000000512,
+            "p95": 29.4945000000007,
+            "max": 38.786800000001676,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 8.349099999992177,
+            "median": 13.296249999999418,
+            "p95": 24.531600000002072,
+            "max": 39.17630000000645,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        },
+        "payloadBytes": 455017
+      },
+      {
+        "experiment": "snapshot_validate",
+        "parameters": {
+          "N": 1000
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 13.800000011920929,
+        "median": 20.749999970197678,
+        "p95": 28.30000001192093,
+        "max": 33.5,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 13.800000011920929,
+            "median": 21.599999994039536,
+            "p95": null,
+            "max": 33.5,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 14.600000023841858,
+            "median": 20.05000001192093,
+            "p95": null,
+            "max": 28.899999976158142,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "snapshot_install",
+        "parameters": {
+          "N": 1000
+        },
+        "clockUnit": "ms",
+        "n": 100,
+        "min": 218.9000000357628,
+        "median": 286.35000002384186,
+        "p95": 478.60000002384186,
+        "max": 543.6999999880791,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 50,
+            "min": 284.5,
+            "median": 392.44999998807907,
+            "p95": null,
+            "max": 543.6999999880791,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 50,
+            "min": 218.9000000357628,
+            "median": 249.75,
+            "p95": null,
+            "max": 358.30000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 100
+        }
+      },
+      {
+        "experiment": "foreground_pull_clean",
+        "parameters": {
+          "N": 1000,
+          "Q": 0
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 256.69999998807907,
+        "median": 400.90000000596046,
+        "p95": null,
+        "max": 554.3999999761581,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 467.5,
+            "median": 506.2999999821186,
+            "p95": null,
+            "max": 554.3999999761581,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 256.69999998807907,
+            "median": 318.34999999403954,
+            "p95": null,
+            "max": 334.30000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "foreground_pull_drafts",
+        "parameters": {
+          "N": 1000,
+          "Q": 100
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 264.60000002384186,
+        "median": 396.40000000596046,
+        "p95": null,
+        "max": 689.1000000238419,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 481.5,
+            "median": 500.94999998807907,
+            "p95": null,
+            "max": 689.1000000238419,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 264.60000002384186,
+            "median": 284.75,
+            "p95": null,
+            "max": 311.30000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 20
+        }
+      },
+      {
+        "experiment": "concurrency_valid",
+        "parameters": {
+          "writers": 1
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 2.991199999989476,
+        "median": 5.715250000004744,
+        "p95": 8.449099999997998,
+        "max": 14.464500000001863,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 4.976599999994505,
+            "median": 7.284800000001269,
+            "p95": 8.896999999997206,
+            "max": 14.464500000001863,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 2.991199999989476,
+            "median": 3.994650000007823,
+            "p95": 5.720200000010664,
+            "max": 8.138600000005681,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "concurrency_race",
+        "parameters": {
+          "writers": 1
+        },
+        "clockUnit": "ms",
+        "n": 20,
+        "min": 3.335499999986496,
+        "median": 6.035499999990861,
+        "p95": null,
+        "max": 9.279199999997218,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 10,
+            "min": 7.030199999993783,
+            "median": 7.782149999999092,
+            "p95": null,
+            "max": 9.279199999997218,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 10,
+            "min": 3.335499999986496,
+            "median": 4.252549999990151,
+            "p95": null,
+            "max": 5.040799999987939,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "200": 20
+        }
+      },
+      {
+        "experiment": "concurrency_valid",
+        "parameters": {
+          "writers": 2
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 3.8260000000009313,
+        "median": 6.957800000000134,
+        "p95": 10.941299999998591,
+        "max": 16.557199999995646,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 6.311999999998079,
+            "median": 8.656000000002678,
+            "p95": 12.148600000000442,
+            "max": 16.557199999995646,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 3.8260000000009313,
+            "median": 4.912800000005518,
+            "p95": 7.129799999995157,
+            "max": 8.94560000000638,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "concurrency_race",
+        "parameters": {
+          "writers": 2
+        },
+        "clockUnit": "ms",
+        "n": 40,
+        "min": 4.481200000009267,
+        "median": 7.344050000003335,
+        "p95": null,
+        "max": 13.8408999999956,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 20,
+            "min": 6.878900000003341,
+            "median": 9.312950000003184,
+            "p95": null,
+            "max": 13.8408999999956,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 20,
+            "min": 4.481200000009267,
+            "median": 5.780450000005658,
+            "p95": null,
+            "max": 8.897199999977602,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "200": 20,
+          "409": 20
+        }
+      },
+      {
+        "experiment": "concurrency_valid",
+        "parameters": {
+          "writers": 10
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 10.340399999986403,
+        "median": 20.866500000003725,
+        "p95": 31.354900000005728,
+        "max": 35.038800000002084,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 16.065700000006473,
+            "median": 23.41284999999698,
+            "p95": 34.00019999999495,
+            "max": 35.038800000002084,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 10.340399999986403,
+            "median": 13.834199999997509,
+            "p95": 31.064400000002934,
+            "max": 31.42919999998412,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "concurrency_race",
+        "parameters": {
+          "writers": 10
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 9.515400000003865,
+        "median": 22.78255000001809,
+        "p95": 41.44380000000092,
+        "max": 50.56390000000101,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 11.998599999998987,
+            "median": 29.58285000000251,
+            "p95": 44.049299999998766,
+            "max": 50.56390000000101,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 9.515400000003865,
+            "median": 18.36820000001171,
+            "p95": 26.323899999988498,
+            "max": 28.41349999999511,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 20,
+          "409": 180
+        }
+      },
+      {
+        "experiment": "concurrency_valid",
+        "parameters": {
+          "writers": 20
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 16.956299999990733,
+        "median": 28.378350000002683,
+        "p95": 68.32460000002175,
+        "max": 75.36699999999837,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 20.860200000002806,
+            "median": 28.897249999998166,
+            "p95": 39.0627999999997,
+            "max": 39.974999999998545,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 16.956299999990733,
+            "median": 27.454249999995227,
+            "p95": 74.09130000000005,
+            "max": 75.36699999999837,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 200
+        }
+      },
+      {
+        "experiment": "concurrency_race",
+        "parameters": {
+          "writers": 20
+        },
+        "clockUnit": "ms",
+        "n": 400,
+        "min": 11.415800000017043,
+        "median": 37.92560000001322,
+        "p95": 68.26580000000104,
+        "max": 83.37510000000475,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 200,
+            "min": 16.458599999998114,
+            "median": 46.860349999999016,
+            "p95": 70.39830000000075,
+            "max": 83.37510000000475,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 200,
+            "min": 11.415800000017043,
+            "median": 31.952050000007148,
+            "p95": 53.55340000000433,
+            "max": 78.76430000000983,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "200": 20,
+          "409": 380
+        }
+      },
+      {
+        "experiment": "pending_scan",
+        "parameters": {
+          "Q": 10
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 1,
+        "median": 1.75,
+        "p95": 2.900000035762787,
+        "max": 3.599999964237213,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 1,
+            "median": 2.100000023841858,
+            "p95": 3.100000023841858,
+            "max": 3.599999964237213,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 1,
+            "median": 1.5,
+            "p95": 2.5,
+            "max": 3.300000011920929,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "local": 200
+        }
+      },
+      {
+        "experiment": "foreground_reconcile",
+        "parameters": {
+          "N": 100,
+          "Q": 10
+        },
+        "clockUnit": "ms",
+        "n": 10,
+        "min": 247,
+        "median": 280.19999998807907,
+        "p95": null,
+        "max": 370.80000001192093,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 5,
+            "min": 284.89999997615814,
+            "median": 319.4000000357628,
+            "p95": null,
+            "max": 370.80000001192093,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 5,
+            "min": 247,
+            "median": 259.89999997615814,
+            "p95": null,
+            "max": 275.5,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 10
+        }
+      },
+      {
+        "experiment": "pending_scan",
+        "parameters": {
+          "Q": 50
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 2.200000047683716,
+        "median": 3.300000011920929,
+        "p95": 4.899999976158142,
+        "max": 7.800000011920929,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 3,
+            "median": 3.9000000059604645,
+            "p95": 5,
+            "max": 5.5,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 2.200000047683716,
+            "median": 2.699999988079071,
+            "p95": 3.900000035762787,
+            "max": 7.800000011920929,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "local": 200
+        }
+      },
+      {
+        "experiment": "foreground_reconcile",
+        "parameters": {
+          "N": 500,
+          "Q": 50
+        },
+        "clockUnit": "ms",
+        "n": 10,
+        "min": 1022.3999999761581,
+        "median": 1250.75,
+        "p95": null,
+        "max": 1547.199999988079,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 5,
+            "min": 1334.5,
+            "median": 1363.8999999761581,
+            "p95": null,
+            "max": 1547.199999988079,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 5,
+            "min": 1022.3999999761581,
+            "median": 1078.3999999761581,
+            "p95": null,
+            "max": 1167,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 10
+        }
+      },
+      {
+        "experiment": "pending_scan",
+        "parameters": {
+          "Q": 100
+        },
+        "clockUnit": "ms",
+        "n": 200,
+        "min": 3.5,
+        "median": 4.600000023841858,
+        "p95": 6.900000035762787,
+        "max": 23.100000023841858,
+        "p95Note": "empirical nearest-rank, pooled across independent repetitions",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 100,
+            "min": 3.700000047683716,
+            "median": 4.9000000059604645,
+            "p95": 7.100000023841858,
+            "max": 23.100000023841858,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          },
+          {
+            "rep": 2,
+            "n": 100,
+            "min": 3.5,
+            "median": 4.400000035762787,
+            "p95": 6.199999988079071,
+            "max": 21.30000001192093,
+            "p95Note": "empirical nearest-rank, pooled across independent repetitions"
+          }
+        ],
+        "statuses": {
+          "local": 200
+        }
+      },
+      {
+        "experiment": "foreground_reconcile",
+        "parameters": {
+          "N": 1000,
+          "Q": 100
+        },
+        "clockUnit": "ms",
+        "n": 10,
+        "min": 2094.900000035763,
+        "median": 2193.800000011921,
+        "p95": null,
+        "max": 2344,
+        "p95Note": "NOT REPORTED: fewer than100 samples",
+        "byRepetition": [
+          {
+            "rep": 1,
+            "n": 5,
+            "min": 2110.5,
+            "median": 2286.300000011921,
+            "p95": null,
+            "max": 2344,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          },
+          {
+            "rep": 2,
+            "n": 5,
+            "min": 2094.900000035763,
+            "median": 2116.399999976158,
+            "p95": null,
+            "max": 2220,
+            "p95Note": "NOT REPORTED: fewer than100 samples"
+          }
+        ],
+        "statuses": {
+          "local": 10
+        }
+      }
+    ]
+  },
+  "freshCopy": "PASS",
+  "twoProfileLauncher": "PASS",
+  "publicPublicationReady": false,
+  "publicationDecision": "Owner review required: license unresolved and private-path review; no publish/push/deploy",
+  "remainingOwnedSchemas": [],
+  "claimLimits": [
+    "forced browser kill",
+    "profile eviction/deletion",
+    "OS/power/hardware failure",
+    "competing tabs",
+    "production deployment/authentication",
+    "multi-region",
+    "unbounded arbitrary network partitions",
+    "physical weeks-long durability"
+  ],
+  "ownedPostgresStopped": true,
+  "testPorts3000And5174Listening": false,
+  "disposableReproDirectoriesRemaining": 0,
+  "disposableAuditProfilesRemaining": 0
+}

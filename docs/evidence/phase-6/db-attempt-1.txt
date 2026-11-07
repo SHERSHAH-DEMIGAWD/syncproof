@@ -1,0 +1,22 @@
+
+> syncproof@0.1.0 test:audit:db
+> node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/audit.test.js dist/tests/process.test.js
+
+.env not found. Continuing without it.
+✔ F2 HTTP concurrent success duplicates arbitrate one receipt and preserve identity (766.1431ms)
+✔ F2 HTTP concurrent conflict duplicates arbitrate one receipt and preserve identity (405.9558ms)
+✔ normal HTTP runtime has no fault routes and ignores test-control request input (279.8757ms)
+.env not found. Continuing without it.
+✔ F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics (1853.0387ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_record_write_before_commit","oldPid":5640,"newPid":29444,"postgresBackendAtCheckpoint":44716,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_e9212f4feb6b4141aee50393d9f02802","replayed":false,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+✔ F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics (1815.1127ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_commit_before_response","oldPid":22744,"newPid":15776,"postgresBackendAtCheckpoint":24272,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_6b22de69f9c34226987dd232ab16132b","replayed":true,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+✔ test process checkpoint controls refuse startup without both test environment and parent IPC (1509.1131ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8018.9675

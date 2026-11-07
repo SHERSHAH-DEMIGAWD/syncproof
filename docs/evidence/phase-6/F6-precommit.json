@@ -1,0 +1,36 @@
+{
+  "scenario": "F6-precommit",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:53:44.662Z",
+  "test": "F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics",
+  "actualNodeRestart": true,
+  "controlPoint": "after_record_write_before_commit",
+  "oldPid": 35128,
+  "newPid": 35404,
+  "postgresBackendAtCheckpoint": 32772,
+  "oldProcessExit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "initialRecord": "absent",
+  "beforeKill": {
+    "recordRevision": null,
+    "receiptCount": 0
+  },
+  "mutationId": "5797eb91-2fa9-41ad-8605-811326d04ffd",
+  "canonical": "{\"protocolVersion\":1,\"mutationId\":\"5797eb91-2fa9-41ad-8605-811326d04ffd\",\"clientId\":\"d4647b78-16c9-4e99-b8e7-2bd65b97ae8c\",\"recordId\":\"ba3fd8b6-75a7-4383-945a-e59cb7e8967e\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Process fixture\",\"status\":\"open\",\"notes\":\"Same ID through server failure\"}}",
+  "fingerprint": "a8b57b3245162c482da9cb784c55cfdb099da4263c3da3b3d9ee389b92862667",
+  "clientBeforeReplay": "outcome_unknown",
+  "clientAfterReplay": "acknowledged",
+  "replayed": false,
+  "finalRevision": "1",
+  "receiptCount": 1,
+  "invariants": [
+    "INV-ACK-01",
+    "INV-ATOMIC-01",
+    "INV-IDEMP-01",
+    "INV-UNKNOWN-01"
+  ],
+  "limit": "Actual forced Node termination, PostgreSQL remains running; local IndexedDB uses fake-indexeddb, browser lifecycle tested separately."
+}

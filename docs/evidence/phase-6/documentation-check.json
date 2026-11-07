@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "localLinksAndAnchorsChecked": 625,
+  "acceptancePass": 22,
+  "scenarioPass": 10,
+  "demoStepsPass": 8,
+  "demoCleanRuns": 2,
+  "sourceHashesChecked": 38,
+  "productionSourceChanged": false,
+  "dependencyLockChanged": false,
+  "finalCounts": {
+    "backendExisting": 45,
+    "newDatabaseAudit": 3,
+    "local": 13,
+    "push": 9,
+    "snapshot": 4,
+    "resolution": 5,
+    "browser": 44,
+    "distinctTotal": 123,
+    "finalCommandTestExecutions": 126,
+    "repeatedProcessChecks": 3
+  },
+  "remainingOwnedSchemas": [],
+  "errors": [],
+  "ownedPostgresStopped": true,
+  "auditPorts3000And5174Listening": false,
+  "auditProfileDirectoriesRemaining": 0
+}

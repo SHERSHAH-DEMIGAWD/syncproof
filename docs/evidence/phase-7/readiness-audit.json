@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-05",
+  "status": "AUDITED - PUBLICATION REQUIRES OWNER REVIEW",
+  "candidateFiles": 237,
+  "textFilesScanned": 237,
+  "candidateBytes": 2531627,
+  "findings": [
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_0.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_1.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_2.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_3.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_4.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_5.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/PHASE_REPORTS/PHASE_6.md",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-1/migrations-unavailable-attempt.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-2/browser-lifecycle.json",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-2/client-build.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-4/snapshot-browser-database-unavailable.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-5/browser-attempt.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-5/regression-browser-lifecycle.json",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-6/before-browser-lifecycle.json",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-7/bench-smoke-attempt-1.json",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-7/bench-smoke-attempt-1.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-7/fresh-copy-attempt-1.txt",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    },
+    {
+      "path": "docs/evidence/phase-7/legacy-phase-2-browser-lifecycle.json",
+      "category": "absolute local/private path",
+      "severity": "REVIEW BEFORE PUBLICATION"
+    }
+  ],
+  "possibleSecretFindings": 0,
+  "ignoreTargets": {
+    ".env": true,
+    ".env.local": true,
+    ".local/pgdata/PG_VERSION": true,
+    ".local/profiles/example": true,
+    "node_modules/example": true,
+    "dist/src/server.js": true,
+    "dist-client/index.html": true
+  },
+  "history": {
+    "hasHead": false,
+    "commits": 0,
+    "review": "No Git commits exist; no history rewrite performed. Working-tree scan cannot certify future commits or files outside candidates."
+  },
+  "projectLicense": {
+    "declared": null,
+    "licenseFiles": [],
+    "selection": "UNRESOLVED; no license chosen without owner authorization"
+  },
+  "dependencies": {
+    "lockEntries": 163,
+    "installed": 119,
+    "licenses": {
+      "MIT": 100,
+      "Apache-2.0": 8,
+      "ISC": 7,
+      "MPL-2.0": 2,
+      "BSD-3-Clause": 2
+    },
+    "unknownInstalled": [],
+    "noticesAvailable": 116
+  },
+  "vulnerabilities": {
+    "assessment": "npm registry audit completed",
+    "counts": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "limit": "Point-in-time advisory check, not a code security audit or absence-of-vulnerabilities guarantee"
+  },
+  "normalMode": {
+    "source": "src/server.ts binds127.0.0.1, validates loopback Origin; no authentication; PostgreSQL helper loopback trust",
+    "testSafety": "tests/audit.test.ts normal HTTP route/header negatives and tests/process.test.ts NODE_ENV/IPC refusal rerun"
+  },
+  "outstanding": [
+    "Owner project-license selection and rights/attribution review",
+    "Review/redact historical absolute private paths before public sharing; preserve private original evidence",
+    "Choose repository owner/privacy; no commit/push/deploy authorized",
+    "Review final staged diff and secret history at actual publication time",
+    "Optional actual UI screenshots/video; none fabricated"
+  ],
+  "limits": [
+    "Heuristic secret scan can miss credentials or flag examples; no secret values printed",
+    "Installed SPDX metadata is not legal clearance; preserve applicable upstream notices if distributing",
+    "Platform-optional packages not installed locally rely on lock metadata, not inspected runtime files"
+  ]
+}

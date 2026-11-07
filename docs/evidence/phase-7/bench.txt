@@ -1,0 +1,25 @@
+rep1: mutation latency
+rep1: snapshot/install N=100
+rep1: snapshot/install N=500
+rep1: snapshot/install N=1000
+rep1: concurrency=1
+rep1: concurrency=2
+rep1: concurrency=10
+rep1: concurrency=20
+rep1: foreground N=100, Q=10
+rep1: foreground N=500, Q=50
+rep1: foreground N=1000, Q=100
+rep1: retained database growth
+rep2: mutation latency
+rep2: snapshot/install N=100
+rep2: snapshot/install N=500
+rep2: snapshot/install N=1000
+rep2: concurrency=1
+rep2: concurrency=2
+rep2: concurrency=10
+rep2: concurrency=20
+rep2: foreground N=100, Q=10
+rep2: foreground N=500, Q=50
+rep2: foreground N=1000, Q=100
+rep2: retained database growth
+{"status":"PASS","smoke":false,"samples":4010,"summaryGroups":32,"errors":[]}

@@ -1,0 +1,30 @@
+
+> syncproof@0.1.0 test:unit
+> node --test dist/tests/contracts.test.js
+
+✔ canonical create has prescribed field order and SHA-256 of UTF-8 bytes (8.0457ms)
+✔ different member order, whitespace and escaped equivalent scalars have one canonical identity (1.3152ms)
+✔ composed and decomposed Unicode, whitespace and business differences remain distinct (0.905ms)
+✔ every immutable identity field participates in the canonical fingerprint (0.8935ms)
+✔ duplicate envelope member names are rejected before JSON can discard a value (1.4066ms)
+✔ duplicate escaped member aliases and nested payload duplicates are rejected (0.2988ms)
+✔ malformed JSON syntax, invalid escapes, controls, trailing tokens and trailing commas are rejected (1.2934ms)
+✔ JSON primitives, arrays and non-object payloads are not envelopes (0.5413ms)
+✔ envelope and payload fields are exact, with no defaults or unknown stripping (1.11ms)
+✔ protocol version is numeric 1 and never coerced (0.7846ms)
+✔ UUID identities must be canonical lowercase hyphenated strings (0.9489ms)
+✔ create requires null base; update and delete require positive BIGINT revision strings (1.9462ms)
+✔ delete requires explicit null payload and unknown operations are rejected (0.6538ms)
+✔ business field validation rejects wrong types and unsupported statuses (1.8153ms)
+✔ title requires a non-whitespace scalar and no input trimming occurs (0.7168ms)
+✔ length limits count Unicode scalars rather than UTF-16 code units (7.1167ms)
+✔ unpaired surrogates are rejected while valid supplementary pairs round-trip (1.8139ms)
+✔ U+0000 is rejected before PostgreSQL text admission, while other escaped controls remain valid (0.5503ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 209.6159

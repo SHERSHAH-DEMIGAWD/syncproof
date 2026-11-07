@@ -1,0 +1,35 @@
+
+> syncproof@0.1.0 test:browser
+> playwright test
+
+[WebServer] (node:35032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 22 tests using 1 worker
+
+(node:34432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\browser\local.spec.ts:17:1 › draft edit/reload, queue immutability, independent records and exact reload persistence (1.6s)
+  ok  2 tests\browser\local.spec.ts:26:1 › already loaded app authors and queues offline with no mutation/snapshot HTTP requests (741ms)
+  ok  3 tests\browser\local.spec.ts:32:1 › actual IndexedDB aborted freeze rolls back both stores; UI write failure never claims saved (946ms)
+  ok  4 tests\browser\local.spec.ts:39:1 › F5 actual graceful browser process close/relaunch retains same persistent profile; fresh profile isolated (2.9s)
+  ok  5 tests\browser\push.spec.ts:39:1 › browser canonical create/independent update accepted; exact duplicates replay without extra revision (1.7s)
+  ok  6 tests\browser\push.spec.ts:45:1 › F1 actual commit confirmed in PostgreSQL before response loss; five exact replays then manual recovery (16.9s)
+  ok  7 tests\browser\push.spec.ts:52:1 › unreachable backend before admission retains bytes across reload and retries when reachable (1.4s)
+  ok  8 tests\browser\push.spec.ts:55:1 › actual server commit followed by native acknowledgment transaction failure recovers same ID (1.4s)
+  ok  9 tests\browser\push.spec.ts:61:1 › real stale conflict retains local/base/original response and blocks edits without resolution UI (1.7s)
+  ok 10 tests\browser\push.spec.ts:66:1 › real identity collision is blocked without altering local frozen envelope or server winner (1.2s)
+  ok 11 tests\browser\push.spec.ts:69:1 › historical replay keeps latest known revision and unrelated later draft while preserving original receipt (1.3s)
+  ok 12 tests\browser\push.spec.ts:75:1 › partial F4 browser interruption leaves acknowledged, unknown and queued records recoverable (2.1s)
+  ok 13 tests\browser\push.spec.ts:81:1 › rapid UI send triggers share one actual request and one durable server outcome (1.3s)
+  ok 14 tests\browser\push.spec.ts:86:1 › HTTP503 not-before and malformed response remain unknown and later same-ID retry succeeds (1.8s)
+  ok 15 tests\browser\push.spec.ts:91:1 › actual retained-profile browser restart after commit-before-loss replays the original unknown operation (3.1s)
+  ok 16 tests\browser\snapshot.spec.ts:37:1 › two independent clients pull, conflict, preserve draft/queue, observe tombstone and simulated weeks (2.5s)
+  ok 17 tests\browser\snapshot.spec.ts:44:1 › real endpoint includes tombstones, current revisions, stable order and empty metadata (277ms)
+  ok 18 tests\browser\snapshot.spec.ts:46:1 › lost acknowledgment with newer server write recovers original receipt before latest pull (1.5s)
+  ok 19 tests\browser\snapshot.spec.ts:49:1 › delayed older HTTP snapshot and invalid HTTP responses cannot regress state; retry recovers (1.4s)
+  ok 20 tests\browser\snapshot.spec.ts:54:1 › three isolated clients converge over independent records while a saved draft stays local (3.2s)
+  ok 21 tests\browser\snapshot.spec.ts:58:1 › single SELECT snapshot stays coherent across an actual concurrent atomic commit (338ms)
+  ok 22 tests\browser\snapshot.spec.ts:63:1 › native snapshot transaction abort and HTTP outage preserve all local state and retry recovers (1.5s)
+
+  22 passed (56.9s)

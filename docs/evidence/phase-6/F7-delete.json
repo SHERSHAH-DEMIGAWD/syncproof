@@ -1,0 +1,216 @@
+{
+  "scenario": "F7-delete",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:13.032Z",
+  "test": "F7 lost stale delete receipt replays historical conflict and never revives tombstone",
+  "initialRevision": "1",
+  "mutation": {
+    "envelope": {
+      "protocolVersion": 1,
+      "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+      "clientId": "6a026c51-233c-4059-a830-d2d60cdff133",
+      "recordId": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+      "operation": "delete",
+      "baseRevision": "1",
+      "payload": null
+    },
+    "canonical": "{\"protocolVersion\":1,\"mutationId\":\"0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb\",\"clientId\":\"6a026c51-233c-4059-a830-d2d60cdff133\",\"recordId\":\"0acf3163-1c45-4820-a0ea-0f0bc7e84a98\",\"operation\":\"delete\",\"baseRevision\":\"1\",\"payload\":null}",
+    "fingerprint": "55804d6f846123d9be456a72cbfcb842234125e93bfb87eb0de91c6a6088441f",
+    "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+    "recordId": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+    "commonBase": {
+      "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Base",
+      "revision": "1",
+      "deleted": false
+    },
+    "phase": "queued"
+  },
+  "fault": "stale input + dropped actual durable conflict2 response",
+  "originalReceipt": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+        "notes": "Other authorized writer",
+        "title": "Audit inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": false,
+    "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+    "protocolVersion": 1
+  },
+  "replayed": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+        "notes": "Other authorized writer",
+        "title": "Audit inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": true,
+    "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+    "protocolVersion": 1
+  },
+  "tombstoneRejections": [
+    {
+      "protocolVersion": 1,
+      "mutationId": "9993e10b-c5e7-4347-9cb2-733a2132cc11",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": "3",
+        "remoteAtDecision": {
+          "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    },
+    {
+      "protocolVersion": 1,
+      "mutationId": "89f1e5bc-f7d8-4e92-9056-7fb447ee7e8c",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": "3",
+        "remoteAtDecision": {
+          "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    },
+    {
+      "protocolVersion": 1,
+      "mutationId": "9cc1956a-7af7-44cf-82fa-5f118f46205c",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": null,
+        "remoteAtDecision": {
+          "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    }
+  ],
+  "client": {
+    "work": [],
+    "mutations": [
+      {
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+          "clientId": "6a026c51-233c-4059-a830-d2d60cdff133",
+          "recordId": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+          "operation": "delete",
+          "baseRevision": "1",
+          "payload": null
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb\",\"clientId\":\"6a026c51-233c-4059-a830-d2d60cdff133\",\"recordId\":\"0acf3163-1c45-4820-a0ea-0f0bc7e84a98\",\"operation\":\"delete\",\"baseRevision\":\"1\",\"payload\":null}",
+        "fingerprint": "55804d6f846123d9be456a72cbfcb842234125e93bfb87eb0de91c6a6088441f",
+        "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+        "recordId": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+        "commonBase": {
+          "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        },
+        "phase": "terminal_conflict",
+        "attemptCount": 2,
+        "lastAttemptAt": 1793811252346,
+        "receipt": {
+          "outcome": {
+            "kind": "conflict",
+            "reason": "stale_revision",
+            "expectedRevision": "1",
+            "remoteAtDecision": {
+              "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+              "notes": "Other authorized writer",
+              "title": "Audit inspection",
+              "status": "open",
+              "deleted": false,
+              "revision": "2"
+            }
+          },
+          "replayed": true,
+          "mutationId": "0f76a604-eed5-4e7f-ab0b-1fea7b42c8eb",
+          "protocolVersion": 1
+        },
+        "lastError": "",
+        "decision": {
+          "kind": "keep_server",
+          "at": 1793811252740
+        }
+      }
+    ],
+    "clean": [
+      {
+        "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "Other authorized writer",
+        "revision": "4",
+        "deleted": true
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "6a026c51-233c-4059-a830-d2d60cdff133"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793811252933,\"recordCount\":1}"
+      }
+    ]
+  },
+  "server": [
+    {
+      "id": "0acf3163-1c45-4820-a0ea-0f0bc7e84a98",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Other authorized writer",
+      "revision": "4",
+      "deleted": true
+    }
+  ],
+  "invariants": [
+    "INV-REV-01",
+    "INV-CONFLICT-01",
+    "INV-IDEMP-01",
+    "INV-TOMB-01"
+  ],
+  "limit": "Retention within test DB lifetime; no backup/restore guarantees"
+}

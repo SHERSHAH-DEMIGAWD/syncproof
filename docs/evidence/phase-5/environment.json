@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Calcutta",
+  "sourceRevision": "No HEAD commit; SHA-256 identifies working source",
+  "node": "v24.15.0",
+  "platform": "win32",
+  "os": "10.0.26200",
+  "architecture": "x64",
+  "versions": {
+    "@playwright/test": "1.64.1",
+    "@types/express": "5.0.6",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "fake-indexeddb": "6.2.7",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "settings": {
+    "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+    "encoding": "UTF8",
+    "isolation": "read committed",
+    "fsync": "on",
+    "synchronous_commit": "on",
+    "full_page_writes": "on"
+  },
+  "chromium": "156.0.8078.4 (same Playwright executable as Phase4)",
+  "sourceHashes": {
+    "client/lib/storage.ts": "51cb7c01863de7c17eac4e749a111fb627a11cd1f356e35a80fd10ec5b8c76ff",
+    "client/lib/push.ts": "3ef6e0b545e3516bcf218a95e6fafa9bb60b689e78f67920ac04c8bb11f878d5",
+    "client/main.tsx": "9640adb1a8e514b06d5033f550a499cf3a038bef342fb49ce62d1cfd2da30a7a",
+    "client/conflict.tsx": "17e943d82dab8c36ca094ad3bd519f18b08d33fc471b37435a8055a9f11c6d51",
+    "tests/resolution.test.ts": "44afe758922359fd66be0973b320ebcdeb64c91074ea96657041c4aedd9ad102",
+    "tests/browser/resolution.spec.ts": "0e6f8ec26849d334808362c2d22484d3288e0001ff4f897b357f8e0526901a2e",
+    "package.json": "5611aa9e00e11353fe7eb84f3b32803e176e29e54e22e5fc4a7d8eb93e5a5ccf"
+  },
+  "unchangedBackendAndDependencies": [
+    {
+      "path": "src/app.ts",
+      "sha256": "dfb96014c08bf913790f82ccbcf30a51574b50e956895468be1d703c4591d384",
+      "matchesPrior": true
+    },
+    {
+      "path": "src/contracts.ts",
+      "sha256": "1e7a3fa7b9cfc2a01fc65c4828fa3a729fa68c2c827ae8bab92248813bcfe273",
+      "matchesPrior": true
+    },
+    {
+      "path": "src/mutations.ts",
+      "sha256": "1235830d808dd4c92f16306e09cf556f3be4bc9f86b0b5bc7df97622cf7a6991",
+      "matchesPrior": true
+    },
+    {
+      "path": "src/db.ts",
+      "sha256": "e6b9787f42cb028bf5be9ad31395dd8bc71e357490fe292d5419be5d4b86bdab",
+      "matchesPrior": true
+    },
+    {
+      "path": "src/server.ts",
+      "sha256": "1830db0beb74dfcdf2a76d858cf724f4b177442e03ae272b3703b37a3b11999c",
+      "matchesPrior": true
+    },
+    {
+      "path": "tests/integration.test.ts",
+      "sha256": "e22f680b56d715eb46addbd1bf0e9ba499dad22b1ae5d0f75f75278074f42574",
+      "matchesPrior": true
+    },
+    {
+      "path": "tests/process.test.ts",
+      "sha256": "42742533b0db788555e18f78096f01b4696d880b46da15d165dca306309f9809",
+      "matchesPrior": true
+    },
+    {
+      "path": "migrations/001_mutation_server.sql",
+      "sha256": "be1ac5ee8eb8e10fbf3983702e9d80de0ed14da560d82bd278a602f873287a19",
+      "matchesPrior": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "9317f3a13ec9292c7052e6a0402093e7f64aa6bb9e5891510c978d54ec8cfd1d",
+      "matchesPrior": true,
+      "baseline": "phase-2/environment.json (client dependencies introduced then)"
+    },
+    {
+      "path": "scripts/local-postgres.ps1",
+      "sha256": "f59994442d6671df6843b07edfb48aaa636c3b638a4c800db6e123d09a7a5394",
+      "matchesPrior": true
+    }
+  ],
+  "remainingOwnedTestSchemas": [],
+  "suiteCounts": {
+    "backend": 45,
+    "local": 13,
+    "push": 9,
+    "snapshot": 4,
+    "resolution": 5,
+    "browser": 31,
+    "newResolutionBrowser": 9
+  },
+  "noBenchmarks": true,
+  "sourceAudit": "PASS",
+  "sourceAuditNote": "Initial comparator used pre-client Phase1 package-lock hash; corrected to retained Phase2 client baseline; all 10 files match appropriate prior hashes."
+}

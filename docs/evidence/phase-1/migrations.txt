@@ -1,0 +1,12 @@
+
+> syncproof@0.1.0 migrate
+> node --env-file-if-exists=.env dist/src/db.js
+
+.env not found. Continuing without it.
+Migrations applied.
+
+> syncproof@0.1.0 migrate
+> node --env-file-if-exists=.env dist/src/db.js
+
+.env not found. Continuing without it.
+Migrations applied.

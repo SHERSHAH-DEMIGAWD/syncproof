@@ -1,0 +1,11 @@
+
+> syncproof@0.1.0 test:demo
+> playwright test tests/browser/demo.spec.ts
+
+
+Running 2 tests using 1 worker
+
+  ok 1 tests\browser\demo.spec.ts:3:24 › DEMO ordered eight-step real PostgreSQL and retained Chromium profiles run 1 (7.3s)
+  ok 2 tests\browser\demo.spec.ts:3:24 › DEMO ordered eight-step real PostgreSQL and retained Chromium profiles run 2 (7.0s)
+
+  2 passed (19.6s)

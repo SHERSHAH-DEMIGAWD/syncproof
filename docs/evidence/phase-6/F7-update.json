@@ -1,0 +1,224 @@
+{
+  "scenario": "F7-update",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:10.853Z",
+  "test": "F7 lost stale update receipt replays historical conflict and never revives tombstone",
+  "initialRevision": "1",
+  "mutation": {
+    "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+    "recordId": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+    "envelope": {
+      "protocolVersion": 1,
+      "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+      "clientId": "4ee2ee8d-db8d-48a8-b2ed-9d2ea1efc19f",
+      "recordId": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+      "operation": "update",
+      "baseRevision": "1",
+      "payload": {
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "Preserved stale proposal"
+      }
+    },
+    "canonical": "{\"protocolVersion\":1,\"mutationId\":\"512da125-eaa5-4d7b-a3b9-7774d5e572aa\",\"clientId\":\"4ee2ee8d-db8d-48a8-b2ed-9d2ea1efc19f\",\"recordId\":\"82b3155f-09c9-4bee-a92b-7f93170482b4\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Audit inspection\",\"status\":\"open\",\"notes\":\"Preserved stale proposal\"}}",
+    "fingerprint": "901d9f7443923b9cd7f3c4f6c1925476508d9d99740140b7b2b2e821796593d1",
+    "commonBase": {
+      "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Base",
+      "revision": "1",
+      "deleted": false
+    },
+    "phase": "queued"
+  },
+  "fault": "stale input + dropped actual durable conflict2 response",
+  "originalReceipt": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+        "notes": "Other authorized writer",
+        "title": "Audit inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": false,
+    "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+    "protocolVersion": 1
+  },
+  "replayed": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+        "notes": "Other authorized writer",
+        "title": "Audit inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": true,
+    "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+    "protocolVersion": 1
+  },
+  "tombstoneRejections": [
+    {
+      "protocolVersion": 1,
+      "mutationId": "32dd2c68-3ea8-4b3f-8e6f-fac6419d69c8",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": "3",
+        "remoteAtDecision": {
+          "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    },
+    {
+      "protocolVersion": 1,
+      "mutationId": "46d77d69-9484-4f36-b386-efaa710cbeff",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": "3",
+        "remoteAtDecision": {
+          "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    },
+    {
+      "protocolVersion": 1,
+      "mutationId": "8afc3015-ab84-43ef-b8c2-3f2aa043a0ce",
+      "replayed": false,
+      "outcome": {
+        "kind": "conflict",
+        "reason": "record_deleted",
+        "expectedRevision": null,
+        "remoteAtDecision": {
+          "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "4",
+          "deleted": true
+        }
+      }
+    }
+  ],
+  "client": {
+    "work": [],
+    "mutations": [
+      {
+        "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+        "recordId": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+          "clientId": "4ee2ee8d-db8d-48a8-b2ed-9d2ea1efc19f",
+          "recordId": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+          "operation": "update",
+          "baseRevision": "1",
+          "payload": {
+            "title": "Audit inspection",
+            "status": "open",
+            "notes": "Preserved stale proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"512da125-eaa5-4d7b-a3b9-7774d5e572aa\",\"clientId\":\"4ee2ee8d-db8d-48a8-b2ed-9d2ea1efc19f\",\"recordId\":\"82b3155f-09c9-4bee-a92b-7f93170482b4\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Audit inspection\",\"status\":\"open\",\"notes\":\"Preserved stale proposal\"}}",
+        "fingerprint": "901d9f7443923b9cd7f3c4f6c1925476508d9d99740140b7b2b2e821796593d1",
+        "commonBase": {
+          "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        },
+        "phase": "terminal_conflict",
+        "attemptCount": 2,
+        "lastAttemptAt": 1793811250182,
+        "receipt": {
+          "outcome": {
+            "kind": "conflict",
+            "reason": "stale_revision",
+            "expectedRevision": "1",
+            "remoteAtDecision": {
+              "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+              "notes": "Other authorized writer",
+              "title": "Audit inspection",
+              "status": "open",
+              "deleted": false,
+              "revision": "2"
+            }
+          },
+          "replayed": true,
+          "mutationId": "512da125-eaa5-4d7b-a3b9-7774d5e572aa",
+          "protocolVersion": 1
+        },
+        "lastError": "",
+        "decision": {
+          "kind": "keep_server",
+          "at": 1793811250589
+        }
+      }
+    ],
+    "clean": [
+      {
+        "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "Other authorized writer",
+        "revision": "4",
+        "deleted": true
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "4ee2ee8d-db8d-48a8-b2ed-9d2ea1efc19f"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793811250812,\"recordCount\":1}"
+      }
+    ]
+  },
+  "server": [
+    {
+      "id": "82b3155f-09c9-4bee-a92b-7f93170482b4",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Other authorized writer",
+      "revision": "4",
+      "deleted": true
+    }
+  ],
+  "invariants": [
+    "INV-REV-01",
+    "INV-CONFLICT-01",
+    "INV-IDEMP-01",
+    "INV-TOMB-01"
+  ],
+  "limit": "Retention within test DB lifetime; no backup/restore guarantees"
+}

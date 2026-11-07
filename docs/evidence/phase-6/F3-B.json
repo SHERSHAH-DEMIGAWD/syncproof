@@ -1,0 +1,54 @@
+{
+  "scenario": "F3-B",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:00.951Z",
+  "test": "F3 HTTP reverse delivery delayed B preserves stale loser",
+  "initialRevision": "1",
+  "fault": "before_server_admission browser request gate; submit delayed client first, deliver other first",
+  "delayed": "97fe8601-c563-439e-b1f5-ea22ece761f3",
+  "winner": "9c7bd2f3-705a-477d-86cf-c2eee464c7e7",
+  "loserReceipt": {
+    "protocolVersion": 1,
+    "mutationId": "97fe8601-c563-439e-b1f5-ea22ece761f3",
+    "replayed": false,
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "1856d5b4-d51d-4d57-bbf0-8317bb0d10e8",
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "A proposal",
+        "revision": "2",
+        "deleted": false
+      }
+    }
+  },
+  "preservedBase": {
+    "id": "1856d5b4-d51d-4d57-bbf0-8317bb0d10e8",
+    "title": "Audit inspection",
+    "status": "open",
+    "notes": "Base",
+    "revision": "1",
+    "deleted": false
+  },
+  "server": [
+    {
+      "id": "1856d5b4-d51d-4d57-bbf0-8317bb0d10e8",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "A proposal",
+      "revision": "2",
+      "deleted": false
+    }
+  ],
+  "recovery": "explicit keep-server then both reconcile",
+  "invariants": [
+    "INV-REV-01",
+    "INV-CONFLICT-01",
+    "INV-IDEMP-01"
+  ],
+  "limit": "Two controlled orderings, not arbitrary network ordering guarantee"
+}

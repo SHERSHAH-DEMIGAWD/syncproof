@@ -1,0 +1,317 @@
+{
+  "scenario": "F10",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:22.264Z",
+  "test": "F10 simulated 21 days offline recovers unknown before tombstones and preserves stale intent until explicit decision",
+  "initial": {
+    "work": [
+      {
+        "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+        "version": 1,
+        "payload": {
+          "title": "Old offline record",
+          "status": "open",
+          "notes": "Old offline proposal"
+        },
+        "baseRevision": "1",
+        "commonBase": {
+          "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "title": "Old offline record",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        },
+        "phase": "queued",
+        "activeMutationId": "7f750148-4c67-4563-90be-9aa303348868"
+      },
+      {
+        "id": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+        "version": 1,
+        "payload": {
+          "title": "Unknown before weeks",
+          "status": "open",
+          "notes": "Saved proposal"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "queued",
+        "activeMutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e"
+      }
+    ],
+    "mutations": [
+      {
+        "mutationId": "7f750148-4c67-4563-90be-9aa303348868",
+        "recordId": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "7f750148-4c67-4563-90be-9aa303348868",
+          "clientId": "80fd92b2-f9b6-4fbf-a179-88516d7b6939",
+          "recordId": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "operation": "update",
+          "baseRevision": "1",
+          "payload": {
+            "title": "Old offline record",
+            "status": "open",
+            "notes": "Old offline proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"7f750148-4c67-4563-90be-9aa303348868\",\"clientId\":\"80fd92b2-f9b6-4fbf-a179-88516d7b6939\",\"recordId\":\"59c4f096-1620-47c9-9bf6-0e238bb48e5d\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Old offline record\",\"status\":\"open\",\"notes\":\"Old offline proposal\"}}",
+        "fingerprint": "41444016cc1a2fa6f357e6685b3d6563cfb20e1e4147fea25990fd5fb8953a2f",
+        "commonBase": {
+          "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "title": "Old offline record",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        },
+        "phase": "queued",
+        "notBefore": 1796403261162
+      },
+      {
+        "mutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e",
+        "recordId": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e",
+          "clientId": "80fd92b2-f9b6-4fbf-a179-88516d7b6939",
+          "recordId": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Unknown before weeks",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"f10c767c-c508-40e5-a853-a8fab1646f1e\",\"clientId\":\"80fd92b2-f9b6-4fbf-a179-88516d7b6939\",\"recordId\":\"7865fa83-6ec3-4e21-adf7-a564c1e784eb\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Unknown before weeks\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "bec5ff2ccf598401727afb4a2bc04d4998ad4eca3938b74838800024e935b76c",
+        "commonBase": null,
+        "phase": "outcome_unknown",
+        "attemptCount": 1,
+        "lastAttemptAt": 1793811261253
+      }
+    ],
+    "clean": [
+      {
+        "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+        "title": "Old offline record",
+        "status": "open",
+        "notes": "Base",
+        "revision": "1",
+        "deleted": false
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "80fd92b2-f9b6-4fbf-a179-88516d7b6939"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793811260520,\"recordCount\":1}"
+      }
+    ]
+  },
+  "fault": "API route disconnected while remote updates/deletes; browser wall clock advanced 21 days",
+  "simulatedDays": 21,
+  "recoveryOrder": [
+    "POST f10c767c-c508-40e5-a853-a8fab1646f1e",
+    "GET /api/inspections",
+    "POST 7f750148-4c67-4563-90be-9aa303348868",
+    "GET /api/inspections",
+    "GET /api/inspections",
+    "GET /api/inspections",
+    "GET /api/inspections"
+  ],
+  "clients": [
+    {
+      "work": [],
+      "mutations": [
+        {
+          "mutationId": "7f750148-4c67-4563-90be-9aa303348868",
+          "recordId": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "envelope": {
+            "protocolVersion": 1,
+            "mutationId": "7f750148-4c67-4563-90be-9aa303348868",
+            "clientId": "80fd92b2-f9b6-4fbf-a179-88516d7b6939",
+            "recordId": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+            "operation": "update",
+            "baseRevision": "1",
+            "payload": {
+              "title": "Old offline record",
+              "status": "open",
+              "notes": "Old offline proposal"
+            }
+          },
+          "canonical": "{\"protocolVersion\":1,\"mutationId\":\"7f750148-4c67-4563-90be-9aa303348868\",\"clientId\":\"80fd92b2-f9b6-4fbf-a179-88516d7b6939\",\"recordId\":\"59c4f096-1620-47c9-9bf6-0e238bb48e5d\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Old offline record\",\"status\":\"open\",\"notes\":\"Old offline proposal\"}}",
+          "fingerprint": "41444016cc1a2fa6f357e6685b3d6563cfb20e1e4147fea25990fd5fb8953a2f",
+          "commonBase": {
+            "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+            "title": "Old offline record",
+            "status": "open",
+            "notes": "Base",
+            "revision": "1",
+            "deleted": false
+          },
+          "phase": "terminal_conflict",
+          "notBefore": 0,
+          "attemptCount": 1,
+          "lastAttemptAt": 1795625661640,
+          "receipt": {
+            "protocolVersion": 1,
+            "mutationId": "7f750148-4c67-4563-90be-9aa303348868",
+            "replayed": false,
+            "outcome": {
+              "kind": "conflict",
+              "reason": "record_deleted",
+              "expectedRevision": "1",
+              "remoteAtDecision": {
+                "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+                "title": "Old offline record",
+                "status": "open",
+                "notes": "Other authorized writer",
+                "revision": "3",
+                "deleted": true
+              }
+            }
+          },
+          "lastError": "",
+          "decision": {
+            "kind": "keep_server",
+            "at": 1795625661980
+          }
+        },
+        {
+          "mutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e",
+          "recordId": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+          "envelope": {
+            "protocolVersion": 1,
+            "mutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e",
+            "clientId": "80fd92b2-f9b6-4fbf-a179-88516d7b6939",
+            "recordId": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+            "operation": "create",
+            "baseRevision": null,
+            "payload": {
+              "title": "Unknown before weeks",
+              "status": "open",
+              "notes": "Saved proposal"
+            }
+          },
+          "canonical": "{\"protocolVersion\":1,\"mutationId\":\"f10c767c-c508-40e5-a853-a8fab1646f1e\",\"clientId\":\"80fd92b2-f9b6-4fbf-a179-88516d7b6939\",\"recordId\":\"7865fa83-6ec3-4e21-adf7-a564c1e784eb\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Unknown before weeks\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+          "fingerprint": "bec5ff2ccf598401727afb4a2bc04d4998ad4eca3938b74838800024e935b76c",
+          "commonBase": null,
+          "phase": "acknowledged",
+          "attemptCount": 2,
+          "lastAttemptAt": 1795625661608,
+          "receipt": {
+            "outcome": {
+              "kind": "committed",
+              "record": {
+                "id": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+                "notes": "Saved proposal",
+                "title": "Unknown before weeks",
+                "status": "open",
+                "deleted": false,
+                "revision": "1"
+              },
+              "committedRevision": "1"
+            },
+            "replayed": true,
+            "mutationId": "f10c767c-c508-40e5-a853-a8fab1646f1e",
+            "protocolVersion": 1
+          },
+          "lastError": ""
+        }
+      ],
+      "clean": [
+        {
+          "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "title": "Old offline record",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "3",
+          "deleted": true
+        },
+        {
+          "id": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+          "title": "Unknown before weeks",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "2",
+          "deleted": true
+        }
+      ],
+      "metadata": [
+        {
+          "key": "clientId",
+          "value": "80fd92b2-f9b6-4fbf-a179-88516d7b6939"
+        },
+        {
+          "key": "lastSnapshot",
+          "value": "{\"completedAt\":1795625662095,\"recordCount\":2}"
+        }
+      ]
+    },
+    {
+      "work": [],
+      "mutations": [],
+      "clean": [
+        {
+          "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+          "title": "Old offline record",
+          "status": "open",
+          "notes": "Other authorized writer",
+          "revision": "3",
+          "deleted": true
+        },
+        {
+          "id": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+          "title": "Unknown before weeks",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "2",
+          "deleted": true
+        }
+      ],
+      "metadata": [
+        {
+          "key": "clientId",
+          "value": "cf0fde88-6a6a-4e4e-a1be-78b414ce4678"
+        },
+        {
+          "key": "lastSnapshot",
+          "value": "{\"completedAt\":1793811262202,\"recordCount\":2}"
+        }
+      ]
+    }
+  ],
+  "server": [
+    {
+      "id": "59c4f096-1620-47c9-9bf6-0e238bb48e5d",
+      "title": "Old offline record",
+      "status": "open",
+      "notes": "Other authorized writer",
+      "revision": "3",
+      "deleted": true
+    },
+    {
+      "id": "7865fa83-6ec3-4e21-adf7-a564c1e784eb",
+      "title": "Unknown before weeks",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "2",
+      "deleted": true
+    }
+  ],
+  "invariants": [
+    "INV-TOMB-01",
+    "INV-UNKNOWN-01",
+    "INV-CONFLICT-01",
+    "INV-SNAP-01",
+    "INV-RECON-01"
+  ],
+  "limit": "Simulated elapsed time, not physical browser disk survival; notBefore fixture only controls independent-record scheduling"
+}

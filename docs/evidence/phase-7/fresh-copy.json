@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-05",
+  "status": "PASS",
+  "installMode": "network allowed, exact lockfile, no lifecycle scripts",
+  "results": [
+    {
+      "command": "npm ci --ignore-scripts --fetch-retries=0 --fetch-timeout=30000",
+      "exitCode": 0,
+      "elapsedMs": 7345
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "elapsedMs": 1725
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "elapsedMs": 1527
+    },
+    {
+      "command": "npm run build:client",
+      "exitCode": 0,
+      "elapsedMs": 2825
+    },
+    {
+      "command": "npm run test:unit",
+      "exitCode": 0,
+      "elapsedMs": 1435
+    },
+    {
+      "command": "fresh compiled migration + real PostgreSQL HTTP create",
+      "status": "PASS",
+      "revision": "1",
+      "receiptCount": 1
+    }
+  ],
+  "error": null,
+  "cleanup": true,
+  "scope": "Fresh local source copy, independent npm installation using exact lockfile, Windows only; package lifecycle scripts disabled; backend/client builds, strict checks,18 contract cases and real isolated PostgreSQL HTTP smoke. Full regressions run separately in working workspace.",
+  "notEstablished": [
+    "Remote clone/network install on another machine",
+    "Other operating systems",
+    "Uncached package-registry availability"
+  ]
+}

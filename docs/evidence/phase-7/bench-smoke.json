@@ -1,0 +1,1289 @@
+{
+  "status": "PASS",
+  "date": "2026-11-05",
+  "recordedAt": "2026-11-05T07:57:46.613Z",
+  "config": {
+    "seed": 20261105,
+    "smoke": true,
+    "repetitions": 1,
+    "httpSamples": 5,
+    "installSamples": 3,
+    "reconcileSamples": 1,
+    "pullSamples": 1,
+    "queueSamples": 5,
+    "raceRounds": 2,
+    "warmupHttp": 1,
+    "warmupInstall": 1,
+    "counts": [
+      100
+    ],
+    "queues": [
+      10
+    ],
+    "concurrency": [
+      1,
+      2
+    ],
+    "deadlineMinutes": 12
+  },
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "os": "10.0.26200",
+    "arch": "x64",
+    "cpuModel": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M           ",
+    "logicalCpus": 24,
+    "totalMemoryBytes": 24823836672,
+    "hostMetadata": {
+      "collection": "Windows CIM/Storage read-only metadata",
+      "disks": {
+        "MediaType": "SSD",
+        "BusType": "NVMe",
+        "Size": 512110190592
+      },
+      "cpu": {
+        "Name": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M           ",
+        "NumberOfCores": 12,
+        "NumberOfLogicalProcessors": 24
+      },
+      "memory": {
+        "TotalPhysicalMemory": 24823836672
+      }
+    },
+    "postgres": {
+      "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+      "encoding": "UTF8",
+      "isolation": "read committed",
+      "fsync": "on",
+      "synchronous_commit": "on",
+      "full_page_writes": "on"
+    },
+    "chromium": "156.0.8078.4"
+  },
+  "boundaries": {
+    "http": "Node performance.now: before fetch through complete response arrayBuffer; includes HTTP/server validation/hash/SQL commit/serialization; excludes request preparation and client JSON.parse",
+    "snapshotInstall": "Chromium performance.now around actual LocalStore.applySnapshot: validation+known-row scan+atomic IndexedDB puts; no network/DOM",
+    "validation": "Chromium performance.now around actual validateSnapshot only",
+    "queue": "Chromium performance.now around actual LocalStore.pending only",
+    "foreground": "Chromium performance.now around PushController.reviewLatest or synchronize through final local commit; includes Vite proxy/HTTP and IndexedDB, excludes fixture/save/freeze/first unknown commit preparation",
+    "growth": "Actual pg_total_relation_size/table/index bytes; includes heap/TOAST/index allocation and dead tuples, no VACUUM or future extrapolation"
+  },
+  "samples": [
+    {
+      "experiment": "post_accepted",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 11.26260000000002,
+      "status": 200,
+      "requestBytes": 562,
+      "responseBytes": 568
+    },
+    {
+      "experiment": "post_accepted",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 9.095800000000054,
+      "status": 200,
+      "requestBytes": 815,
+      "responseBytes": 821
+    },
+    {
+      "experiment": "post_accepted",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 10.170000000000073,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 433
+    },
+    {
+      "experiment": "post_accepted",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 11.68159999999989,
+      "status": 200,
+      "requestBytes": 562,
+      "responseBytes": 568
+    },
+    {
+      "experiment": "post_accepted",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 12.427599999999984,
+      "status": 200,
+      "requestBytes": 815,
+      "responseBytes": 821
+    },
+    {
+      "experiment": "post_replay",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 7.375,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 432
+    },
+    {
+      "experiment": "post_replay",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 6.685500000000047,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 432
+    },
+    {
+      "experiment": "post_replay",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 6.572799999999916,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 432
+    },
+    {
+      "experiment": "post_replay",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 5.083100000000059,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 432
+    },
+    {
+      "experiment": "post_replay",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 3.3461999999999534,
+      "status": 200,
+      "requestBytes": 427,
+      "responseBytes": 432
+    },
+    {
+      "experiment": "post_conflict",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 4.828800000000001,
+      "status": 409,
+      "requestBytes": 562,
+      "responseBytes": 855
+    },
+    {
+      "experiment": "post_conflict",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 3.781600000000026,
+      "status": 409,
+      "requestBytes": 815,
+      "responseBytes": 855
+    },
+    {
+      "experiment": "post_conflict",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 4.873700000000099,
+      "status": 409,
+      "requestBytes": 427,
+      "responseBytes": 855
+    },
+    {
+      "experiment": "post_conflict",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 5.79970000000003,
+      "status": 409,
+      "requestBytes": 562,
+      "responseBytes": 855
+    },
+    {
+      "experiment": "post_conflict",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 4.575600000000122,
+      "status": 409,
+      "requestBytes": 815,
+      "responseBytes": 855
+    },
+    {
+      "experiment": "snapshot_http",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 6.745100000000093,
+      "payloadBytes": 45306,
+      "status": 200
+    },
+    {
+      "experiment": "snapshot_http",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 5.066600000000108,
+      "payloadBytes": 45306,
+      "status": 200
+    },
+    {
+      "experiment": "snapshot_http",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 4.624299999999948,
+      "payloadBytes": 45306,
+      "status": 200
+    },
+    {
+      "experiment": "snapshot_http",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 4.665300000000116,
+      "payloadBytes": 45306,
+      "status": 200
+    },
+    {
+      "experiment": "snapshot_http",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 4.710599999999886,
+      "payloadBytes": 45306,
+      "status": 200
+    },
+    {
+      "experiment": "snapshot_validate",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 2.399999976158142
+    },
+    {
+      "experiment": "snapshot_install",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 38.5
+    },
+    {
+      "experiment": "snapshot_validate",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 3.800000011920929
+    },
+    {
+      "experiment": "snapshot_install",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 43.10000002384186
+    },
+    {
+      "experiment": "snapshot_validate",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 2.300000011920929
+    },
+    {
+      "experiment": "snapshot_install",
+      "rep": 1,
+      "parameters": {
+        "N": 100
+      },
+      "ms": 39.799999952316284
+    },
+    {
+      "experiment": "foreground_pull_clean",
+      "rep": 1,
+      "parameters": {
+        "N": 100,
+        "Q": 0
+      },
+      "ms": 47.09999996423721
+    },
+    {
+      "experiment": "foreground_pull_drafts",
+      "rep": 1,
+      "parameters": {
+        "N": 100,
+        "Q": 10
+      },
+      "ms": 54.19999998807907
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 7.927100000000337,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 5.168700000000172,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 8.097400000000107,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 6.014599999999973,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 5.405999999999949,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 6.539099999999962,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 1
+      },
+      "ms": 7.037800000000061,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 11.898199999999633,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 11.858100000000377,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 11.834800000000541,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 12.541199999999662,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 7.097600000000057,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 10.92109999999957,
+      "status": 409
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 9.33349999999973,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 8.5596000000005,
+      "status": 200
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "parameters": {
+        "writers": 2
+      },
+      "ms": 10.337000000000444,
+      "status": 409
+    },
+    {
+      "experiment": "pending_scan",
+      "rep": 1,
+      "parameters": {
+        "Q": 10
+      },
+      "ms": 2.800000011920929
+    },
+    {
+      "experiment": "pending_scan",
+      "rep": 1,
+      "parameters": {
+        "Q": 10
+      },
+      "ms": 2
+    },
+    {
+      "experiment": "pending_scan",
+      "rep": 1,
+      "parameters": {
+        "Q": 10
+      },
+      "ms": 2.199999988079071
+    },
+    {
+      "experiment": "pending_scan",
+      "rep": 1,
+      "parameters": {
+        "Q": 10
+      },
+      "ms": 1.699999988079071
+    },
+    {
+      "experiment": "pending_scan",
+      "rep": 1,
+      "parameters": {
+        "Q": 10
+      },
+      "ms": 1.9000000357627869
+    },
+    {
+      "experiment": "foreground_reconcile",
+      "rep": 1,
+      "parameters": {
+        "N": 100,
+        "Q": 10
+      },
+      "ms": 282.5999999642372,
+      "summary": {
+        "snapshotApplied": true,
+        "acknowledged": 10,
+        "conflicts": 0,
+        "unknown": 0,
+        "blocked": 0,
+        "deferred": 0
+      },
+      "retainedHistory": 20,
+      "unknownsRecovered": 1
+    }
+  ],
+  "batches": [
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "writers": 1,
+      "requests": 5,
+      "accepted": 5,
+      "conflicts": 0,
+      "errors": 0,
+      "elapsedMs": 33.01760000000013,
+      "requestsPerSecond": 151.43438650901277,
+      "successfulWritesPerSecond": 151.43438650901277,
+      "poolMax": 12
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "writers": 1,
+      "requests": 2,
+      "accepted": 2,
+      "conflicts": 0,
+      "errors": 0,
+      "elapsedMs": 17.454799999999977,
+      "requestsPerSecond": 114.58166235075753,
+      "successfulWritesPerSecond": 114.58166235075753,
+      "note": "Race throughput includes per-round seed insertion/preparation and SQL postcondition; per-request clock includes JSON decode and group start offset; unlike isolated POST timings"
+    },
+    {
+      "experiment": "concurrency_valid",
+      "rep": 1,
+      "writers": 2,
+      "requests": 5,
+      "accepted": 5,
+      "conflicts": 0,
+      "errors": 0,
+      "elapsedMs": 32.857400000000325,
+      "requestsPerSecond": 152.172722126521,
+      "successfulWritesPerSecond": 152.172722126521,
+      "poolMax": 12
+    },
+    {
+      "experiment": "concurrency_race",
+      "rep": 1,
+      "writers": 2,
+      "requests": 4,
+      "accepted": 2,
+      "conflicts": 2,
+      "errors": 0,
+      "elapsedMs": 25.798499999999876,
+      "requestsPerSecond": 155.0477740953939,
+      "successfulWritesPerSecond": 77.52388704769695,
+      "note": "Race throughput includes per-round seed insertion/preparation and SQL postcondition; per-request clock includes JSON decode and group start offset; unlike isolated POST timings"
+    }
+  ],
+  "fixtures": [
+    {
+      "label": "latency",
+      "rep": 1,
+      "recordCount": 10,
+      "tombstones": 1,
+      "payloadBytes": 434.8,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    },
+    {
+      "label": "snapshot/100",
+      "rep": 1,
+      "recordCount": 100,
+      "tombstones": 10,
+      "payloadBytes": 451.39,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    },
+    {
+      "label": "concurrency/1",
+      "rep": 1,
+      "recordCount": 20,
+      "tombstones": 2,
+      "payloadBytes": 442.05,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    },
+    {
+      "label": "concurrency/2",
+      "rep": 1,
+      "recordCount": 20,
+      "tombstones": 2,
+      "payloadBytes": 442.05,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    },
+    {
+      "label": "reconcile/10",
+      "rep": 1,
+      "recordCount": 100,
+      "tombstones": 10,
+      "payloadBytes": 451.39,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    },
+    {
+      "label": "growth",
+      "rep": 1,
+      "recordCount": 100,
+      "tombstones": 10,
+      "payloadBytes": 451.39,
+      "seedMethod": "direct synthetic SQL fixture, not a timed API write; no receipts initially"
+    }
+  ],
+  "growth": [
+    {
+      "rep": 1,
+      "stage": "seed",
+      "records": 100,
+      "tombstones": 10,
+      "receipts": 0,
+      "avg_request_bytes": 0,
+      "avg_response_storage_bytes": 0,
+      "relations": [
+        {
+          "table": "inspections",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        },
+        {
+          "table": "processed_mutations",
+          "table_bytes": 8192,
+          "index_bytes": 8192,
+          "total_bytes": 16384
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "stage": "receipts_10",
+      "records": 100,
+      "tombstones": 10,
+      "receipts": 10,
+      "avg_request_bytes": 583.9,
+      "avg_response_storage_bytes": 637.2,
+      "relations": [
+        {
+          "table": "inspections",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        },
+        {
+          "table": "processed_mutations",
+          "table_bytes": 57344,
+          "index_bytes": 16384,
+          "total_bytes": 73728
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "stage": "receipts_20",
+      "records": 100,
+      "tombstones": 10,
+      "receipts": 20,
+      "avg_request_bytes": 591.15,
+      "avg_response_storage_bytes": 644,
+      "relations": [
+        {
+          "table": "inspections",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        },
+        {
+          "table": "processed_mutations",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "stage": "after_10_more_deletes",
+      "records": 100,
+      "tombstones": 20,
+      "receipts": 30,
+      "avg_request_bytes": 470.1,
+      "avg_response_storage_bytes": 641.7333333333333,
+      "relations": [
+        {
+          "table": "inspections",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        },
+        {
+          "table": "processed_mutations",
+          "table_bytes": 81920,
+          "index_bytes": 16384,
+          "total_bytes": 98304
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "rep": 1,
+      "N": 100,
+      "query": "complete ordered snapshot",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Sort",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 42.61,
+            "Total Cost": 43.96,
+            "Plan Rows": 540,
+            "Plan Width": 145,
+            "Actual Startup Time": 0.109,
+            "Actual Total Time": 0.115,
+            "Actual Rows": 100,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Sort Key": [
+              "id"
+            ],
+            "Sort Method": "quicksort",
+            "Sort Space Used": 62,
+            "Sort Space Type": "Memory",
+            "Shared Hit Blocks": 6,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Seq Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "inspections",
+                "Alias": "inspections",
+                "Startup Cost": 0,
+                "Total Cost": 18.1,
+                "Plan Rows": 540,
+                "Plan Width": 145,
+                "Actual Startup Time": 0.022,
+                "Actual Total Time": 0.057,
+                "Actual Rows": 100,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Shared Hit Blocks": 6,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.146,
+          "Triggers": [],
+          "Execution Time": 0.163
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "query": "receipt lookup by mutation_id",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Index Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Scan Direction": "Forward",
+            "Index Name": "processed_mutations_pkey",
+            "Relation Name": "processed_mutations",
+            "Alias": "processed_mutations",
+            "Startup Cost": 0.15,
+            "Total Cost": 8.17,
+            "Plan Rows": 1,
+            "Plan Width": 32,
+            "Actual Startup Time": 0.008,
+            "Actual Total Time": 0.147,
+            "Actual Rows": 1,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Index Cond": "(mutation_id = '1525a1ca-a619-4dcf-83ce-9f70183ea71e'::uuid)",
+            "Rows Removed by Index Recheck": 0,
+            "Index Searches": 1,
+            "Shared Hit Blocks": 2,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning": {
+            "Shared Hit Blocks": 0,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.095,
+          "Triggers": [],
+          "Execution Time": 0.165
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "summary": [
+    {
+      "experiment": "post_accepted",
+      "parameters": {
+        "writers": 1
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 9.095800000000054,
+      "median": 11.26260000000002,
+      "p95": null,
+      "max": 12.427599999999984,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 9.095800000000054,
+          "median": 11.26260000000002,
+          "p95": null,
+          "max": 12.427599999999984,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 5
+      }
+    },
+    {
+      "experiment": "post_replay",
+      "parameters": {
+        "writers": 1
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 3.3461999999999534,
+      "median": 6.572799999999916,
+      "p95": null,
+      "max": 7.375,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 3.3461999999999534,
+          "median": 6.572799999999916,
+          "p95": null,
+          "max": 7.375,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 5
+      }
+    },
+    {
+      "experiment": "post_conflict",
+      "parameters": {
+        "writers": 1
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 3.781600000000026,
+      "median": 4.828800000000001,
+      "p95": null,
+      "max": 5.79970000000003,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 3.781600000000026,
+          "median": 4.828800000000001,
+          "p95": null,
+          "max": 5.79970000000003,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "409": 5
+      }
+    },
+    {
+      "experiment": "snapshot_http",
+      "parameters": {
+        "N": 100
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 4.624299999999948,
+      "median": 4.710599999999886,
+      "p95": null,
+      "max": 6.745100000000093,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 4.624299999999948,
+          "median": 4.710599999999886,
+          "p95": null,
+          "max": 6.745100000000093,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 5
+      },
+      "payloadBytes": 45306
+    },
+    {
+      "experiment": "snapshot_validate",
+      "parameters": {
+        "N": 100
+      },
+      "clockUnit": "ms",
+      "n": 3,
+      "min": 2.300000011920929,
+      "median": 2.399999976158142,
+      "p95": null,
+      "max": 3.800000011920929,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 3,
+          "min": 2.300000011920929,
+          "median": 2.399999976158142,
+          "p95": null,
+          "max": 3.800000011920929,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 3
+      }
+    },
+    {
+      "experiment": "snapshot_install",
+      "parameters": {
+        "N": 100
+      },
+      "clockUnit": "ms",
+      "n": 3,
+      "min": 38.5,
+      "median": 39.799999952316284,
+      "p95": null,
+      "max": 43.10000002384186,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 3,
+          "min": 38.5,
+          "median": 39.799999952316284,
+          "p95": null,
+          "max": 43.10000002384186,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 3
+      }
+    },
+    {
+      "experiment": "foreground_pull_clean",
+      "parameters": {
+        "N": 100,
+        "Q": 0
+      },
+      "clockUnit": "ms",
+      "n": 1,
+      "min": 47.09999996423721,
+      "median": 47.09999996423721,
+      "p95": null,
+      "max": 47.09999996423721,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 1,
+          "min": 47.09999996423721,
+          "median": 47.09999996423721,
+          "p95": null,
+          "max": 47.09999996423721,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 1
+      }
+    },
+    {
+      "experiment": "foreground_pull_drafts",
+      "parameters": {
+        "N": 100,
+        "Q": 10
+      },
+      "clockUnit": "ms",
+      "n": 1,
+      "min": 54.19999998807907,
+      "median": 54.19999998807907,
+      "p95": null,
+      "max": 54.19999998807907,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 1,
+          "min": 54.19999998807907,
+          "median": 54.19999998807907,
+          "p95": null,
+          "max": 54.19999998807907,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 1
+      }
+    },
+    {
+      "experiment": "concurrency_valid",
+      "parameters": {
+        "writers": 1
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 5.168700000000172,
+      "median": 6.014599999999973,
+      "p95": null,
+      "max": 8.097400000000107,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 5.168700000000172,
+          "median": 6.014599999999973,
+          "p95": null,
+          "max": 8.097400000000107,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 5
+      }
+    },
+    {
+      "experiment": "concurrency_race",
+      "parameters": {
+        "writers": 1
+      },
+      "clockUnit": "ms",
+      "n": 2,
+      "min": 6.539099999999962,
+      "median": 6.788450000000012,
+      "p95": null,
+      "max": 7.037800000000061,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 2,
+          "min": 6.539099999999962,
+          "median": 6.788450000000012,
+          "p95": null,
+          "max": 7.037800000000061,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 2
+      }
+    },
+    {
+      "experiment": "concurrency_valid",
+      "parameters": {
+        "writers": 2
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 7.097600000000057,
+      "median": 11.858100000000377,
+      "p95": null,
+      "max": 12.541199999999662,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 7.097600000000057,
+          "median": 11.858100000000377,
+          "p95": null,
+          "max": 12.541199999999662,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 5
+      }
+    },
+    {
+      "experiment": "concurrency_race",
+      "parameters": {
+        "writers": 2
+      },
+      "clockUnit": "ms",
+      "n": 4,
+      "min": 8.5596000000005,
+      "median": 9.835250000000087,
+      "p95": null,
+      "max": 10.92109999999957,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 4,
+          "min": 8.5596000000005,
+          "median": 9.835250000000087,
+          "p95": null,
+          "max": 10.92109999999957,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "200": 2,
+        "409": 2
+      }
+    },
+    {
+      "experiment": "pending_scan",
+      "parameters": {
+        "Q": 10
+      },
+      "clockUnit": "ms",
+      "n": 5,
+      "min": 1.699999988079071,
+      "median": 2,
+      "p95": null,
+      "max": 2.800000011920929,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 5,
+          "min": 1.699999988079071,
+          "median": 2,
+          "p95": null,
+          "max": 2.800000011920929,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 5
+      }
+    },
+    {
+      "experiment": "foreground_reconcile",
+      "parameters": {
+        "N": 100,
+        "Q": 10
+      },
+      "clockUnit": "ms",
+      "n": 1,
+      "min": 282.5999999642372,
+      "median": 282.5999999642372,
+      "p95": null,
+      "max": 282.5999999642372,
+      "p95Note": "NOT REPORTED: fewer than100 samples",
+      "byRepetition": [
+        {
+          "rep": 1,
+          "n": 1,
+          "min": 282.5999999642372,
+          "median": 282.5999999642372,
+          "p95": null,
+          "max": 282.5999999642372,
+          "p95Note": "NOT REPORTED: fewer than100 samples"
+        }
+      ],
+      "statuses": {
+        "local": 1
+      }
+    }
+  ],
+  "finishedAt": "2026-11-05T07:57:51.514Z",
+  "environmentNotes": [
+    "Warm steady-state samples; server/browser startup and seed setup excluded",
+    "No cold-start performance, mobile/WAN, production load or causal architecture comparison",
+    "All processes colocated, caches warm, default durability, background OS workloads uncontrolled",
+    "IndexedDB install reuses already-known clean records after warmup; validation primed immediately before combined install",
+    "Same-record race clock/throughput boundaries differ from isolated request timings; do not compare as equal workloads",
+    "One precommitted unknown per foreground cycle; fixture commit intentionally outside timed interval; original same-ID replay inside"
+  ]
+}

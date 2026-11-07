@@ -1,0 +1,16 @@
+
+> syncproof@0.1.0 test:snapshot
+> node --test dist/tests/snapshot.test.js
+
+✔ complete snapshot validation rejects incomplete, duplicates and invalid revisions before writes (5.2856ms)
+✔ atomic snapshot rollback preserves metadata, drafts, queue; missing/older/tombstone rollback rejected (56.2525ms)
+✔ draft keeps original base while new remote data installs; repeated snapshot creates no mutations (13.4078ms)
+✔ failed/truncated HTTP snapshot cannot masquerade as complete (100.9941ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 558.6679

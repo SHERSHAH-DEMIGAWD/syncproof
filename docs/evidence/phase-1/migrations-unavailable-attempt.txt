@@ -1,0 +1,22 @@
+
+> syncproof@0.1.0 migrate
+> node --env-file-if-exists=.env dist/src/db.js
+
+.env not found. Continuing without it.
+<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45
+    Error.captureStackTrace(err)
+          ^
+
+Error: connect ECONNREFUSED 127.0.0.1:55432
+    at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async migrate (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/dist/src/db.js:21:20)
+    at async file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/dist/src/db.js:64:9 {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 55432
+}
+
+Node.js v24.15.0

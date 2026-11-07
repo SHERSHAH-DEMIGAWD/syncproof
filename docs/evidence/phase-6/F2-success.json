@@ -1,0 +1,81 @@
+{
+  "scenario": "F2-success",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:53:41.669Z",
+  "test": "F2 HTTP concurrent success duplicates arbitrate one receipt and preserve identity",
+  "layer": "real PostgreSQL + HTTP independent connections",
+  "initialRevision": "1",
+  "mutationId": "8e791d6a-f17f-4a3f-8bb9-1285a3e44227",
+  "canonical": "{\"protocolVersion\":1,\"mutationId\":\"8e791d6a-f17f-4a3f-8bb9-1285a3e44227\",\"clientId\":\"6b807cc4-d8dc-427f-a00f-17d85668f413\",\"recordId\":\"588d8019-fca5-4331-9cb1-39ab60f02964\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Duplicate candidate\",\"status\":\"open\",\"notes\":\"Exact identity\"}}",
+  "fingerprint": "1e460eb8a1ceb9421a4b023242349650ee680632c9ccdcdd3219003d3fa3f285",
+  "fault": "hold receipt owner, observe actual pg_blocking_pids, release",
+  "ownerPid": 25160,
+  "waiterPid": 44188,
+  "observed": {
+    "protocolVersion": 1,
+    "mutationId": "8e791d6a-f17f-4a3f-8bb9-1285a3e44227",
+    "replayed": false,
+    "outcome": {
+      "kind": "committed",
+      "committedRevision": "2",
+      "record": {
+        "id": "588d8019-fca5-4331-9cb1-39ab60f02964",
+        "title": "Duplicate candidate",
+        "status": "open",
+        "notes": "Exact identity",
+        "revision": "2",
+        "deleted": false
+      }
+    }
+  },
+  "duplicate": {
+    "outcome": {
+      "kind": "committed",
+      "record": {
+        "id": "588d8019-fca5-4331-9cb1-39ab60f02964",
+        "notes": "Exact identity",
+        "title": "Duplicate candidate",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      },
+      "committedRevision": "2"
+    },
+    "replayed": true,
+    "mutationId": "8e791d6a-f17f-4a3f-8bb9-1285a3e44227",
+    "protocolVersion": 1
+  },
+  "serial": {
+    "outcome": {
+      "kind": "committed",
+      "record": {
+        "id": "588d8019-fca5-4331-9cb1-39ab60f02964",
+        "notes": "Exact identity",
+        "title": "Duplicate candidate",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      },
+      "committedRevision": "2"
+    },
+    "replayed": true,
+    "mutationId": "8e791d6a-f17f-4a3f-8bb9-1285a3e44227",
+    "protocolVersion": 1
+  },
+  "collision": {
+    "protocolVersion": 1,
+    "mutationId": "8e791d6a-f17f-4a3f-8bb9-1285a3e44227",
+    "error": {
+      "code": "mutation_identity_collision"
+    }
+  },
+  "finalRevision": "2",
+  "receiptCount": 1,
+  "invariants": [
+    "INV-IDEMP-01",
+    "INV-ATOMIC-01",
+    "INV-REV-01"
+  ],
+  "limit": "No delivery guarantee; ownership rollback separately covered by existing integration regression."
+}

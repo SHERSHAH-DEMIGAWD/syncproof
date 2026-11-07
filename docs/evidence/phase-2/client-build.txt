@@ -1,0 +1,31 @@
+
+> syncproof@0.1.0 build:client
+> tsc -p tsconfig.client.json && vite build --config vite.config.ts
+
+failed to load config from <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\vite.config.ts
+error during build:
+Error: Build failed with 1 error:
+
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:441:11)
+    at spawn (node:child_process:796:9)
+    at Object.execFile (node:child_process:349:17)
+    at exec (node:child_process:236:25)
+    at optimizeSafeRealPathSync (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:2492:2)
+    at windowsSafeRealPathSync (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:2478:3)
+    at getRealPath (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:29695:36)
+    at tryResolveRealFileOrType (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:29689:9)
+    at tryCleanFsResolve (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:29438:21)
+    at tryFsResolve (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:29431:14)
+    at aggregateBindingErrorsIntoJsError (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/rolldown/dist/shared/error-BJ9uQLIS.mjs:50:18)
+    at unwrapBindingResult (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/rolldown/dist/shared/error-BJ9uQLIS.mjs:20:128)
+    at #build (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/rolldown/dist/shared/rolldown-DWd2aEL4.mjs:146:34)
+    at async bundleConfigFile (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:38209:12)
+    at async bundleAndLoadConfigFile (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:38105:18)
+    at async loadConfigFromFile (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:38066:42)
+    at async resolveConfig (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:37668:22)
+    at async createBuilder (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/chunks/node.js:35245:17)
+    at async CAC.<anonymous> (file:///<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/vite/dist/node/cli.js:779:19) {
+  errors: [Getter/Setter]
+}

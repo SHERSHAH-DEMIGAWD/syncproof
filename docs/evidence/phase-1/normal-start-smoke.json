@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "mode": "Normal development server entry point, no parent IPC and no test hooks",
+  "bind": "127.0.0.1",
+  "post": 200,
+  "revision": "1",
+  "replayed": true,
+  "deferredSnapshotEndpoint": 404,
+  "isolatedSchema": "syncproof_smoke_26e0d06ab50546669ca340e3fa438d31"
+}

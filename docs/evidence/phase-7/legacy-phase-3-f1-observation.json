@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "mutationId": "ee26a93a-5d82-4617-97ae-95001da1a8bd",
+  "recordId": "f1b520a6-4532-4597-adbb-4d4e09bcf45f",
+  "commitObservedBeforeEveryAbort": true,
+  "forwardedRequests": 5,
+  "canonicalBytesIdentical": true,
+  "finalRevision": "1",
+  "receiptCount": 1,
+  "replayed": true
+}

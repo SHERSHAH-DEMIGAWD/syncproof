@@ -1,0 +1,4 @@
+
+> syncproof@0.1.0 check:client
+> tsc -p tsconfig.client.json
+

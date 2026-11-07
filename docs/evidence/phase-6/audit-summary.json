@@ -1,0 +1,479 @@
+{
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "date": "2026-11-04",
+  "timezone": "Asia/Calcutta",
+  "sourceRevision": "No HEAD commit; working source identified by SHA-256",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "os": "10.0.26200",
+    "arch": "x64",
+    "postgres": {
+      "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+      "encoding": "UTF8",
+      "isolation": "read committed",
+      "fsync": "on",
+      "synchronous_commit": "on",
+      "full_page_writes": "on"
+    },
+    "dependencies": {
+      "dexie": "4.4.7",
+      "express": "5.3.0",
+      "pg": "8.23.1",
+      "react": "19.3.1",
+      "react-dom": "19.3.1"
+    },
+    "devDependencies": {
+      "@playwright/test": "1.64.1",
+      "@types/express": "5.0.6",
+      "@types/node": "24.19.2",
+      "@types/pg": "8.23.1",
+      "@types/react": "19.3.0",
+      "@types/react-dom": "19.3.0",
+      "fake-indexeddb": "6.2.7",
+      "typescript": "7.0.2",
+      "vite": "8.3.5"
+    },
+    "chromium": "156.0.8078.4"
+  },
+  "counts": {
+    "backendExisting": 45,
+    "newDatabaseAudit": 3,
+    "local": 13,
+    "push": 9,
+    "snapshot": 4,
+    "resolution": 5,
+    "browser": 44,
+    "distinctTotal": 123,
+    "finalCommandTestExecutions": 126,
+    "repeatedProcessChecks": 3
+  },
+  "changedExistingSources": [
+    "package.json",
+    "tests/browser/resolution.spec.ts",
+    "tests/process.test.ts"
+  ],
+  "newTestHarnessSources": [
+    "tests/audit-evidence.ts",
+    "tests/audit.test.ts",
+    "tests/browser/audit-harness.ts",
+    "tests/browser/audit.spec.ts",
+    "tests/browser/demo.spec.ts",
+    "scripts/verify-audit.mjs"
+  ],
+  "productionSourceChanged": false,
+  "dependencyLockChanged": false,
+  "sourceHashes": {
+    "src/app.ts": "dfb96014c08bf913790f82ccbcf30a51574b50e956895468be1d703c4591d384",
+    "src/contracts.ts": "1e7a3fa7b9cfc2a01fc65c4828fa3a729fa68c2c827ae8bab92248813bcfe273",
+    "src/db.ts": "e6b9787f42cb028bf5be9ad31395dd8bc71e357490fe292d5419be5d4b86bdab",
+    "src/mutations.ts": "1235830d808dd4c92f16306e09cf556f3be4bc9f86b0b5bc7df97622cf7a6991",
+    "src/server.ts": "1830db0beb74dfcdf2a76d858cf724f4b177442e03ae272b3703b37a3b11999c",
+    "client/conflict.tsx": "17e943d82dab8c36ca094ad3bd519f18b08d33fc471b37435a8055a9f11c6d51",
+    "client/env.d.ts": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+    "client/index.html": "086aeb897d08516bbe249d37f8943eb493c312b3eed130915cfaf9f24753dff2",
+    "client/main.tsx": "9640adb1a8e514b06d5033f550a499cf3a038bef342fb49ce62d1cfd2da30a7a",
+    "client/style.css": "184725c46ffd08d2f9a5c90430699205f55aaded92689dd7eb9b749cf04a6c61",
+    "client/lib/contract.ts": "fed81ae8be72f3c2e3e4173fe2bc899fb7012eb030f1002793cb660a8b8f5ca6",
+    "client/lib/pull.ts": "e3fd32cd144dff834e90643d0858be9220b3f6a358376b6ccae7ad9bd4df2fd1",
+    "client/lib/push.ts": "3ef6e0b545e3516bcf218a95e6fafa9bb60b689e78f67920ac04c8bb11f878d5",
+    "client/lib/storage.ts": "51cb7c01863de7c17eac4e749a111fb627a11cd1f356e35a80fd10ec5b8c76ff",
+    "migrations/001_mutation_server.sql": "be1ac5ee8eb8e10fbf3983702e9d80de0ed14da560d82bd278a602f873287a19",
+    "tests/contracts.test.ts": "ff258e830d8595c84a8af2ded7b4516b51c7531ae310e8cc9c6647da45e5c729",
+    "tests/helpers.ts": "71294bda59e3f16219bf1266698a48c5992c570acbc0b3512833be20166c8889",
+    "tests/integration.test.ts": "e22f680b56d715eb46addbd1bf0e9ba499dad22b1ae5d0f75f75278074f42574",
+    "tests/local.test.ts": "8d84127161b7032feccb52ca50225b6778cf2577675806043efa6e02f42dacc6",
+    "tests/process.test.ts": "948acee3d9ae97bcf82728f4a72f1bb87b34998e0509c646f7ec76324ed9638b",
+    "tests/push.test.ts": "4a6f177f0fa2cfa3be540ccbc04c67009ddf2fd217d3642ddeee263d6227cd9b",
+    "tests/resolution.test.ts": "44afe758922359fd66be0973b320ebcdeb64c91074ea96657041c4aedd9ad102",
+    "tests/snapshot.test.ts": "ae5b409438b956cc66661bb22290d8438f8c98d122aff62ecd92096822a348a1",
+    "tests/browser/local.spec.ts": "40fdf719c55fed45ff41f6868629ef468e0739c77b092b216f58573a99a3d85a",
+    "tests/browser/push.spec.ts": "1484448c69f1966be9eaf80b2a2593637b347005ee5a776f83b7442a6ce954b7",
+    "tests/browser/resolution.spec.ts": "47ecace8df7a816638159aa52a55ecb3376120d748da977692d933b72a40e2f6",
+    "tests/browser/snapshot.spec.ts": "5c8bbfe7c382c26d119c8a647e4e9c69efa5500e95a670d5ce98ef84bd43f1dd",
+    "package.json": "58e153f3b0f8e679cbe6507a97a64aae3beff774cec5c3c3eb7b93bdc3b4c453",
+    "package-lock.json": "9317f3a13ec9292c7052e6a0402093e7f64aa6bb9e5891510c978d54ec8cfd1d",
+    "playwright.config.ts": "e448af9f7d1d01d8858757a421d74543aeaa81c3038d400901af02e3807e3da2",
+    "tsconfig.json": "6073147dae3b773d57c72901c911b9aaad34162650ea9600b048ead86c193bb3",
+    "tsconfig.client.json": "1ed8bd77df034f0fe788197362f6203b3e4494ef2d29a1cb9705336c521c1a03",
+    "tests/audit-evidence.ts": "fe335e591c96b33fd5ed901447bed4468e7af050a1743f553fa0b02aa0f950fd",
+    "tests/audit.test.ts": "a1d7c6910b55a0ef83e67e1fd8a76ef4ad81a582f1257e429aa015d53ec72ae9",
+    "tests/browser/audit-harness.ts": "b47c3f1cf35539d169e746e6565c9aabc10cae49e88490ad5c31bf4618307251",
+    "tests/browser/audit.spec.ts": "7b30dfad6975e10f4ef550df987fbc4baf4bc28fe568fdd862c808c466529d9a",
+    "tests/browser/demo.spec.ts": "24d02473093e0a9bd2e731c98fb358f7a82f78785b82e128433ecd484c99955c",
+    "scripts/verify-audit.mjs": "58d2ae21735288b4a91ed6380881ba7d1874bba63988289be893f310b6895f72"
+  },
+  "remainingOwnedSchemas": [],
+  "scenarios": [
+    {
+      "id": "F1",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F1 confirmed commit loss replays original ID before newer snapshot and atomic acknowledgment"
+      ],
+      "initial": "clean1, immutable update/base1, no receipt",
+      "injectedFault": "commit2 held before browser delivery; reload destroys old controller",
+      "expectedClient": "unknown/locked original bytes; replay before pull gives historical2 and clean3",
+      "expectedServer": "one original receipt, final3",
+      "recovery": "same-ID replay then full pull",
+      "invariants": [
+        "INV-ACK-01",
+        "INV-ATOMIC-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01"
+      ],
+      "artifacts": [
+        "F1.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F1",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:54.839Z"
+        }
+      ],
+      "limitation": "Interception/reload; local ack abort additionally covered in resolution/browser regressions"
+    },
+    {
+      "id": "F2",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/audit.test.ts",
+      "tests": [
+        "F2 HTTP concurrent success duplicates arbitrate one receipt and preserve identity",
+        "F2 HTTP concurrent conflict duplicates arbitrate one receipt and preserve identity"
+      ],
+      "initial": "live1 or live2, no target receipt",
+      "injectedFault": "hold owner claim, observe independent waiter PostgreSQL lock; duplicate and collision HTTP",
+      "expectedClient": "HTTP client sees original decision and replay; collision explicit",
+      "expectedServer": "one target receipt; final2, conflict adds no effect",
+      "recovery": "identical sequential/concurrent replay; owner-rollback variant in backend regression",
+      "invariants": [
+        "INV-IDEMP-01",
+        "INV-ATOMIC-01",
+        "INV-REV-01"
+      ],
+      "artifacts": [
+        "F2-success.json",
+        "F2-conflict.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F2-success",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:41.669Z"
+        },
+        {
+          "scenario": "F2-conflict",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:42.209Z"
+        }
+      ],
+      "limitation": "HTTP clients plus existing browser collision regression; no exactly-once delivery claim"
+    },
+    {
+      "id": "F3",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F3 HTTP reverse delivery delayed A preserves stale loser",
+        "F3 HTTP reverse delivery delayed B preserves stale loser"
+      ],
+      "initial": "two isolated profiles at1 with distinct update IDs/base1",
+      "injectedFault": "hold first-sent HTTP before admission; deliver other first, both orderings",
+      "expectedClient": "one acknowledged, one preserved terminal conflict/base1/local values",
+      "expectedServer": "one effect to2, success and conflict receipts",
+      "recovery": "explicit keep-server and both final reconcile",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-IDEMP-01"
+      ],
+      "artifacts": [
+        "F3-A.json",
+        "F3-B.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F3-A",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:58.015Z"
+        },
+        {
+          "scenario": "F3-B",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:00.951Z"
+        }
+      ],
+      "limitation": "Controlled finite orderings; no general network ordering guarantee"
+    },
+    {
+      "id": "F4",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F4 independent-record cycle interruption retains acknowledged unknown queued and recovers in order"
+      ],
+      "initial": "three independent queued creates, no target receipts",
+      "injectedFault": "first acknowledged; second commit reply held until reload; third unsent",
+      "expectedClient": "acknowledged/unknown/queued; final all acknowledged with same IDs",
+      "expectedServer": "two receipts before recovery, three after; each record1",
+      "recovery": "unknown first, full pull, send queued third, final pull",
+      "invariants": [
+        "INV-ATOMIC-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01",
+        "INV-ONE-01",
+        "INV-SNAP-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F4.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F4",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:03.209Z"
+        }
+      ],
+      "limitation": "No multi-record atomicity; snapshot abort/truncation covered by existing snapshot suite"
+    },
+    {
+      "id": "F5",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F5 real graceful Chromium restarts retain saved draft queued unknown locks and completed receipt"
+      ],
+      "initial": "persistent profile with saved draft and separate offline queued mutation",
+      "injectedFault": "graceful whole Chromium close/relaunch; later unknown variant and second acknowledged reopen",
+      "expectedClient": "exact durable identity/work/ID/hash/envelope/lock across launches; fresh profile empty",
+      "expectedServer": "no effect offline; one receipt per sent operation",
+      "recovery": "same retained profile, exact retry, full reconciliation",
+      "invariants": [
+        "INV-DRAFT-01",
+        "INV-ONE-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01"
+      ],
+      "artifacts": [
+        "F5.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F5",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:08.533Z"
+        }
+      ],
+      "limitation": "Graceful only, reachable frontend shell, no eviction/forced browser kill/power loss"
+    },
+    {
+      "id": "F6",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/process.test.ts",
+      "tests": [
+        "F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics",
+        "F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics"
+      ],
+      "initial": "local frozen create marked unknown; no server record/receipt",
+      "injectedFault": "actual dedicated Node SIGKILL after provisional write or after commit, before reply",
+      "expectedClient": "transport lost, unknown original lock retained; local acknowledgment after retry",
+      "expectedServer": "before kill: 0/0 or record1/receipt1; after retry always1/1",
+      "recovery": "new Node PID same database/schema; original ID executes or replays",
+      "invariants": [
+        "INV-ACK-01",
+        "INV-ATOMIC-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01"
+      ],
+      "artifacts": [
+        "F6-precommit.json",
+        "F6-postcommit.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F6-precommit",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:44.662Z"
+        },
+        {
+          "scenario": "F6-postcommit",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:53:46.583Z"
+        }
+      ],
+      "limitation": "Actual Node termination; local store fake-indexeddb, separate actual-browser coverage; PostgreSQL remains running"
+    },
+    {
+      "id": "F7",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F7 lost stale update receipt replays historical conflict and never revives tombstone",
+        "F7 lost stale delete receipt replays historical conflict and never revives tombstone"
+      ],
+      "initial": "browser original base1, server2, no stale-request receipt",
+      "injectedFault": "stale update/delete; durable conflict2 reply lost; server later3 then tombstone4",
+      "expectedClient": "original intent/base and historical conflict2 retained; current clean3/4 separate",
+      "expectedServer": "stale requests never change server; create/update/delete cannot revive tombstone4",
+      "recovery": "same-ID conflict replay, pull, explicit keep deletion",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-TOMB-01"
+      ],
+      "artifacts": [
+        "F7-update.json",
+        "F7-delete.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F7-update",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:10.853Z"
+        },
+        {
+          "scenario": "F7-delete",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:13.032Z"
+        }
+      ],
+      "limitation": "Receipt/tombstone retention within unpruned test DB, no restore coverage"
+    },
+    {
+      "id": "F8",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F8 independent clients both at record-lock barrier then A wins without lost update",
+        "F8 independent clients both at record-lock barrier then B wins without lost update"
+      ],
+      "initial": "independent profiles at1, different IDs/client IDs",
+      "injectedFault": "both HTTP transactions held before_record_lock; controlled A-first and B-first releases",
+      "expectedClient": "one acknowledgment and visible preserved conflict until deliberate new resolution",
+      "expectedServer": "one transition to2; two original terminal receipts; resolution to3",
+      "recovery": "new ID/base2 then both clean caches3 under quiescence",
+      "invariants": [
+        "INV-REV-01",
+        "INV-CONFLICT-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F8-A.json",
+        "F8-B.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F8-A",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:16.283Z"
+        },
+        {
+          "scenario": "F8-B",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:19.253Z"
+        }
+      ],
+      "limitation": "One controller per independent store; no shared-profile tab arbitration"
+    },
+    {
+      "id": "F9",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/resolution.spec.ts",
+      "tests": [
+        "F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID"
+      ],
+      "initial": "genuine conflict/base4 at server5, explicit new resolution/base5",
+      "injectedFault": "real commit6 response dropped; graceful whole Chromium restart; writer7 before replay",
+      "expectedClient": "same unknown ID/hash/envelope/lock/history; original resolution receipt6 then clean7",
+      "expectedServer": "one resolution receipt/effect; final7",
+      "recovery": "same-ID replay before pull; local ack abort separately rerun in same spec",
+      "invariants": [
+        "INV-IDEMP-01",
+        "INV-UNKNOWN-01",
+        "INV-ACKCLIENT-01",
+        "INV-CONFLICT-01",
+        "INV-ONE-01"
+      ],
+      "artifacts": [
+        "F9.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F9",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:55:29.913Z"
+        }
+      ],
+      "limitation": "Graceful browser restart, no forced browser kill or power loss"
+    },
+    {
+      "id": "F10",
+      "status": "PASS",
+      "scope": "Specified bounded Phase6 variants plus named regression supplements",
+      "testPath": "tests/browser/audit.spec.ts",
+      "tests": [
+        "F10 simulated 21 days offline recovers unknown before tombstones and preserves stale intent until explicit decision"
+      ],
+      "initial": "old-base queued record and separate previously committed unknown record",
+      "injectedFault": "API disconnected; simulated wall clock +21 days; remote update/delete",
+      "expectedClient": "unknown replay first, tombstones observed, stale proposal retained until keep-server",
+      "expectedServer": "tombstones3 and2, no resurrection or unintended increment",
+      "recovery": "recover unknown, pull, stale request conflicts, explicit keep, both caches equal",
+      "invariants": [
+        "INV-TOMB-01",
+        "INV-DRAFT-01",
+        "INV-UNKNOWN-01",
+        "INV-CONFLICT-01",
+        "INV-SNAP-01",
+        "INV-RECON-01"
+      ],
+      "artifacts": [
+        "F10.json"
+      ],
+      "observed": [
+        {
+          "scenario": "F10",
+          "status": "PASS",
+          "recordedAt": "2026-11-04T16:54:22.264Z"
+        }
+      ],
+      "limitation": "Simulated duration only; independent not-before fixture schedules queued work, no cursor/aging claim"
+    }
+  ],
+  "demos": {
+    "runs": 2,
+    "steps": 8,
+    "artifacts": [
+      "demo-run-1.json",
+      "demo-run-2.json"
+    ],
+    "equivalentLogicalFinalState": true
+  },
+  "noBenchmarks": true,
+  "unsupported": [
+    "forced browser kill",
+    "profile eviction/deletion",
+    "OS/power/hardware failure",
+    "competing tabs",
+    "production deployment/authentication",
+    "multi-region",
+    "unbounded arbitrary network partitions",
+    "physical weeks-long durability"
+  ]
+}

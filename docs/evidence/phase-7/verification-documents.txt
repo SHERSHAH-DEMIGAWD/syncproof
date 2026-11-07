@@ -1,0 +1,2 @@
+{"date":"2026-11-05","status":"PASS","localLinksAndAnchorsChecked":799,"phase7AcceptancePass":20,"handbookChapters":14,"handbookInterviewQuestions":24,"sourceFunctionNamesChecked":25,"sourceHashesChecked":45,"errors":[]}
+{"status":"PASS","phase6Entry":"PASS","cases":123,"benchmarkObservations":4010,"demoRuns":2,"productionSourceChanged":false,"remainingOwnedSchemas":0,"publicPublicationReady":false}

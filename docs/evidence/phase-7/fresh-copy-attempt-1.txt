@@ -1,0 +1,23 @@
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\<USER_HOME>\\OneDrive\\Documents\\ChatGPT\\SYNCPROOF\\.local\\repro-***\\node_modules',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir '<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\.local\repro-***\node_modules\@rolldown\pluginutils\dist'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: '<USER_HOME>\\OneDrive\\Documents\\ChatGPT\\SYNCPROOF\\.local\\repro-***\\node_modules\\@rolldown\\pluginutils\\dist'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\<USER_HOME>\\OneDrive\\Documents\\ChatGPT\\SYNCPROOF\\.local\\repro-***\\node_modules\\@rolldown\\pluginutils',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir '<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\.local\repro-***\node_modules\@rolldown\pluginutils'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: '<USER_HOME>\\OneDrive\\Documents\\ChatGPT\\SYNCPROOF\\.local\\repro-***\\node_modules\\@rolldown\\pluginutils'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code ENOTCACHED
+npm error request to https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz failed: cache mode is 'only-if-cached' but no cached response is available.
+npm error A complete log of this run can be found in: <USER_HOME>\AppData\Local\npm-cache\_logs\2026-11-05T08_07_51_520Z-debug-0.log

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.local/
+.env
+.env.*
+!.env.example
+*.log
+dist-client/
+playwright-report/
+test-results/
+
+# Temporary document/rendering files
+tmp/

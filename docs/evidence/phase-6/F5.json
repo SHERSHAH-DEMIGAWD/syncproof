@@ -1,0 +1,397 @@
+{
+  "scenario": "F5",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:54:08.533Z",
+  "test": "F5 real graceful Chromium restarts retain saved draft queued unknown locks and completed receipt",
+  "initial": {
+    "work": [
+      {
+        "id": "2cc490f3-8326-4c5f-bfa6-53330953d04d",
+        "version": 1,
+        "payload": {
+          "title": "Durable draft",
+          "status": "open",
+          "notes": "Draft content"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "draft"
+      },
+      {
+        "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "version": 1,
+        "payload": {
+          "title": "Durable queue",
+          "status": "open",
+          "notes": "Saved proposal"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "queued",
+        "activeMutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43"
+      }
+    ],
+    "mutations": [
+      {
+        "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+        "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable queue",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"305cb0a3-6c5b-4bb8-bab6-df270014cb43\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"8eda5483-af3f-4ef0-8200-c048e4fadab9\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable queue\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "ed71c9d6ee34db545fe3d56e4817dac6bdb913457f01107b61f2b235782c4aea",
+        "commonBase": null,
+        "phase": "queued"
+      }
+    ],
+    "clean": [],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "6d88793d-105c-422f-b652-f12ad831dd2c"
+      }
+    ]
+  },
+  "reopened": {
+    "work": [
+      {
+        "id": "2cc490f3-8326-4c5f-bfa6-53330953d04d",
+        "version": 1,
+        "payload": {
+          "title": "Durable draft",
+          "status": "open",
+          "notes": "Draft content"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "draft"
+      },
+      {
+        "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "version": 1,
+        "payload": {
+          "title": "Durable queue",
+          "status": "open",
+          "notes": "Saved proposal"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "queued",
+        "activeMutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43"
+      }
+    ],
+    "mutations": [
+      {
+        "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+        "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable queue",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"305cb0a3-6c5b-4bb8-bab6-df270014cb43\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"8eda5483-af3f-4ef0-8200-c048e4fadab9\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable queue\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "ed71c9d6ee34db545fe3d56e4817dac6bdb913457f01107b61f2b235782c4aea",
+        "commonBase": null,
+        "phase": "queued"
+      }
+    ],
+    "clean": [],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "6d88793d-105c-422f-b652-f12ad831dd2c"
+      }
+    ]
+  },
+  "unknownBeforeRestart": {
+    "work": [
+      {
+        "id": "2cc490f3-8326-4c5f-bfa6-53330953d04d",
+        "version": 1,
+        "payload": {
+          "title": "Durable draft",
+          "status": "open",
+          "notes": "Draft content"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "draft"
+      },
+      {
+        "id": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+        "version": 1,
+        "payload": {
+          "title": "Durable unknown",
+          "status": "open",
+          "notes": "Saved proposal"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "queued",
+        "activeMutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8"
+      }
+    ],
+    "mutations": [
+      {
+        "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+        "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable queue",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"305cb0a3-6c5b-4bb8-bab6-df270014cb43\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"8eda5483-af3f-4ef0-8200-c048e4fadab9\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable queue\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "ed71c9d6ee34db545fe3d56e4817dac6bdb913457f01107b61f2b235782c4aea",
+        "commonBase": null,
+        "phase": "acknowledged",
+        "attemptCount": 1,
+        "lastAttemptAt": 1793811245951,
+        "receipt": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "replayed": false,
+          "outcome": {
+            "kind": "committed",
+            "committedRevision": "1",
+            "record": {
+              "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+              "title": "Durable queue",
+              "status": "open",
+              "notes": "Saved proposal",
+              "revision": "1",
+              "deleted": false
+            }
+          }
+        },
+        "lastError": ""
+      },
+      {
+        "mutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8",
+        "recordId": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable unknown",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"d39fdb69-23b1-48da-ad3f-75b1fecca5b8\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"60d41e1c-4801-481d-ac46-0a24c3742dec\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable unknown\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "dd419609aae3d9875215cee2a789f925342f633338cd1d857db76109d141943e",
+        "commonBase": null,
+        "phase": "outcome_unknown",
+        "attemptCount": 1,
+        "lastAttemptAt": 1793811246469
+      }
+    ],
+    "clean": [
+      {
+        "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "title": "Durable queue",
+        "status": "open",
+        "notes": "Saved proposal",
+        "revision": "1",
+        "deleted": false
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "6d88793d-105c-422f-b652-f12ad831dd2c"
+      }
+    ]
+  },
+  "final": {
+    "work": [
+      {
+        "id": "2cc490f3-8326-4c5f-bfa6-53330953d04d",
+        "version": 1,
+        "payload": {
+          "title": "Durable draft",
+          "status": "open",
+          "notes": "Draft content"
+        },
+        "baseRevision": null,
+        "commonBase": null,
+        "phase": "draft"
+      }
+    ],
+    "mutations": [
+      {
+        "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+        "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable queue",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"305cb0a3-6c5b-4bb8-bab6-df270014cb43\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"8eda5483-af3f-4ef0-8200-c048e4fadab9\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable queue\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "ed71c9d6ee34db545fe3d56e4817dac6bdb913457f01107b61f2b235782c4aea",
+        "commonBase": null,
+        "phase": "acknowledged",
+        "attemptCount": 1,
+        "lastAttemptAt": 1793811245951,
+        "receipt": {
+          "protocolVersion": 1,
+          "mutationId": "305cb0a3-6c5b-4bb8-bab6-df270014cb43",
+          "replayed": false,
+          "outcome": {
+            "kind": "committed",
+            "committedRevision": "1",
+            "record": {
+              "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+              "title": "Durable queue",
+              "status": "open",
+              "notes": "Saved proposal",
+              "revision": "1",
+              "deleted": false
+            }
+          }
+        },
+        "lastError": ""
+      },
+      {
+        "mutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8",
+        "recordId": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8",
+          "clientId": "6d88793d-105c-422f-b652-f12ad831dd2c",
+          "recordId": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+          "operation": "create",
+          "baseRevision": null,
+          "payload": {
+            "title": "Durable unknown",
+            "status": "open",
+            "notes": "Saved proposal"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"d39fdb69-23b1-48da-ad3f-75b1fecca5b8\",\"clientId\":\"6d88793d-105c-422f-b652-f12ad831dd2c\",\"recordId\":\"60d41e1c-4801-481d-ac46-0a24c3742dec\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Durable unknown\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+        "fingerprint": "dd419609aae3d9875215cee2a789f925342f633338cd1d857db76109d141943e",
+        "commonBase": null,
+        "phase": "acknowledged",
+        "attemptCount": 2,
+        "lastAttemptAt": 1793811247607,
+        "receipt": {
+          "outcome": {
+            "kind": "committed",
+            "record": {
+              "id": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+              "notes": "Saved proposal",
+              "title": "Durable unknown",
+              "status": "open",
+              "deleted": false,
+              "revision": "1"
+            },
+            "committedRevision": "1"
+          },
+          "replayed": true,
+          "mutationId": "d39fdb69-23b1-48da-ad3f-75b1fecca5b8",
+          "protocolVersion": 1
+        },
+        "lastError": ""
+      }
+    ],
+    "clean": [
+      {
+        "id": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+        "title": "Durable unknown",
+        "status": "open",
+        "notes": "Saved proposal",
+        "revision": "1",
+        "deleted": false
+      },
+      {
+        "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+        "title": "Durable queue",
+        "status": "open",
+        "notes": "Saved proposal",
+        "revision": "1",
+        "deleted": false
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "6d88793d-105c-422f-b652-f12ad831dd2c"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793811247721,\"recordCount\":2}"
+      }
+    ]
+  },
+  "server": [
+    {
+      "id": "60d41e1c-4801-481d-ac46-0a24c3742dec",
+      "title": "Durable unknown",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "1",
+      "deleted": false
+    },
+    {
+      "id": "8eda5483-af3f-4ef0-8200-c048e4fadab9",
+      "title": "Durable queue",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "1",
+      "deleted": false
+    }
+  ],
+  "browserPids": [
+    39888,
+    25696,
+    32844,
+    29012
+  ],
+  "closure": "graceful whole Chromium process; same persistent profile",
+  "freshProfileEmpty": true,
+  "invariants": [
+    "INV-DRAFT-01",
+    "INV-ONE-01",
+    "INV-UNKNOWN-01",
+    "INV-ACKCLIENT-01"
+  ],
+  "limit": "Reachable frontend shell; no forced browser kill, eviction, OS or power failure"
+}

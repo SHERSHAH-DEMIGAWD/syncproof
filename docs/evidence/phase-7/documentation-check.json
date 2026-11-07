@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-05",
+  "status": "PASS",
+  "localLinksAndAnchorsChecked": 799,
+  "phase7AcceptancePass": 20,
+  "handbookChapters": 14,
+  "handbookInterviewQuestions": 24,
+  "sourceFunctionNamesChecked": 25,
+  "sourceHashesChecked": 45,
+  "errors": [],
+  "ownedPostgresStopped": true,
+  "testPorts3000And5174Listening": false,
+  "disposableReproDirectoriesRemaining": 0,
+  "disposableAuditProfilesRemaining": 0
+}

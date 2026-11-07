@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Calcutta",
+  "os": "Windows-11-10.0.26200-SP0",
+  "node": "24.15.0",
+  "npm": "11.12.1",
+  "versions": {
+    "name": "syncproof",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "description": "Local educational PostgreSQL mutation server \u2014 Phase 1",
+    "engines": {
+      "node": ">=24 <25"
+    },
+    "scripts": {
+      "build": "tsc -p tsconfig.json",
+      "typecheck": "tsc -p tsconfig.json --noEmit",
+      "start": "node --env-file-if-exists=.env dist/src/server.js",
+      "migrate": "node --env-file-if-exists=.env dist/src/db.js",
+      "test:unit": "node --test dist/tests/contracts.test.js",
+      "test:db": "node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/integration.test.js dist/tests/process.test.js",
+      "test": "npm run build && npm run test:unit && npm run test:db",
+      "dev:client": "vite --config vite.config.ts",
+      "build:client": "tsc -p tsconfig.client.json && vite build --config vite.config.ts",
+      "test:local": "node --test dist/tests/local.test.js",
+      "test:browser": "playwright test",
+      "check:client": "tsc -p tsconfig.client.json"
+    },
+    "dependencies": {
+      "dexie": "4.4.7",
+      "express": "5.3.0",
+      "pg": "8.23.1",
+      "react": "19.3.1",
+      "react-dom": "19.3.1"
+    },
+    "devDependencies": {
+      "@playwright/test": "1.64.1",
+      "@types/express": "5.0.6",
+      "@types/node": "24.19.2",
+      "@types/pg": "8.23.1",
+      "@types/react": "19.3.0",
+      "@types/react-dom": "19.3.0",
+      "fake-indexeddb": "6.2.7",
+      "typescript": "7.0.2",
+      "vite": "8.3.5"
+    }
+  },
+  "phase1SourcesUnchanged": {
+    "migrations/001_mutation_server.sql": true,
+    "scripts/local-postgres.ps1": true,
+    "src/app.ts": true,
+    "src/contracts.ts": true,
+    "src/db.ts": true,
+    "src/mutations.ts": true,
+    "src/server.ts": true,
+    "tests/contracts.test.ts": true,
+    "tests/helpers.ts": true,
+    "tests/integration.test.ts": true,
+    "tests/process.test.ts": true
+  },
+  "sourceHashes": {
+    "client/env.d.ts": "424faf9241dd699dda995b367ed36665732da1e6ec1f33b2fd40394488ecac92",
+    "client/index.html": "086aeb897d08516bbe249d37f8943eb493c312b3eed130915cfaf9f24753dff2",
+    "client/main.tsx": "0e6e2f5d9597dd6c651072265e4b78a44e91b74b4648fa788a9351f61f5c4dca",
+    "client/style.css": "184725c46ffd08d2f9a5c90430699205f55aaded92689dd7eb9b749cf04a6c61",
+    "client/lib/contract.ts": "fed81ae8be72f3c2e3e4173fe2bc899fb7012eb030f1002793cb660a8b8f5ca6",
+    "client/lib/storage.ts": "dae9b82d9787ddff81c739999aa53d9ad4af8c4a434f638db74866c9b8df087e",
+    "tests/local.test.ts": "8d84127161b7032feccb52ca50225b6778cf2577675806043efa6e02f42dacc6",
+    "tests/browser/local.spec.ts": "40fdf719c55fed45ff41f6868629ef468e0739c77b092b216f58573a99a3d85a",
+    "package.json": "7951c38e8cd513027d013512bc6d5a5332c10633cccd7ff5a84a102c2b3ecef8",
+    "package-lock.json": "9317f3a13ec9292c7052e6a0402093e7f64aa6bb9e5891510c978d54ec8cfd1d",
+    "tsconfig.json": "6073147dae3b773d57c72901c911b9aaad34162650ea9600b048ead86c193bb3",
+    "tsconfig.client.json": "1ed8bd77df034f0fe788197362f6203b3e4494ef2d29a1cb9705336c521c1a03",
+    "vite.config.ts": "6a98bc68c4da40b83813235e7d66aeb28a98e449c2cdc398864cd1f1b7c5961c",
+    "playwright.config.ts": "e448af9f7d1d01d8858757a421d74543aeaa81c3038d400901af02e3807e3da2"
+  },
+  "counts": {
+    "local": 13,
+    "browser": 4,
+    "backendContract": 18,
+    "backendDatabaseProcess": 27
+  },
+  "noBenchmarks": true
+}

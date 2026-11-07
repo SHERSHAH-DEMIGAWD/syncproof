@@ -1,0 +1,7 @@
+rep1: mutation latency
+rep1: snapshot/install N=100
+rep1: concurrency=1
+rep1: concurrency=2
+rep1: foreground N=100, Q=10
+rep1: retained database growth
+{"status":"PASS","smoke":true,"samples":50,"summaryGroups":14,"errors":[]}

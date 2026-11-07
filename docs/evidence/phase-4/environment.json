@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-04",
+  "timezone": "Asia/Calcutta",
+  "node": "24.15.0",
+  "postgres": "18.6 UTF8 READ COMMITTED fsync/synchronous_commit/full_page_writes on",
+  "chromium": "156.0.8078.4",
+  "sourceHashes": {
+    "src/app.ts": "dfb96014c08bf913790f82ccbcf30a51574b50e956895468be1d703c4591d384",
+    "tests/integration.test.ts": "e22f680b56d715eb46addbd1bf0e9ba499dad22b1ae5d0f75f75278074f42574",
+    "client/lib/pull.ts": "e3fd32cd144dff834e90643d0858be9220b3f6a358376b6ccae7ad9bd4df2fd1",
+    "client/lib/storage.ts": "416c6c761eff0bd70db120fc3e9713b822010403b3cc656fe7311c20e245a593",
+    "client/lib/push.ts": "b05389a6b4201ae76dcf527a2a9dca4050f624f099050a75266d826db4b58482",
+    "client/main.tsx": "c82d326dc2e3468aa5b06c099a611c4b3ea9e9a10b804b8a92c808e6ff0cc73c",
+    "vite.config.ts": "0bbea1ab1f43a75dccfd1941d309be6da4eb8b338d940a7ce7ff356f37049c11",
+    "package.json": "ebbb6a06d405be02c5141bd48d44f028054d913a576f3a887a981deb7969bf78",
+    "tests/snapshot.test.ts": "ae5b409438b956cc66661bb22290d8438f8c98d122aff62ecd92096822a348a1",
+    "tests/browser/snapshot.spec.ts": "5c8bbfe7c382c26d119c8a647e4e9c69efa5500e95a670d5ce98ef84bd43f1dd"
+  },
+  "suiteCounts": {
+    "snapshotLocal": 4,
+    "snapshotBrowser": 7,
+    "priorBrowser": 15,
+    "backend": 45,
+    "local": 13,
+    "push": 9
+  },
+  "noBenchmarks": true
+}

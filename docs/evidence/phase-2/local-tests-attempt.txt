@@ -1,0 +1,23 @@
+
+> syncproof@0.1.0 test:local
+> node --test dist/tests/local.test.js
+
+✔ browser canonical bytes, hash and validation conform to Phase 1 parser (17.3044ms)
+✔ draft create/edit/read and database version1 reopen preserve identity and values (31.4146ms)
+✔ freeze matches server create with null base and one stable identity (10.8209ms)
+✔ editing, requeue and double queue cannot replace immutable operation (21.715ms)
+✔ freeze abort rolls back queue insertion and work lock together (10.9576ms)
+✔ failed draft write preserves prior saved values; stale versions rejected (10.3642ms)
+✔ independent records queue independently and profiles start empty (10.4107ms)
+✔ draft discard is explicit and queued work cannot be discarded (7.8898ms)
+✔ test-only authoritative fixture produces update envelope retaining common base (6.2582ms)
+✔ synthetic success acknowledgment is atomic and historical state never regresses clean record (8.1548ms)
+✔ synthetic conflict retains proposal/base and original receipt; invalid receipt rejected (15.928ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 517.5179

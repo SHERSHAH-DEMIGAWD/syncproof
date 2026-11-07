@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "localLinksChecked": 255,
+  "markdownFiles": 11,
+  "phase2AcceptancePass": 18,
+  "testedSourceHashesVerified": 14,
+  "backendOriginalHashesUnchanged": 11,
+  "clientNetworkCalls": 0,
+  "errors": []
+}

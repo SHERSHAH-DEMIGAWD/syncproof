@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "browser": "156.0.8078.4",
+  "pids": [
+    1084,
+    25148,
+    9960
+  ],
+  "closure": "graceful full browser close/relaunch before and after acknowledgment",
+  "sameProfile": true,
+  "mutationId": "637cca35-cfc0-4786-93c8-25336c589a43",
+  "canonicalUnchanged": true,
+  "committedBeforeLoss": true,
+  "acknowledgmentSurvivesSecondRestart": true,
+  "finalRevision": "1",
+  "replayed": true
+}

@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "localLinksChecked": 306,
+  "markdownFiles": 12,
+  "invariantsDefined": 12,
+  "phase3AcceptancePass": 20,
+  "testedSourceHashes": 8,
+  "originalBackendFilesUnchanged": 11,
+  "finalTests": {
+    "pushUnit": 9,
+    "browserTotal": 15,
+    "browserNew": 11,
+    "localRegression": 13,
+    "backendRegression": 45
+  },
+  "errors": []
+}

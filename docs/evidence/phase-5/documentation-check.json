@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "localLinksAndAnchorsChecked": 418,
+  "phase5AcceptancePass": 24,
+  "sourceHashesRecorded": 7,
+  "unchangedBackendDependencyHelperFiles": 10,
+  "finalCounts": {
+    "backend": 45,
+    "local": 13,
+    "push": 9,
+    "snapshot": 4,
+    "resolution": 5,
+    "browser": 31,
+    "newResolutionBrowser": 9
+  },
+  "ownedTestSchemasRemaining": [],
+  "ownedPostgresStopped": true,
+  "priorEvidenceAutoRefreshDisclosed": true,
+  "noBenchmarks": true,
+  "fullRepeatedF1ToF10AndEightStepDemo": "NOT RUN",
+  "errors": []
+}

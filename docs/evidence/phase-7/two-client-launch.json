@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "clients": 2,
+  "separatePersistentProfiles": true,
+  "distinctClientIds": true,
+  "headlessCheck": true,
+  "normalMode": "two visible Chromium processes; owner profiles retained after close"
+}

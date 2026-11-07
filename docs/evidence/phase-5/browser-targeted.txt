@@ -1,0 +1,21 @@
+
+> syncproof@0.1.0 test:browser
+> playwright test tests/browser/resolution.spec.ts
+
+[WebServer] (node:42776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:41336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\resolution.spec.ts:46:1 › inspector and confirmed keep-server preserve audit; cancel creates no server mutation (2.7s)
+  ok 2 tests\browser\resolution.spec.ts:47:1 › new reapply and manual combine use new IDs; second conflict preserves both histories (3.5s)
+  ok 3 tests\browser\resolution.spec.ts:48:1 › F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID (4.1s)
+  ok 4 tests\browser\resolution.spec.ts:50:1 › resolution acknowledgment native transaction abort preserves unknown and retries identical ID (2.6s)
+  ok 5 tests\browser\resolution.spec.ts:51:1 › update against retained tombstone disables restore after simulated weeks and keeps deletion (2.2s)
+  ok 6 tests\browser\resolution.spec.ts:53:35 › stale delete versus newer live record requires explicit safe choice (2.8s)
+  ok 7 tests\browser\resolution.spec.ts:53:35 › stale delete versus tombstone requires explicit safe choice (2.7s)
+  ok 8 tests\browser\resolution.spec.ts:59:1 › native resolution freeze rollback, invalid values and repeated queue retain original conflict (2.6s)
+
+  8 passed (28.3s)

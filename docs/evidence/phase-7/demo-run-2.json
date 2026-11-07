@@ -1,0 +1,1847 @@
+{
+  "scenario": "demo-run-2",
+  "status": "PASS",
+  "runId": "phase7-192835c3-297e-4048-ae59-de5a503712ed",
+  "recordedAt": "2026-11-05T07:53:28.656Z",
+  "test": "DEMO ordered eight-step real PostgreSQL and retained Chromium profiles run 2",
+  "command": "npm run test:demo",
+  "layer": "real PostgreSQL + two persistent Chromium profiles",
+  "browserPids": {
+    "A": [
+      31856,
+      16776
+    ],
+    "B": [
+      34904
+    ]
+  },
+  "trace": [
+    {
+      "step": 1,
+      "asserted": "both independent profiles clean1; one seed receipt",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "Base",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204174,\"recordCount\":1}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "Base",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204378,\"recordCount\":1}"
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "asserted": "A new ID committed2 with one receipt",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "A first edit",
+          "revision": "2",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "A first edit",
+            "revision": "2",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204174,\"recordCount\":1}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "Base",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204378,\"recordCount\":1}"
+          }
+        ]
+      },
+      "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04"
+    },
+    {
+      "step": 3,
+      "asserted": "B stale1 conflicts at2, local/base/receipt intact",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "A first edit",
+          "revision": "2",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "A first edit",
+            "revision": "2",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204174,\"recordCount\":1}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "version": 1,
+            "payload": {
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "B deliberate proposal"
+            },
+            "baseRevision": "1",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "activeMutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34"
+          }
+        ],
+        "mutations": [
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "A first edit",
+            "revision": "2",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865204378,\"recordCount\":1}"
+          }
+        ]
+      },
+      "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34"
+    },
+    {
+      "step": 4,
+      "asserted": "explicit reapply/base2/new ID commits3; both observe3",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "B deliberate proposal",
+          "revision": "3",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865205659,\"recordCount\":1}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "2",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"07091d29-56f8-4f8b-9894-24b08da3e586\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"2\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "2b649e6d5fbb744fca82ce2e97f7b0c80853c622744ff11b19d216b29e8f499f",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "A first edit",
+              "revision": "2",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "resolves": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205553,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "3",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "B deliberate proposal",
+                  "revision": "3",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865205757,\"recordCount\":1}"
+          }
+        ]
+      },
+      "resolutionId": "07091d29-56f8-4f8b-9894-24b08da3e586"
+    },
+    {
+      "step": 5,
+      "asserted": "actual commit1/receipt precede response abort; browser unknown and locked",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "B deliberate proposal",
+          "revision": "3",
+          "deleted": false
+        },
+        {
+          "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+          "title": "Demo lost response",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "1",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "version": 1,
+            "payload": {
+              "title": "Demo lost response",
+              "status": "open",
+              "notes": "Saved proposal"
+            },
+            "baseRevision": null,
+            "commonBase": null,
+            "phase": "queued",
+            "activeMutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c"
+          }
+        ],
+        "mutations": [
+          {
+            "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+            "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo lost response",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1ca340ac-0a4d-4adf-93ac-98f09963ca3c\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"858b16b1-3e20-4af2-b3c5-5fa2b9bc3254\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo lost response\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "e8d4f3a8e56295479cb7e6533a4fddb70cdc11d64cee41d1a819f414d7d0ecd5",
+            "commonBase": null,
+            "phase": "outcome_unknown",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865206123
+          },
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865205659,\"recordCount\":1}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "2",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"07091d29-56f8-4f8b-9894-24b08da3e586\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"2\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "2b649e6d5fbb744fca82ce2e97f7b0c80853c622744ff11b19d216b29e8f499f",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "A first edit",
+              "revision": "2",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "resolves": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205553,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "3",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "B deliberate proposal",
+                  "revision": "3",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865205757,\"recordCount\":1}"
+          }
+        ]
+      },
+      "lostId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c"
+    },
+    {
+      "step": 6,
+      "asserted": "same ID replay equals original terminal outcome; no extra effect",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "B deliberate proposal",
+          "revision": "3",
+          "deleted": false
+        },
+        {
+          "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+          "title": "Demo lost response",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "1",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+            "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo lost response",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1ca340ac-0a4d-4adf-93ac-98f09963ca3c\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"858b16b1-3e20-4af2-b3c5-5fa2b9bc3254\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo lost response\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "e8d4f3a8e56295479cb7e6533a4fddb70cdc11d64cee41d1a819f414d7d0ecd5",
+            "commonBase": null,
+            "phase": "acknowledged",
+            "attemptCount": 2,
+            "lastAttemptAt": 1793865206508,
+            "receipt": {
+              "outcome": {
+                "kind": "committed",
+                "record": {
+                  "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+                  "notes": "Saved proposal",
+                  "title": "Demo lost response",
+                  "status": "open",
+                  "deleted": false,
+                  "revision": "1"
+                },
+                "committedRevision": "1"
+              },
+              "replayed": true,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "protocolVersion": 1
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865206553,\"recordCount\":2}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "2",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"07091d29-56f8-4f8b-9894-24b08da3e586\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"2\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "2b649e6d5fbb744fca82ce2e97f7b0c80853c622744ff11b19d216b29e8f499f",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "A first edit",
+              "revision": "2",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "resolves": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205553,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "3",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "B deliberate proposal",
+                  "revision": "3",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865206680,\"recordCount\":2}"
+          }
+        ]
+      }
+    },
+    {
+      "step": 7,
+      "asserted": "new Chromium PID, same profile/identity/ID/hash/envelope/queued lock; no server receipt",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "B deliberate proposal",
+          "revision": "3",
+          "deleted": false
+        },
+        {
+          "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+          "title": "Demo lost response",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "1",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [
+          {
+            "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+            "version": 1,
+            "payload": {
+              "title": "Demo offline pending",
+              "status": "open",
+              "notes": "Saved proposal"
+            },
+            "baseRevision": null,
+            "commonBase": null,
+            "phase": "queued",
+            "activeMutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e"
+          }
+        ],
+        "mutations": [
+          {
+            "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+            "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo lost response",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1ca340ac-0a4d-4adf-93ac-98f09963ca3c\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"858b16b1-3e20-4af2-b3c5-5fa2b9bc3254\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo lost response\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "e8d4f3a8e56295479cb7e6533a4fddb70cdc11d64cee41d1a819f414d7d0ecd5",
+            "commonBase": null,
+            "phase": "acknowledged",
+            "attemptCount": 2,
+            "lastAttemptAt": 1793865206508,
+            "receipt": {
+              "outcome": {
+                "kind": "committed",
+                "record": {
+                  "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+                  "notes": "Saved proposal",
+                  "title": "Demo lost response",
+                  "status": "open",
+                  "deleted": false,
+                  "revision": "1"
+                },
+                "committedRevision": "1"
+              },
+              "replayed": true,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "protocolVersion": 1
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e",
+            "recordId": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo offline pending",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1f73c35d-e8c6-42d0-8040-021dc93bd95e\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo offline pending\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "95b63b57e82e2233a4484b8152f08ff2175ab90293dede612bc7a8d34c6aaaff",
+            "commonBase": null,
+            "phase": "queued"
+          },
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865206553,\"recordCount\":2}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "2",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"07091d29-56f8-4f8b-9894-24b08da3e586\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"2\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "2b649e6d5fbb744fca82ce2e97f7b0c80853c622744ff11b19d216b29e8f499f",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "A first edit",
+              "revision": "2",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "resolves": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205553,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "3",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "B deliberate proposal",
+                  "revision": "3",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865206680,\"recordCount\":2}"
+          }
+        ]
+      },
+      "browserPids": [
+        31856,
+        16776
+      ],
+      "offlineId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e"
+    },
+    {
+      "step": 8,
+      "asserted": "both caches equal authoritative three rows, including tombstone2; no pending work, seven receipts",
+      "server": [
+        {
+          "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+          "title": "Demo inspection",
+          "status": "open",
+          "notes": "B deliberate proposal",
+          "revision": "3",
+          "deleted": false
+        },
+        {
+          "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+          "title": "Demo lost response",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "2",
+          "deleted": true
+        },
+        {
+          "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+          "title": "Demo offline pending",
+          "status": "open",
+          "notes": "Saved proposal",
+          "revision": "1",
+          "deleted": false
+        }
+      ],
+      "clientA": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+            "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo lost response",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1ca340ac-0a4d-4adf-93ac-98f09963ca3c\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"858b16b1-3e20-4af2-b3c5-5fa2b9bc3254\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo lost response\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "e8d4f3a8e56295479cb7e6533a4fddb70cdc11d64cee41d1a819f414d7d0ecd5",
+            "commonBase": null,
+            "phase": "acknowledged",
+            "attemptCount": 2,
+            "lastAttemptAt": 1793865206508,
+            "receipt": {
+              "outcome": {
+                "kind": "committed",
+                "record": {
+                  "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+                  "notes": "Saved proposal",
+                  "title": "Demo lost response",
+                  "status": "open",
+                  "deleted": false,
+                  "revision": "1"
+                },
+                "committedRevision": "1"
+              },
+              "replayed": true,
+              "mutationId": "1ca340ac-0a4d-4adf-93ac-98f09963ca3c",
+              "protocolVersion": 1
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e",
+            "recordId": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+              "operation": "create",
+              "baseRevision": null,
+              "payload": {
+                "title": "Demo offline pending",
+                "status": "open",
+                "notes": "Saved proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"1f73c35d-e8c6-42d0-8040-021dc93bd95e\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Demo offline pending\",\"status\":\"open\",\"notes\":\"Saved proposal\"}}",
+            "fingerprint": "95b63b57e82e2233a4484b8152f08ff2175ab90293dede612bc7a8d34c6aaaff",
+            "commonBase": null,
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865208330,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "1f73c35d-e8c6-42d0-8040-021dc93bd95e",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "1",
+                "record": {
+                  "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+                  "title": "Demo offline pending",
+                  "status": "open",
+                  "notes": "Saved proposal",
+                  "revision": "1",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "clientId": "909fecba-83ae-4452-8b69-1a670c2708c4",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "A first edit"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cb0c43b5-d56b-4d38-90a3-0843e06d4f04\",\"clientId\":\"909fecba-83ae-4452-8b69-1a670c2708c4\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"A first edit\"}}",
+            "fingerprint": "503d3b1dd118923967752ff6eeeaccf6e39e5432b6710cf46222625800fa2668",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865204728,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cb0c43b5-d56b-4d38-90a3-0843e06d4f04",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "2",
+            "deleted": true
+          },
+          {
+            "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+            "title": "Demo offline pending",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "909fecba-83ae-4452-8b69-1a670c2708c4"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865208372,\"recordCount\":3}"
+          }
+        ]
+      },
+      "clientB": {
+        "work": [],
+        "mutations": [
+          {
+            "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "2",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"07091d29-56f8-4f8b-9894-24b08da3e586\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"2\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "2b649e6d5fbb744fca82ce2e97f7b0c80853c622744ff11b19d216b29e8f499f",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "A first edit",
+              "revision": "2",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "resolves": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205553,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "07091d29-56f8-4f8b-9894-24b08da3e586",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "3",
+                "record": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "B deliberate proposal",
+                  "revision": "3",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "9ff6ed73-cc0a-4f34-8b55-f8e00326b606",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "operation": "delete",
+              "baseRevision": "1",
+              "payload": null
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"9ff6ed73-cc0a-4f34-8b55-f8e00326b606\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"858b16b1-3e20-4af2-b3c5-5fa2b9bc3254\",\"operation\":\"delete\",\"baseRevision\":\"1\",\"payload\":null}",
+            "fingerprint": "2db5535aa569fd866cb8a1cfb5c7f3ed3a176b939bce1e5ca3e4578f5ad4fd3a",
+            "mutationId": "9ff6ed73-cc0a-4f34-8b55-f8e00326b606",
+            "recordId": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "commonBase": {
+              "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+              "title": "Demo lost response",
+              "status": "open",
+              "notes": "Saved proposal",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "acknowledged",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865208155,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "9ff6ed73-cc0a-4f34-8b55-f8e00326b606",
+              "replayed": false,
+              "outcome": {
+                "kind": "committed",
+                "committedRevision": "2",
+                "record": {
+                  "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+                  "title": "Demo lost response",
+                  "status": "open",
+                  "notes": "Saved proposal",
+                  "revision": "2",
+                  "deleted": true
+                }
+              }
+            },
+            "lastError": ""
+          },
+          {
+            "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+            "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "envelope": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "clientId": "11dc6560-5fb2-4e88-8a11-92ab5156656d",
+              "recordId": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "operation": "update",
+              "baseRevision": "1",
+              "payload": {
+                "title": "Demo inspection",
+                "status": "open",
+                "notes": "B deliberate proposal"
+              }
+            },
+            "canonical": "{\"protocolVersion\":1,\"mutationId\":\"cfa2c333-d807-4173-bc83-6caf4c859a34\",\"clientId\":\"11dc6560-5fb2-4e88-8a11-92ab5156656d\",\"recordId\":\"695b411c-0fd9-4c13-ad15-5b6cfef80249\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Demo inspection\",\"status\":\"open\",\"notes\":\"B deliberate proposal\"}}",
+            "fingerprint": "8e12ea9a4fd0141d27ec88bf01e1e04ac3bb499f64a48042b38f660b8501ce92",
+            "commonBase": {
+              "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+              "title": "Demo inspection",
+              "status": "open",
+              "notes": "Base",
+              "revision": "1",
+              "deleted": false
+            },
+            "phase": "terminal_conflict",
+            "attemptCount": 1,
+            "lastAttemptAt": 1793865205113,
+            "receipt": {
+              "protocolVersion": 1,
+              "mutationId": "cfa2c333-d807-4173-bc83-6caf4c859a34",
+              "replayed": false,
+              "outcome": {
+                "kind": "conflict",
+                "reason": "stale_revision",
+                "expectedRevision": "1",
+                "remoteAtDecision": {
+                  "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+                  "title": "Demo inspection",
+                  "status": "open",
+                  "notes": "A first edit",
+                  "revision": "2",
+                  "deleted": false
+                }
+              }
+            },
+            "lastError": ""
+          }
+        ],
+        "clean": [
+          {
+            "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+            "title": "Demo inspection",
+            "status": "open",
+            "notes": "B deliberate proposal",
+            "revision": "3",
+            "deleted": false
+          },
+          {
+            "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+            "title": "Demo lost response",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "2",
+            "deleted": true
+          },
+          {
+            "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+            "title": "Demo offline pending",
+            "status": "open",
+            "notes": "Saved proposal",
+            "revision": "1",
+            "deleted": false
+          }
+        ],
+        "metadata": [
+          {
+            "key": "clientId",
+            "value": "11dc6560-5fb2-4e88-8a11-92ab5156656d"
+          },
+          {
+            "key": "lastSnapshot",
+            "value": "{\"completedAt\":1793865208515,\"recordCount\":3}"
+          }
+        ]
+      },
+      "receiptCount": 7
+    }
+  ],
+  "finalServer": [
+    {
+      "id": "695b411c-0fd9-4c13-ad15-5b6cfef80249",
+      "title": "Demo inspection",
+      "status": "open",
+      "notes": "B deliberate proposal",
+      "revision": "3",
+      "deleted": false
+    },
+    {
+      "id": "858b16b1-3e20-4af2-b3c5-5fa2b9bc3254",
+      "title": "Demo lost response",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "2",
+      "deleted": true
+    },
+    {
+      "id": "ed1b1d02-d8ed-40e3-80bc-ceabbc07f4b2",
+      "title": "Demo offline pending",
+      "status": "open",
+      "notes": "Saved proposal",
+      "revision": "1",
+      "deleted": false
+    }
+  ],
+  "receiptCount": 7,
+  "limit": "Graceful browser restart; transport fault is intercepted response loss, frontend reachable; conditional final equality under quiescence"
+}

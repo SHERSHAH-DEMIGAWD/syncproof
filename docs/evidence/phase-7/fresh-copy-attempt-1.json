@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "status": "FAIL",
+  "results": [
+    {
+      "command": "npm ci --ignore-scripts --offline",
+      "exitCode": 1,
+      "elapsedMs": 8190
+    }
+  ],
+  "error": "Fresh command failed: npm ci --ignore-scripts --offline",
+  "cleanup": true,
+  "scope": "Fresh local source copy, independent npm installation from cached lockfile, Windows only; package lifecycle scripts disabled; backend/client builds, strict checks,18 contract cases and real isolated PostgreSQL HTTP smoke. Full regressions run separately in working workspace.",
+  "notEstablished": [
+    "Remote clone/network install on another machine",
+    "Other operating systems",
+    "Uncached package-registry availability"
+  ]
+}

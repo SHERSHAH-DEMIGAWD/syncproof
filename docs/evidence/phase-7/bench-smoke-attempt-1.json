@@ -1,0 +1,91 @@
+{
+  "status": "FAIL",
+  "date": "2026-11-05",
+  "recordedAt": "2026-11-05T07:57:14.246Z",
+  "config": {
+    "seed": 20261105,
+    "smoke": true,
+    "repetitions": 1,
+    "httpSamples": 5,
+    "installSamples": 3,
+    "reconcileSamples": 1,
+    "pullSamples": 1,
+    "queueSamples": 5,
+    "raceRounds": 2,
+    "warmupHttp": 1,
+    "warmupInstall": 1,
+    "counts": [
+      100
+    ],
+    "queues": [
+      10
+    ],
+    "concurrency": [
+      1,
+      2
+    ],
+    "deadlineMinutes": 12
+  },
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "os": "10.0.26200",
+    "arch": "x64",
+    "cpuModel": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M           ",
+    "logicalCpus": 24,
+    "totalMemoryBytes": 24823836672,
+    "hostMetadata": {
+      "collection": "Windows CIM/Storage read-only metadata",
+      "disks": {
+        "MediaType": "SSD",
+        "BusType": "NVMe",
+        "Size": 512110190592
+      },
+      "cpu": {
+        "Name": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M           ",
+        "NumberOfCores": 12,
+        "NumberOfLogicalProcessors": 24
+      },
+      "memory": {
+        "TotalPhysicalMemory": 24823836672
+      }
+    },
+    "postgres": {
+      "version": "PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+      "encoding": "UTF8",
+      "isolation": "read committed",
+      "fsync": "on",
+      "synchronous_commit": "on",
+      "full_page_writes": "on"
+    }
+  },
+  "boundaries": {
+    "http": "Node performance.now: before fetch through complete response arrayBuffer; includes HTTP/server validation/hash/SQL commit/serialization; excludes request preparation and client JSON.parse",
+    "snapshotInstall": "Chromium performance.now around actual LocalStore.applySnapshot: validation+known-row scan+atomic IndexedDB puts; no network/DOM",
+    "validation": "Chromium performance.now around actual validateSnapshot only",
+    "queue": "Chromium performance.now around actual LocalStore.pending only",
+    "foreground": "Chromium performance.now around PushController.reviewLatest or synchronize through final local commit; includes Vite proxy/HTTP and IndexedDB, excludes fixture/save/freeze/first unknown commit preparation",
+    "growth": "Actual pg_total_relation_size/table/index bytes; includes heap/TOAST/index allocation and dead tuples, no VACUUM or future extrapolation"
+  },
+  "samples": [],
+  "batches": [],
+  "fixtures": [],
+  "growth": [],
+  "plans": [],
+  "errors": [
+    {
+      "message": "browserType.launch: Executable doesn't exist at <USER_HOME>\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1248\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+      "name": "Error"
+    }
+  ],
+  "summary": [],
+  "finishedAt": "2026-11-05T07:57:14.526Z",
+  "environmentNotes": [
+    "Warm steady-state samples; server/browser startup and seed setup excluded",
+    "No cold-start performance, mobile/WAN, production load or causal architecture comparison",
+    "All processes colocated, caches warm, default durability, background OS workloads uncontrolled",
+    "IndexedDB install reuses already-known clean records after warmup; validation primed immediately before combined install",
+    "Same-record race clock/throughput boundaries differ from isolated request timings; do not compare as equal workloads",
+    "One precommitted unknown per foreground cycle; fixture commit intentionally outside timed interval; original same-ID replay inside"
+  ]
+}

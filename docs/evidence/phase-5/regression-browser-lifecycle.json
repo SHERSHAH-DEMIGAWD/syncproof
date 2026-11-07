@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "browser": "156.0.8078.4",
+  "browserPids": [
+    44148,
+    36880
+  ],
+  "close": "graceful full persistent browser context/process close",
+  "sameUserDataDir": true,
+  "profileDirectory": "<USER_HOME>\\OneDrive\\Documents\\ChatGPT\\SYNCPROOF\\.local\\profiles\\phase2-U2YbLC",
+  "profileRemovedAfterTest": true,
+  "durabilityHint": "default",
+  "canonicalBefore": "{\"protocolVersion\":1,\"mutationId\":\"c6643911-a22a-4922-8d70-5d2beb48438b\",\"clientId\":\"b69aa6ca-0efd-4945-beec-ee341a65911c\",\"recordId\":\"317fdf27-e683-49bd-920c-4055b552a995\",\"operation\":\"create\",\"baseRevision\":null,\"payload\":{\"title\":\"Restart pump\",\"status\":\"open\",\"notes\":\"Retain this offline proposal\"}}",
+  "canonicalAfterIdentical": true,
+  "freshProfileEmpty": true,
+  "limits": "Frontend shell reachable on relaunch; no forced kill, power loss, eviction, OS crash or backend sync tested"
+}

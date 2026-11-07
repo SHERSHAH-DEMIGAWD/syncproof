@@ -1,0 +1,3 @@
+# Preserve retained evidence and source bytes on every platform.
+* -text
+*.pdf binary

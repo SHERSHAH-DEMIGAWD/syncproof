@@ -1,0 +1,17 @@
+
+> syncproof@0.1.0 test:resolution
+> node --test dist/tests/resolution.test.js
+
+✔ keep server requires confirmation, retains exact receipt and cannot discard pending resolution (49.7397ms)
+✔ new resolution immutable ID/base/provenance, repeated actions and edit after queue rejected (33.1329ms)
+✔ atomic freeze abort preserves resolution draft/evidence; invalid candidate and changed remote rejected (18.746ms)
+✔ delete conflict needs fresh destructive confirmation; newer tombstone cannot restore or increment (13.742ms)
+✔ unsafe resolution revision and corrupt frozen hash block before any transport; legacy conflict retained (17.6673ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 502.229

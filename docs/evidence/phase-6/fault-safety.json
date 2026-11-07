@@ -1,0 +1,10 @@
+{
+  "scenario": "fault-safety",
+  "status": "PASS",
+  "runId": "phase6-fe7576e9-d817-4b7d-9e88-5455cb747cdc",
+  "recordedAt": "2026-11-04T16:53:42.484Z",
+  "test": "normal HTTP runtime has no fault routes and ignores test-control request input",
+  "normalFaultRoutes": 404,
+  "testHeaderIgnored": true,
+  "productionProcessGuard": "tests/process.test.ts negative NODE_ENV/IPC test rerun separately"
+}

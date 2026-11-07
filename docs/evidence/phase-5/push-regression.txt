@@ -1,0 +1,21 @@
+
+> syncproof@0.1.0 test:push
+> node --test dist/tests/push.test.js
+
+✔ fetch transport validates status/body/identity and exact durable canonical request (68.1676ms)
+✔ classification separates blocked collision/admission from 429/5xx/unknown errors (18.1804ms)
+✔ timeout, rejected fetch and unreadable body retain unknown outcome (22.6204ms)
+✔ five attempts use durable marker, unchanged bytes, capped fake-clock backoff; next manual retry safe (54.3368ms)
+✔ overlapping triggers share one foreground operation and mutation identity (10.8905ms)
+✔ local acknowledgment abort retains unknown and all stores recover by same-ID replay (15.938ms)
+✔ blocked requests retain unknown identity; another click cannot invent a repair mutation (24.245ms)
+✔ Retry-After beyond cap persists a not-before time instead of waiting or spinning (17.6084ms)
+✔ multi-record interruption preserves partial success and recovers unknown before never-attempted work (37.4198ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 657.481

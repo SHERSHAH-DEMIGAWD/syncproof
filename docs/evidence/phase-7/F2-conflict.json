@@ -1,0 +1,84 @@
+{
+  "scenario": "F2-conflict",
+  "status": "PASS",
+  "runId": "phase7-192835c3-297e-4048-ae59-de5a503712ed",
+  "recordedAt": "2026-11-05T07:52:48.841Z",
+  "test": "F2 HTTP concurrent conflict duplicates arbitrate one receipt and preserve identity",
+  "layer": "real PostgreSQL + HTTP independent connections",
+  "initialRevision": "2",
+  "mutationId": "456e8f0c-7f82-4aa1-92ac-43cebd8d003e",
+  "canonical": "{\"protocolVersion\":1,\"mutationId\":\"456e8f0c-7f82-4aa1-92ac-43cebd8d003e\",\"clientId\":\"a10c1e39-3919-49d2-b903-cd4a25588e84\",\"recordId\":\"d745d95b-8027-4fac-be97-d22b056d3560\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Duplicate candidate\",\"status\":\"open\",\"notes\":\"Exact identity\"}}",
+  "fingerprint": "66e841823bf633889ce6fc7c2c0c1ed75b1b28847d2c43a574d607caa6be241c",
+  "fault": "hold receipt owner, observe actual pg_blocking_pids, release",
+  "ownerPid": 42432,
+  "waiterPid": 11200,
+  "observed": {
+    "protocolVersion": 1,
+    "mutationId": "456e8f0c-7f82-4aa1-92ac-43cebd8d003e",
+    "replayed": false,
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "d745d95b-8027-4fac-be97-d22b056d3560",
+        "title": "Pump inspection",
+        "status": "open",
+        "notes": "Synthetic test fixture",
+        "revision": "2",
+        "deleted": false
+      }
+    }
+  },
+  "duplicate": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "d745d95b-8027-4fac-be97-d22b056d3560",
+        "notes": "Synthetic test fixture",
+        "title": "Pump inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": true,
+    "mutationId": "456e8f0c-7f82-4aa1-92ac-43cebd8d003e",
+    "protocolVersion": 1
+  },
+  "serial": {
+    "outcome": {
+      "kind": "conflict",
+      "reason": "stale_revision",
+      "expectedRevision": "1",
+      "remoteAtDecision": {
+        "id": "d745d95b-8027-4fac-be97-d22b056d3560",
+        "notes": "Synthetic test fixture",
+        "title": "Pump inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      }
+    },
+    "replayed": true,
+    "mutationId": "456e8f0c-7f82-4aa1-92ac-43cebd8d003e",
+    "protocolVersion": 1
+  },
+  "collision": {
+    "protocolVersion": 1,
+    "mutationId": "456e8f0c-7f82-4aa1-92ac-43cebd8d003e",
+    "error": {
+      "code": "mutation_identity_collision"
+    }
+  },
+  "finalRevision": "2",
+  "receiptCount": 1,
+  "invariants": [
+    "INV-IDEMP-01",
+    "INV-ATOMIC-01",
+    "INV-REV-01"
+  ],
+  "limit": "No delivery guarantee; ownership rollback separately covered by existing integration regression."
+}

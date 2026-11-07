@@ -1,0 +1,236 @@
+
+> syncproof@0.1.0 test:browser
+> playwright test tests/browser/snapshot.spec.ts
+
+[WebServer] (node:8548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:7868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\browser\snapshot.spec.ts:37:1 › two independent clients pull, conflict, preserve draft/queue, observe tombstone and simulated weeks (17ms)
+(node:6600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\browser\snapshot.spec.ts:44:1 › real endpoint includes tombstones, current revisions, stable order and empty metadata (23ms)
+(node:20388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\browser\snapshot.spec.ts:46:1 › lost acknowledgment with newer server write recovers original receipt before latest pull (22ms)
+(node:18348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  4 tests\browser\snapshot.spec.ts:49:1 › delayed older HTTP snapshot and invalid HTTP responses cannot regress state; retry recovers (20ms)
+(node:35472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  5 tests\browser\snapshot.spec.ts:54:1 › three isolated clients converge over independent records while a saved draft stays local (17ms)
+(node:23872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  6 tests\browser\snapshot.spec.ts:58:1 › single SELECT snapshot stays coherent across an actual concurrent atomic commit (17ms)
+(node:31192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  7 tests\browser\snapshot.spec.ts:63:1 › native snapshot transaction abort and HTTP outage preserve all local state and retry recovers (23ms)
+
+
+  1) tests\browser\snapshot.spec.ts:37:1 › two independent clients pull, conflict, preserve draft/queue, observe tombstone and simulated weeks 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-two-independent-c-c0385-mbstone-and-simulated-weeks\error-context.md
+
+  2) tests\browser\snapshot.spec.ts:44:1 › real endpoint includes tombstones, current revisions, stable order and empty metadata 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-real-endpoint-inc-3d934-le-order-and-empty-metadata\error-context.md
+
+  3) tests\browser\snapshot.spec.ts:46:1 › lost acknowledgment with newer server write recovers original receipt before latest pull 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-lost-acknowledgme-286d3--receipt-before-latest-pull\error-context.md
+
+  4) tests\browser\snapshot.spec.ts:49:1 › delayed older HTTP snapshot and invalid HTTP responses cannot regress state; retry recovers 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-delayed-older-HTT-7e1ef-egress-state-retry-recovers\error-context.md
+
+  5) tests\browser\snapshot.spec.ts:54:1 › three isolated clients converge over independent records while a saved draft stays local 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-three-isolated-cl-adb33-e-a-saved-draft-stays-local\error-context.md
+
+  6) tests\browser\snapshot.spec.ts:58:1 › single SELECT snapshot stays coherent across an actual concurrent atomic commit 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-single-SELECT-sna-1df99-al-concurrent-atomic-commit\error-context.md
+
+  7) tests\browser\snapshot.spec.ts:63:1 › native snapshot transaction abort and HTTP outage preserve all local state and retry recovers 
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      18 | test.beforeEach(async()=>{
+      19 |   const url=process.env.TEST_DATABASE_URL;if(!url)throw Error('TEST_DATABASE_URL required for real browser/PostgreSQL integration');
+    > 20 |   schema='syncproof_push_'+randomUUID().replaceAll('-','');admin=createPool(url);await admin.query(`CREATE SCHEMA "${schema}"`);pool=createPool(url,schema);await migrate(pool);
+         |                                                                                  ^
+      21 |   server=createApp(pool,{allowedOrigin:'http://127.0.0.1:5174'}).listen(3000,'127.0.0.1');await once(server,'listening');
+      22 | });
+      23 | test.afterEach(async()=>{
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:20:82
+
+    Error: connect ECONNREFUSED 127.0.0.1:55432
+
+      24 |   if(server){server.closeAllConnections();await new Promise<void>(yes=>server.close(()=>yes()));}
+      25 |   if(pool)await pool.end();
+    > 26 |   if(admin){if(!/^syncproof_push_[a-f0-9]{32}$/.test(schema))throw Error('Unsafe test schema cleanup');await admin.query(`DROP SCHEMA "${schema}" CASCADE`);await admin.end();}
+         |                                                                                                        ^
+      27 | });
+      28 | async function list(page:Page):Promise<Mutation[]> {return page.evaluate(async()=>{const p='/lib/storage.ts';const {LocalStore}=await import(p);const db=new LocalStore();try{return await db.mutations.toArray();}finally{db.close();}});}
+      29 | async function queue(page:Page,title='Push pump 🧪') {
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\node_modules\pg-pool\index.js:45:11
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\snapshot.spec.ts:26:104
+
+    Error Context: .local\browser-results\snapshot-native-snapshot-t-7d12d-al-state-and-retry-recovers\error-context.md
+
+  7 failed
+    tests\browser\snapshot.spec.ts:37:1 › two independent clients pull, conflict, preserve draft/queue, observe tombstone and simulated weeks 
+    tests\browser\snapshot.spec.ts:44:1 › real endpoint includes tombstones, current revisions, stable order and empty metadata 
+    tests\browser\snapshot.spec.ts:46:1 › lost acknowledgment with newer server write recovers original receipt before latest pull 
+    tests\browser\snapshot.spec.ts:49:1 › delayed older HTTP snapshot and invalid HTTP responses cannot regress state; retry recovers 
+    tests\browser\snapshot.spec.ts:54:1 › three isolated clients converge over independent records while a saved draft stays local 
+    tests\browser\snapshot.spec.ts:58:1 › single SELECT snapshot stays coherent across an actual concurrent atomic commit 
+    tests\browser\snapshot.spec.ts:63:1 › native snapshot transaction abort and HTTP outage preserve all local state and retry recovers 

@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "localLinksChecked": 372,
+  "phase4AcceptancePass": 22,
+  "sourceHashesRecorded": 10,
+  "finalCounts": {
+    "snapshotLocal": 4,
+    "snapshotBrowser": 7,
+    "priorBrowser": 15,
+    "backend": 45,
+    "local": 13,
+    "push": 9
+  },
+  "errors": []
+}

@@ -1,0 +1,148 @@
+{
+  "scenario": "F1",
+  "status": "PASS",
+  "runId": "phase7-192835c3-297e-4048-ae59-de5a503712ed",
+  "recordedAt": "2026-11-05T07:52:46.338Z",
+  "test": "F1 confirmed commit loss replays original ID before newer snapshot and atomic acknowledgment",
+  "initialRevision": "1",
+  "fault": "real commit2 and receipt verified before simulated response abort; reload stops foreground retries",
+  "mutation": {
+    "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+    "recordId": "6ee05161-4370-40be-85db-c2651cf58a7e",
+    "envelope": {
+      "protocolVersion": 1,
+      "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+      "clientId": "55c34c78-7fab-494d-8dd1-eb6592036b53",
+      "recordId": "6ee05161-4370-40be-85db-c2651cf58a7e",
+      "operation": "update",
+      "baseRevision": "1",
+      "payload": {
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "Lost update"
+      }
+    },
+    "canonical": "{\"protocolVersion\":1,\"mutationId\":\"ff5741c3-89ad-4589-a878-6a5574330368\",\"clientId\":\"55c34c78-7fab-494d-8dd1-eb6592036b53\",\"recordId\":\"6ee05161-4370-40be-85db-c2651cf58a7e\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Audit inspection\",\"status\":\"open\",\"notes\":\"Lost update\"}}",
+    "fingerprint": "2aa76e63bcd18d8c91d797a71a1539249cf6f0503493e5ae518c82e7107777cf",
+    "commonBase": {
+      "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Base",
+      "revision": "1",
+      "deleted": false
+    },
+    "phase": "queued"
+  },
+  "originalReceipt": {
+    "outcome": {
+      "kind": "committed",
+      "record": {
+        "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+        "notes": "Lost update",
+        "title": "Audit inspection",
+        "status": "open",
+        "deleted": false,
+        "revision": "2"
+      },
+      "committedRevision": "2"
+    },
+    "replayed": false,
+    "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+    "protocolVersion": 1
+  },
+  "recoveryRequestOrder": [
+    "POST /api/mutations",
+    "GET /api/inspections",
+    "GET /api/inspections"
+  ],
+  "client": {
+    "work": [],
+    "mutations": [
+      {
+        "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+        "recordId": "6ee05161-4370-40be-85db-c2651cf58a7e",
+        "envelope": {
+          "protocolVersion": 1,
+          "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+          "clientId": "55c34c78-7fab-494d-8dd1-eb6592036b53",
+          "recordId": "6ee05161-4370-40be-85db-c2651cf58a7e",
+          "operation": "update",
+          "baseRevision": "1",
+          "payload": {
+            "title": "Audit inspection",
+            "status": "open",
+            "notes": "Lost update"
+          }
+        },
+        "canonical": "{\"protocolVersion\":1,\"mutationId\":\"ff5741c3-89ad-4589-a878-6a5574330368\",\"clientId\":\"55c34c78-7fab-494d-8dd1-eb6592036b53\",\"recordId\":\"6ee05161-4370-40be-85db-c2651cf58a7e\",\"operation\":\"update\",\"baseRevision\":\"1\",\"payload\":{\"title\":\"Audit inspection\",\"status\":\"open\",\"notes\":\"Lost update\"}}",
+        "fingerprint": "2aa76e63bcd18d8c91d797a71a1539249cf6f0503493e5ae518c82e7107777cf",
+        "commonBase": {
+          "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+          "title": "Audit inspection",
+          "status": "open",
+          "notes": "Base",
+          "revision": "1",
+          "deleted": false
+        },
+        "phase": "acknowledged",
+        "attemptCount": 2,
+        "lastAttemptAt": 1793865166221,
+        "receipt": {
+          "outcome": {
+            "kind": "committed",
+            "record": {
+              "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+              "notes": "Lost update",
+              "title": "Audit inspection",
+              "status": "open",
+              "deleted": false,
+              "revision": "2"
+            },
+            "committedRevision": "2"
+          },
+          "replayed": true,
+          "mutationId": "ff5741c3-89ad-4589-a878-6a5574330368",
+          "protocolVersion": 1
+        },
+        "lastError": ""
+      }
+    ],
+    "clean": [
+      {
+        "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+        "title": "Audit inspection",
+        "status": "open",
+        "notes": "Other authorized writer",
+        "revision": "3",
+        "deleted": false
+      }
+    ],
+    "metadata": [
+      {
+        "key": "clientId",
+        "value": "55c34c78-7fab-494d-8dd1-eb6592036b53"
+      },
+      {
+        "key": "lastSnapshot",
+        "value": "{\"completedAt\":1793865166276,\"recordCount\":1}"
+      }
+    ]
+  },
+  "server": [
+    {
+      "id": "6ee05161-4370-40be-85db-c2651cf58a7e",
+      "title": "Audit inspection",
+      "status": "open",
+      "notes": "Other authorized writer",
+      "revision": "3",
+      "deleted": false
+    }
+  ],
+  "invariants": [
+    "INV-UNKNOWN-01",
+    "INV-IDEMP-01",
+    "INV-ACKCLIENT-01"
+  ],
+  "limit": "Response interception and graceful page reload, not actual network partition or power loss"
+}

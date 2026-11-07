@@ -1,0 +1,85 @@
+
+> syncproof@0.1.0 test
+> npm run build && npm run test:unit && npm run test:db
+
+
+> syncproof@0.1.0 build
+> tsc -p tsconfig.json
+
+
+> syncproof@0.1.0 test:unit
+> node --test dist/tests/contracts.test.js
+
+✔ canonical create has prescribed field order and SHA-256 of UTF-8 bytes (4.08ms)
+✔ different member order, whitespace and escaped equivalent scalars have one canonical identity (0.8401ms)
+✔ composed and decomposed Unicode, whitespace and business differences remain distinct (2.1051ms)
+✔ every immutable identity field participates in the canonical fingerprint (1.2404ms)
+✔ duplicate envelope member names are rejected before JSON can discard a value (1.263ms)
+✔ duplicate escaped member aliases and nested payload duplicates are rejected (0.3821ms)
+✔ malformed JSON syntax, invalid escapes, controls, trailing tokens and trailing commas are rejected (0.8329ms)
+✔ JSON primitives, arrays and non-object payloads are not envelopes (0.9192ms)
+✔ envelope and payload fields are exact, with no defaults or unknown stripping (1.1379ms)
+✔ protocol version is numeric 1 and never coerced (0.7514ms)
+✔ UUID identities must be canonical lowercase hyphenated strings (0.6569ms)
+✔ create requires null base; update and delete require positive BIGINT revision strings (1.2386ms)
+✔ delete requires explicit null payload and unknown operations are rejected (0.4226ms)
+✔ business field validation rejects wrong types and unsupported statuses (1.3371ms)
+✔ title requires a non-whitespace scalar and no input trimming occurs (0.8649ms)
+✔ length limits count Unicode scalars rather than UTF-16 code units (6.5067ms)
+✔ unpaired surrogates are rejected while valid supplementary pairs round-trip (1.1167ms)
+✔ U+0000 is rejected before PostgreSQL text admission, while other escaped controls remain valid (0.7281ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 185.8224
+
+> syncproof@0.1.0 test:db
+> node --env-file-if-exists=.env --test --test-concurrency=1 dist/tests/integration.test.js dist/tests/process.test.js
+
+.env not found. Continuing without it.
+.env not found. Continuing without it.
+✔ environment: real PostgreSQL records durability and isolation settings (224.6086ms)
+ℹ {"database":"PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit","settings":[{"name":"default_transaction_isolation","setting":"read committed"},{"name":"fsync","setting":"on"},{"name":"full_page_writes","setting":"on"},{"name":"synchronous_commit","setting":"on"}]}
+✔ create stores revision 1 and a durable complete success receipt (193.7729ms)
+✔ update and sequential identical replay advance exactly once; equivalent JSON replays (201.7213ms)
+✔ no-change update still advances revision exactly once (185.0189ms)
+✔ same ID rejects each changed immutable envelope field with no new effect (204.2135ms)
+✔ F2 concurrent same-ID requests block on independent PostgreSQL connections then replay (257.7223ms)
+ℹ Observed duplicate backend 41512 blocked by owner 40436; one receipt and revision 2.
+✔ F2 waiting duplicate becomes processor when initial claim owner rolls back (246.7534ms)
+✔ F2 concurrent changed-envelope contender collides after owner commits (251.3297ms)
+✔ F8 distinct same-base mutations serialize on row; winner index 0 (255.9501ms)
+✔ F8 distinct same-base mutations serialize on row; winner index 1 (259.966ms)
+✔ F3 reversed arrival order accepts delivered-first request and records stale loser (261.6668ms)
+✔ F7 terminal stale conflict replays original snapshot after further legitimate update (228.7564ms)
+✔ historical success replay returns old revision without rolling newest authoritative state back (208.8413ms)
+✔ delete retains tombstone; identical delete replays; new matching/stale deletes and update/create cannot resurrect (300.0759ms)
+✔ missing update/delete yield replayable record_missing receipts without creating records (193.8353ms)
+✔ concurrent distinct-ID creates on one absent record yield one record and one record_exists receipt (267.0475ms)
+✔ F6 simulated pre-commit exception rolls back provisional row and receipt; retry executes safely (187.7373ms)
+✔ F1/F6 controlled after-commit exception gives transient HTTP failure but replay is original success (307.4308ms)
+ℹ Controlled exception after COMMIT; not a process restart or socket-drop simulation. Real restart covered separately.
+✔ database enforces positive revisions/status constraints and terminal receipt immutability (469.7464ms)
+✔ revision overflow is a real database error, rolls back receipt, and is not a terminal conflict (312.89ms)
+✔ database rejects COMMIT of incomplete receipt claims rather than leaving permanent pending rows (305.543ms)
+✔ parallel different-record writes progress while an unrelated transaction holds its row lock (295.6845ms)
+✔ HTTP rejects invalid/malformed/media/oversized input before receipt admission; no read API added early (223.4032ms)
+✔ HTTP rejects invalid UTF8/BOM/charset/encoding/origin before admission; normal app exposes no fault controls (223.6185ms)
+.env not found. Continuing without it.
+✔ F6 ACTUAL Node termination/restart at after_record_write_before_commit preserves transaction/replay semantics (1697.7246ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_record_write_before_commit","oldPid":7488,"newPid":28044,"postgresBackendAtCheckpoint":36040,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_8a3d7bf19a4b4f019a84973a839b3d53","replayed":false,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+✔ F6 ACTUAL Node termination/restart at after_commit_before_response preserves transaction/replay semantics (1439.8108ms)
+ℹ {"actualNodeRestart":true,"controlPoint":"after_commit_before_response","oldPid":3436,"newPid":13240,"postgresBackendAtCheckpoint":19444,"oldProcessExit":{"code":null,"signal":"SIGKILL"},"responseLost":true,"sameSchema":"syncproof_test_da2496b53f454f3c905ae0a3c36cb60a","replayed":true,"finalRevision":"1","receiptCount":1,"limitation":"Node process lifecycle only; PostgreSQL/OS/browser were not restarted."}
+✔ test process checkpoint controls refuse startup without both test environment and parent IPC (1207.776ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11192.2066

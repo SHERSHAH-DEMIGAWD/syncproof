@@ -1,0 +1,113 @@
+
+> syncproof@0.1.0 test:browser
+> playwright test tests/browser/resolution.spec.ts
+
+[WebServer] (node:8884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:34572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\resolution.spec.ts:46:1 › inspector and confirmed keep-server preserve audit; cancel creates no server mutation (3.3s)
+  x  2 tests\browser\resolution.spec.ts:47:1 › new reapply and manual combine use new IDs; second conflict preserves both histories (40.2s)
+(node:24136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\browser\resolution.spec.ts:48:1 › F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID (7.2s)
+(node:41252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 tests\browser\resolution.spec.ts:50:1 › resolution acknowledgment native transaction abort preserves unknown and retries identical ID (2.8s)
+  ok 5 tests\browser\resolution.spec.ts:51:1 › update against retained tombstone disables restore after simulated weeks and keeps deletion (2.3s)
+
+
+  1) tests\browser\resolution.spec.ts:47:1 › new reapply and manual combine use new IDs; second conflict preserves both histories 
+
+    Test timeout of 40000ms exceeded.
+
+    Error: locator.click: Test timeout of 40000ms exceeded.
+    Browser logs:
+
+    <launching> <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\.local\browsers\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,AvoidCorsURLLoaderRestartOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=<USER_HOME>\AppData\Local\Temp\playwright_chromiumdev_profile-9ykelS --remote-debugging-pipe --no-startup-window
+    <launched> pid=20956
+    [pid=20956][err] [1104/213130.462:INFO:CONSOLE:946] "[vite] connecting...", source: http://127.0.0.1:5174/@vite/client (946)
+    [pid=20956][err] [1104/213130.521:INFO:CONSOLE:15994] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5174/@fs/<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/.vite/deps/react-dom_client.js?v=e159766f (15994)
+    [pid=20956][err] [1104/213130.624:INFO:CONSOLE:1055] "[vite] connected.", source: http://127.0.0.1:5174/@vite/client (1055)
+    [pid=20956][err] [1104/213130.978:INFO:CONSOLE:946] "[vite] connecting...", source: http://127.0.0.1:5174/@vite/client (946)
+    [pid=20956][err] [1104/213131.081:INFO:CONSOLE:15994] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5174/@fs/<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/.vite/deps/react-dom_client.js?v=e159766f (15994)
+    [pid=20956][err] [1104/213131.195:INFO:CONSOLE:1055] "[vite] connected.", source: http://127.0.0.1:5174/@vite/client (1055)
+    [pid=20956][err] [1104/213133.264:INFO:CONSOLE:946] "[vite] connecting...", source: http://127.0.0.1:5174/@vite/client (946)
+    [pid=20956][err] [1104/213133.273:INFO:CONSOLE:1055] "[vite] connected.", source: http://127.0.0.1:5174/@vite/client (1055)
+    [pid=20956][err] [1104/213133.351:INFO:CONSOLE:15994] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5174/@fs/<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/.vite/deps/react-dom_client.js?v=e159766f (15994)
+    [pid=20956][err] [1104/213133.648:INFO:CONSOLE:946] "[vite] connecting...", source: http://127.0.0.1:5174/@vite/client (946)
+    [pid=20956][err] [1104/213133.667:INFO:CONSOLE:1055] "[vite] connected.", source: http://127.0.0.1:5174/@vite/client (1055)
+    [pid=20956][err] [1104/213133.743:INFO:CONSOLE:15994] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5174/@fs/<USER_HOME>/OneDrive/Documents/ChatGPT/SYNCPROOF/node_modules/.vite/deps/react-dom_client.js?v=e159766f (15994)
+    [pid=20956] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'Review latest server', exact: true })
+        - locator resolved to <button disabled>Review latest server</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        71 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      42 |  await edit(p,'Rejected B proposal');await edit(a,'A winner');await send(a);await expect(a.getByRole('status')).toContainText('Server acknowledged: 1');await send(p);await expect(p.getByRole('status')).toContainText('conflicts: 1');const m=(await list(p)).find(x=>x.phase==='terminal_conflict')!;await p.getByRole('button',{name:'Inspection — Conflict — local proposal preserved',exact:true}).click();return {m,a};
+      43 | }
+    > 44 | async function review(p:Page){await p.getByRole('button',{name:'Review latest server',exact:true}).click();await expect(p.getByRole('button',{name:'Keep server',exact:true})).toBeEnabled();}
+         |                                                                                                    ^
+      45 | async function prepareResolution(p:Page,manual=false){await review(p);await p.getByRole('button',{name:manual?'Manually combine values':'Reapply local values',exact:true}).click();await expect(p.getByRole('button',{name:'Cancel resolution draft',exact:true})).toBeVisible();if(manual){await p.getByLabel('Notes').fill('Manual combined values');await p.getByRole('button',{name:'Save draft',exact:true}).click();await expect(p.getByRole('status')).toHaveText('Saved locally');}await p.getByRole('button',{name:'Queue for future sync',exact:true}).click();await expect(p.getByRole('status')).toHaveText('Queued on this device');return (await list(p)).find(x=>x.phase==='queued')!;}
+      46 | test('inspector and confirmed keep-server preserve audit; cancel creates no server mutation',async({page,browser})=>{const {m}=await conflict(page,browser);await expect(page.getByRole('heading',{name:'Original common base'})).toBeVisible();expect(m.commonBase?.revision).toBe('4');await review(page);page.once('dialog',d=>d.dismiss());await page.getByRole('button',{name:'Keep server',exact:true}).click();expect((await list(page)).find(x=>x.mutationId===m.mutationId)?.decision).toBeUndefined();const count=await pool.query('SELECT count(*) FROM processed_mutations');page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'Keep server',exact:true}).click();await expect(page.getByRole('status')).toContainText('deliberately discarded');expect((await list(page)).find(x=>x.mutationId===m.mutationId)?.decision?.kind).toBe('keep_server');expect((await pool.query('SELECT count(*) FROM processed_mutations')).rows).toEqual(count.rows);});
+      47 | test('new reapply and manual combine use new IDs; second conflict preserves both histories',async({page,browser})=>{const {m,a}=await conflict(page,browser);const r=await prepareResolution(page);expect(r.resolves).toBe(m.mutationId);expect(r.envelope.baseRevision).toBe('5');expect(r.mutationId).not.toBe(m.mutationId);await update(m,'5','Inspection');await send(page);await expect(page.getByRole('status')).toContainText('conflicts: 1');await page.getByRole('button',{name:'Inspection — Conflict — local proposal preserved',exact:true}).click();const r2=await prepareResolution(page,true);expect(r2.resolves).toBe(r.mutationId);expect(r2.envelope.baseRevision).toBe('6');await send(page);await expect(page.getByRole('status')).toContainText('Server acknowledged: 1');for(const p of [a,page]){await p.getByRole('button',{name:'Reconcile now',exact:true}).click();await expect(p.getByRole('status')).toContainText('Snapshot applied');}expect((await dbState(m)).row.revision).toBe('7');const all=await list(page);expect(all.find(x=>x.mutationId===m.mutationId)?.canonical).toBe(m.canonical);expect(all.find(x=>x.mutationId===r.mutationId)?.phase).toBe('terminal_conflict');});
+        at review (<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:44:100)
+        at prepareResolution (<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:45:61)
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:47:562
+
+    Error Context: .local\browser-results\resolution-new-reapply-and-18fac-ct-preserves-both-histories\error-context.md
+
+  2) tests\browser\resolution.spec.ts:48:1 › F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByRole('status')
+    Expected: "Queued on this device"
+    Received: "Unsaved changes"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+        2 × locator resolved to <p role="status">Saving locally…</p>
+          - unexpected value "Saving locally…"
+        - waiting for "http://127.0.0.1:5174/" navigation to finish...
+        - navigated to "http://127.0.0.1:5174/"
+        11 × locator resolved to <p role="status">Unsaved changes</p>
+           - unexpected value "Unsaved changes"
+
+
+      36 | const others:BrowserContext[]=[];
+      37 | test.afterEach(async()=>{for(const c of others.splice(0))await c.close();});
+    > 38 | async function edit(p:Page,notes:string){await p.getByRole('button',{name:'Inspection — Server acknowledged',exact:true}).click();await p.getByLabel('Notes').fill(notes);await p.getByRole('button',{name:'Save draft',exact:true}).click();await expect(p.getByRole('status')).toHaveText('Saved locally');await p.getByRole('button',{name:'Queue for future sync',exact:true}).click();await expect(p.getByRole('status')).toHaveText('Queued on this device');return JSON.parse(await p.getByTestId('metadata').innerText()) as Mutation;}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      39 | async function conflict(p:Page, browser:import('@playwright/test').Browser){
+      40 |  const initial=parseMutation(JSON.stringify({protocolVersion:1,mutationId:randomUUID(),clientId:randomUUID(),recordId:randomUUID(),operation:'create',baseRevision:null,payload:{title:'Inspection',status:'open',notes:'Base'}}));await processMutation(pool,initial);const base:Mutation={...initial,mutationId:initial.envelope.mutationId,recordId:initial.envelope.recordId,commonBase:null,phase:'acknowledged'};for(let r=1;r<4;r++)await update(base,String(r),'Inspection');
+      41 |  const c=await browser.newContext();others.push(c);const a=await c.newPage();for(const page of [a,p]){await page.goto('http://127.0.0.1:5174');await page.getByRole('button',{name:'Reconcile now',exact:true}).click();await expect(page.getByRole('status')).toContainText('Snapshot applied');}
+        at edit (<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:38:416)
+        at conflict (<USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:42:2)
+        at <USER_HOME>\OneDrive\Documents\ChatGPT\SYNCPROOF\tests\browser\resolution.spec.ts:49:89
+
+    Error Context: .local\browser-results\resolution-F9-committed-re-1169e-wser-restart-replay-same-ID\error-context.md
+
+  2 failed
+    tests\browser\resolution.spec.ts:47:1 › new reapply and manual combine use new IDs; second conflict preserves both histories 
+    tests\browser\resolution.spec.ts:48:1 › F9 committed resolution dropped reply, newer write and graceful browser restart replay same ID 
+  3 passed (1.1m)
